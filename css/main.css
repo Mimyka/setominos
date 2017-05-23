@@ -1,0 +1,498 @@
+@font-face {
+  font-family: "orphans";
+  src:url('../font/dreamOrphans.ttf');
+}
+
+@font-face {
+  font-family: "london";
+  src:url('../font/LondonBetween.ttf');
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box
+}
+
+html,body{
+  height: 100%;
+  overflow-x: hidden
+}
+
+p{
+  font-family: sans-serif;
+  line-height: 1.8em;
+  text-align: center;
+  padding: 0px 30px
+}
+
+span{
+  font-family: sans-serif;
+  line-height: 1.7em;
+}
+
+/*Component*/
+
+.wrapped{
+  overflow: hidden;
+}
+
+.open{
+  display: block !important;
+}
+
+/********************************************/
+/***** HEADER *******************************/
+/********************************************/
+header img{
+  position: relative;
+  width: 150%;
+  -webkit-transform: scale(2.3);
+          transform: scale(2.3);
+  top: 0px;
+  left: -20px;
+}
+
+header > div:nth-of-type(2){
+  position: relative;
+  height: 80px;
+  top: 20px
+}
+
+header h1{
+  position: relative;
+  float: right;
+  padding-right: 10px;
+  text-shadow: 0 0 2px #FFF;
+  font-family: orphans;
+  font-size: 36px;
+  line-height: 1.2em;
+  color: #259F25;
+  letter-spacing: 0.25em
+}
+
+header h2{
+  position: relative;
+  float: right;
+  padding-right: 10px;
+  text-shadow: 0 0 2px #FFF;
+  font-family: london;
+  color: #F33;
+  line-height: 1.4em;
+  text-transform: uppercase;
+  letter-spacing: 0.03em
+}
+
+.allBtn{
+  position: relative;
+  height: 50px;
+  width: 100%;
+  -webkit-animation: mymove 2s;
+          animation: mymove 2s;
+}
+
+@-webkit-keyframes mymove {
+  0%    {left: 600px;}
+  100%  {left: 0px;}
+}
+
+@keyframes mymove {
+  0%    {left: 1000px;}
+  100%  {left: 0px;}
+}
+
+.fxArd{
+  margin: 40px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+    -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.btn{
+  width: 45%;
+  color: #FFF;
+  background-color: #F3A333;
+}
+
+.allBtn div[class=btn]:nth-of-type(1){
+  position: relative;
+  cursor: not-allowed;
+  color: #EEE;
+  background-color: #BBB;
+}
+
+div[class^=btn]{
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+  padding: 12px 10px;
+  letter-spacing: 0.2em
+}
+
+.allBtn div[class=btn]:nth-of-type(1){
+  position: relative;
+  cursor: not-allowed;
+  color: #EEE;
+  background-color: #BBB;
+}
+
+
+/********************************************/
+/***** INTRODUCE ****************************/
+/********************************************/
+section:nth-of-type(1) > div:nth-of-type(1){
+  position: relative;
+  height: 180px;
+  margin-top: -40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+     -ms-flex-align: center;
+        align-items: center;
+}
+
+section:nth-of-type(1) span{
+  margin: 0px 30px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #E55
+}
+
+div[class^=contIntro]{
+  position: relative;
+  height: 150px;
+  width: 100%;
+}
+
+svg{
+  position: absolute
+}
+
+.seto_1{
+  top: 25px;
+  left: 20px;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+
+section:nth-of-type(1) > div:nth-of-type(3){
+  position: relative;
+  height: 150px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+     -ms-flex-align: center;
+        align-items: center;
+}
+
+section:nth-of-type(1) > div:nth-of-type(3) span{
+  margin-left: 20px;
+}
+
+.minos_1{
+  top: 30px;
+  left: 40px;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+
+
+/********************************************/
+/***** HOW TO PLAY **************************/
+/********************************************/
+.contHTP{
+  position: relative;
+  height: 220px;
+  width: 100%
+}
+
+.seto_2{
+  top: 55px;
+  left: 50px;
+  -webkit-transform: rotate(-50deg);
+          transform: rotate(-50deg);
+}
+
+.minos_2{
+  top: 131px;
+  left: 139px;
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+}
+
+
+/********************************************/
+/***** POSITIONS ****************************/
+/********************************************/
+.contPos{
+  position: relative;
+  height: 220px;
+  width: 100%
+}
+
+.seto_32{
+  top: 80px;
+  left: 40px;
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+}
+
+.seto_31{
+  top: 26px;
+  left: 133px;
+  -webkit-transform: rotate(240deg);
+          transform: rotate(240deg);
+}
+
+/********************************************/
+/***** MECANIC ******************************/
+/********************************************/
+.contMeca{
+  position: relative;
+  height: 360px;
+  width: 100%
+}
+
+.minos_4{
+  top: 140px;
+  left: 120px;
+}
+
+.seto_41{
+  top: 78px;
+  left: 22px;
+  -webkit-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+}
+
+.seto_42{
+  top: 33px;
+  left: 100px;
+}
+
+.seto_43{
+  top: 77px;
+  left: 178px;
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+}
+
+.seto_44{
+  top: 167px;
+  left: 178px;
+  -webkit-transform: rotate(120deg);
+          transform: rotate(120deg);
+}
+
+.seto_45{
+  top: 212px;
+  left: 100px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.seto_46{
+  top: 168px;
+  left: 22px;
+  -webkit-transform: rotate(240deg);
+          transform: rotate(240deg);
+}
+
+
+/********************************************/
+/***** STRATEGY *****************************/
+/********************************************/
+.contStrat{
+  position: relative;
+  height: 200px;
+  width: 100%
+}
+
+.seto_51{
+  top: 40px;
+  left: 43px;
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg)
+}
+
+.seto_52{
+  top: 40px;
+  left: 150px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg)
+}
+
+
+/********************************************/
+/***** PLAY *********************************/
+/********************************************/
+
+
+
+/********************************************/
+/***** BOUTON D'ACTION **********************/
+/********************************************/
+section:nth-of-type(7) > div:nth-of-type(2){
+  height: 200px;
+  text-align: center;
+}
+
+.btn_membre{
+  position: relative;
+  width: 260px;
+  margin: auto;
+  top: 20px;
+  color: #FFF;
+  background-color: #2A9A2A
+}
+
+section:nth-of-type(7) div:nth-of-type(3){
+  -webkit-box-align: center;
+     -ms-flex-align: center;
+        align-items: center;
+}
+
+.fa-facebook-square{
+  color: #3B5998
+}
+
+.fa-twitter-square{
+  color: #1DA1F2
+}
+
+section:nth-of-type(7) > div:nth-of-type(4){
+  height: 200px;
+  text-align: center;
+}
+
+.btn_contact{
+  position: relative;
+  width: 200px;
+  top: 20px;
+  margin: auto;
+  padding: 6px 10px;
+  color: #55F;
+  background-color: #FE5
+}
+
+/********************************************/
+/***** MODAUX *******************************/
+/********************************************/
+div[class^=modal]{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+div[class^=modal] > div{
+  height: 90%;
+  width: 80%;
+  margin-top: 10%;
+  margin-left: 10%;
+  background-color: #FFF
+}
+
+div[class^=modal] > div > span{
+  float: right;
+  cursor: pointer;
+  padding: 10px 20px;
+  color: #F60
+}
+
+div[class^=modal] h4{
+  padding: 50px 0 40px 0
+}
+
+div[class^=modal] h4 span{
+  color: #2A9A2A
+}
+
+div[class^=modal] input{
+  width: 80%;
+  padding-left: 10%;
+  border: none;
+  border-bottom: 2px solid #F60
+}
+
+div[class^=modal] form span{
+  cursor: pointer;
+  font-size: 30px;
+  color: #2A9A2A
+}
+
+/***** MODAL ACHAT **************************/
+.modal_buy p{
+  font-weight: 700
+}
+
+.modal_buy a, img{
+  width: 80%
+}
+
+.modal_buy form div{
+  display: none;
+  margin-bottom: 40px
+}
+
+/***** MODAL MEMBER *************************/
+.modal_member{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.modal_member button{
+  display: inline-block;
+
+}
+
+
+/********************************************/
+/***** FOOTER *******************************/
+/********************************************/
+footer{
+  height: 50px;
+  background-color: #2A9A2A
+}
+
+footer p{
+  padding: 0 20px;
+  text-align: center;
+  color: #EEE;
+  font-size: 8px
+}
+
+footer a, footer span{
+  cursor: pointer;
+  color: #EEE;
+  text-decoration: none
+}
+
+
+
+/********************************************/
+/********************************************/
+/***** SMARTPHONE ***************************/
+/********************************************/
+/********************************************/
+@media screen and (min-width: 320px) {
+
+
+}
