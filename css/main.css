@@ -1,3 +1,4 @@
+/*TODO : Clean css and do more reusable component*/
 /*------------------------------------------------------
 
   #####  ####### #     # ####### ######     #    #
@@ -134,7 +135,7 @@ p{
 }
 
 .modal{
-  overflow: scroll; 
+  overflow: scroll;
   position: fixed;
   top: 0;
   left: 0;
@@ -225,6 +226,8 @@ div[class^=contIntro]{
 svg{
   position: absolute
 }
+
+/*TODO : Position of seto and minos with other technic than pixel*/
 
 .seto_1{
   top: 25px;
@@ -433,6 +436,8 @@ section:nth-of-type(7) > div:nth-of-type(4){
   background-color: #FE5
 }
 
+/*TODO : CSS of modal*/
+
 /***** MODAL ACHAT **************************/
 .modal-buy p{
   font-weight: 700
@@ -473,3 +478,5 @@ footer a, footer span{
   color: #EEE;
   text-decoration: none
 }
+
+/*TODO : Responsive mode*/
