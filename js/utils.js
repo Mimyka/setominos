@@ -25,16 +25,19 @@ Element.prototype.modalize = function(arg) {
   arg.close = arg.close || that;
 
   for (var i = 0; i < arg.open.length; i++) {
-    arg.open[i].onclick = function() {
-      that.toggleClass('open');
-      document.querySelector('html').toggleClass('wrapped');
-    }
+    arg.open[i].onclick = toggle;
   }
 
   for (var i = 0; i < arg.close.length; i++) {
-    arg.close[i].onclick = function() {
-      that.removeClass('open');
-      document.querySelector('html').removeClass('wrapped');
-    }
+    arg.close[i].onclick = toggle;
   }
+
+	document.querySelector('.overlay').onclick = toggle;
+
+	function toggle() {
+		that.toggleClass('open');
+		document.querySelector('.overlay').toggleClass('open');
+		document.querySelector('html').toggleClass('hidden');
+		document.querySelector('body').toggleClass('hidden');
+	}
 }
