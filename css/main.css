@@ -43,7 +43,7 @@ h1,h2{
 }
 
 h1{
-  line-height: 1.35em;
+  line-height: 1.55em;
   font-family: orphans;
   font-size: 36px;
   color: #259F25;
@@ -54,6 +54,7 @@ h2{
   font-family: london;
   font-size: 24px;
   color: #F33;
+  line-height: 1.35em;
   text-transform: uppercase;
   letter-spacing: 0.03em
 }
@@ -105,7 +106,7 @@ p{
 
 .btn-group{
   position: relative;
-  margin: 40px 0px;
+  margin: 20px 0px 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -180,19 +181,16 @@ p{
 /********************************************/
 /***** HEADER *******************************/
 /********************************************/
-header img{
-  position: relative;
-  width: 150%;
-  -webkit-transform: scale(2.3);
-          transform: scale(2.3);
-  top: 0px;
-  left: -20px;
-}
 
-header > div:nth-of-type(2){
-  position: relative;
-  height: 80px;
-  top: 20px
+header{
+  height: 300px;
+  background-image: url(../img/home1.jpg);
+  background-position: -210px -80px;
+  background-size: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 /********************************************/
