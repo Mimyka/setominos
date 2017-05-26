@@ -1,4 +1,4 @@
-/*TODO : Clean css and do more reusable component*/
+/*DOING : Clean css and do more reusable component*/
 /*------------------------------------------------------
 
   #####  ####### #     # ####### ######     #    #
@@ -26,8 +26,7 @@
 *{
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box
+  box-sizing: border-box
 }
 
 html, body{
@@ -66,6 +65,10 @@ p{
   padding: 0px 30px
 }
 
+svg{
+  position: absolute
+}
+
 /*-------------------------------------------------------------
 
   #####
@@ -88,37 +91,46 @@ p{
   display: block !important;
 }
 
-/*Boutons*/
+.line{
+  height: 1px;
+  width: 90%;
+  margin: auto;
+  background-color: #EDE;
+}
+
+.wrapper{
+  position: relative;
+}
+
+/*Button*/
 
 .btn{
   width: 45%;
   color: #FFF;
-  background-color: #F3A333;
   border: none;
   cursor: pointer;
   text-align: center;
   border-radius: 5px;
-  padding: 12px 10px;
+  padding: 18px 0px;
   letter-spacing: 0.2em;
   font-family: sans-serif;
-  line-height: 1.7em;
 }
 
 .btn-group{
   position: relative;
-  margin: 20px 0px 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  padding: 20px 0px;
   display: flex;
-  -ms-flex-pack: distribute;
   justify-content: space-around;
 }
 
 .btn-disabled{
-  position: relative;
   cursor: not-allowed;
   color: #EEE;
   background-color: #BBB;
+}
+
+.btn-buy{
+  background-color: #F3A333;
 }
 
 /*Modal*/
@@ -187,6 +199,7 @@ header{
   background-image: url(../img/home1.jpg);
   background-position: -210px -80px;
   background-size: 800px;
+  padding: 2px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -196,61 +209,45 @@ header{
 /********************************************/
 /***** INTRODUCE ****************************/
 /********************************************/
-section:nth-of-type(1) > div:nth-of-type(1){
-  position: relative;
-  height: 180px;
-  margin-top: -40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-     -ms-flex-align: center;
-        align-items: center;
-}
 
-section:nth-of-type(1) span{
-  margin: 0px 30px;
+#intro span{
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
   font-size: 30px;
   font-weight: 700;
   color: #E55
 }
 
-div[class^=contIntro]{
-  position: relative;
+#intro .wrapper:first-child{
+  height: 180px;
+}
+
+#intro .wrapper:first-child span{
+  left: 12.5%;
+}
+
+#intro .wrapper:last-child{
   height: 150px;
   width: 100%;
 }
 
-svg{
-  position: absolute
+#intro .wrapper:last-child span{
+  right: 12.5%;
 }
 
-/*TODO : Position of seto and minos with other technic than pixel*/
+/*Pieces*/
 
-.seto_1{
-  top: 25px;
-  left: 20px;
+/*DOING : Position of seto and minos with other technic than pixel*/
+
+.seto_intro{
+  top: 40px;
+  right: 20px;
   -webkit-transform: rotate(30deg);
           transform: rotate(30deg);
 }
 
-section:nth-of-type(1) > div:nth-of-type(3){
-  position: relative;
-  height: 150px;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-     -ms-flex-align: center;
-        align-items: center;
-}
-
-section:nth-of-type(1) > div:nth-of-type(3) span{
-  margin-left: 20px;
-}
-
-.minos_1{
+.minos_intro{
   top: 30px;
   left: 40px;
   -webkit-transform: rotate(-30deg);
@@ -259,7 +256,7 @@ section:nth-of-type(1) > div:nth-of-type(3) span{
 
 
 /********************************************/
-/***** HOW TO PLAY **************************/
+/***** RULES ********************************/
 /********************************************/
 .contHTP{
   position: relative;
@@ -281,10 +278,6 @@ section:nth-of-type(1) > div:nth-of-type(3) span{
           transform: rotate(10deg);
 }
 
-
-/********************************************/
-/***** POSITIONS ****************************/
-/********************************************/
 .contPos{
   position: relative;
   height: 220px;
@@ -383,17 +376,10 @@ section:nth-of-type(1) > div:nth-of-type(3) span{
           transform: rotate(90deg)
 }
 
-
-/********************************************/
-/***** PLAY *********************************/
-/********************************************/
-
-
-
 /********************************************/
 /***** BOUTON D'ACTION **********************/
 /********************************************/
-section:nth-of-type(7) > div:nth-of-type(2){
+#contact > div:nth-of-type(2){
   height: 200px;
   text-align: center;
 }
@@ -407,7 +393,7 @@ section:nth-of-type(7) > div:nth-of-type(2){
   background-color: #2A9A2A
 }
 
-section:nth-of-type(7) div:nth-of-type(3){
+#contact div:nth-of-type(3){
   -webkit-box-align: center;
      -ms-flex-align: center;
         align-items: center;
@@ -421,7 +407,7 @@ section:nth-of-type(7) div:nth-of-type(3){
   color: #1DA1F2
 }
 
-section:nth-of-type(7) > div:nth-of-type(4){
+#contact > div:nth-of-type(4){
   height: 200px;
   text-align: center;
 }
@@ -429,7 +415,7 @@ section:nth-of-type(7) > div:nth-of-type(4){
 .btn-contact{
   width: 200px;
   margin: auto;
-  padding: 6px 10px;
+  padding: 10px 10px;
   color: #55F;
   background-color: #FE5
 }
