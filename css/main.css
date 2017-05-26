@@ -157,6 +157,7 @@ svg{
   width: 80%;
   margin-top: 10%;
   margin-left: 10%;
+  padding: 20px;
   z-index: 500;
   background-color: #FFF
 }
@@ -169,6 +170,7 @@ svg{
 }
 
 .modal h4{
+  line-height: 1.9em;
   padding: 50px 0 40px 0
 }
 
@@ -423,15 +425,25 @@ header{
 /*TODO : CSS of modal*/
 
 /***** MODAL ACHAT **************************/
-.modal-buy p{
-  font-weight: 700
+.modal-buy{
+  text-align: center;
 }
 
-.modal-buy a, img{
-  width: 80%
+.modal-buy strong{
+  font-size: 28px
 }
 
-.modal-buy form div{
+.modal-buy >span{
+  display: block
+}
+
+.modal-buy b{
+  color: #F82;
+  letter-spacing: 0.2em;
+  font-size: 26px
+}
+
+.modal-buy form{
   display: none;
   margin-bottom: 40px
 }
