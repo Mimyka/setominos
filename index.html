@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<!-- TODO:50 : Html readapt for reusable component and responsive-->
+<!-- DOING:50 : Html readapt for reusable component and responsive-->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,148 +18,121 @@
 
 <body>
 
-  <header>
-    <!-- FIXME : Image resizing -->
-    <div>
-      <img src="./img/home1.jpg" alt="Boîte du jeu de société SétoMinos">
-    </div>
+  <main>
 
-    <div>
-      <h1>SétoMinos</h1>
-      <h2>Le Nouveau Défi !</h2>
-    </div>
+    <header>
+        <!-- DONE : Image resizing -->
+        <h1>SétoMinos</h1>
+        <h2>Le Nouveau Défi !</h2>
+    </header>
 
     <div class="btn-group">
       <div class="btn-disabled btn">
         Essayer
       </div>
-
       <div class="btn btn-buy">
         Achetez
       </div>
     </div>
-  </header>
 
-  <section id="introduce">
+    <div class="line"></div>
 
-    <div>
-      <span>Séto</span>
-
-      <!-- TODO:0 : Adapt cont class for animation and reusable component -->
-      <!-- IDEA : Replace by white space between section and remote seto and minos with javascript-->
-      <div class="contIntro1">
-
+    <section id="intro">
+      <div class="wrapper">
+        <span>Séto</span>
+        <!-- DOING:0 : Adapt cont class for animation and reusable component -->
       </div>
-    </div>
-
-    <div>
       <p>Ce jeu de tuiles reprend les bases ancestrales des dominos. Il se joue de 2 à 6 joueurs et à partir de 6ans.</p>
-    </div>
-
-    <div>
-      <div class="contIntro2">
-
+      <div class="wrapper">
+        <span>Minos</span>
       </div>
-      <span>Minos</span>
-    </div>
+    </section>
 
-  </section>
-
-  <section id="howToPlay">
-    <div>
+    <section id="rules">
       <p>Assemblez les Sétos de même couleur à leur bon Minos et reconstituez les 9 rosaces de couleur appelés SétoMinos.</p>
-    </div>
+      <div class="contHTP">
 
-    <div class="contHTP">
+      </div>
+      <div>
+        <p>Les Sétos peuvent se lier entre eux par leur extrémité extérieur si les chiffres sont de même valeur.</p>
+      </div>
+      <div class="contPos">
 
-    </div>
+      </div>
+    </section>
 
-  </section>
-
-  <section id="positions">
-    <div>
-      <p>Les Sétos peuvent se lier entre eux par leur extrémité extérieur si les chiffres sont de même valeur.</p>
-    </div>
-
-    <div class="contPos">
-
-    </div>
-  </section>
-
-  <section id="mecanic">
-    <div>
-      <p>Finissez une rosace, dites "SétoMinos" et gagnez 100 pts bonus. Ce jeu intéractif recèle d'autres bonus de taille.</p>
-    </div>
-
-    <div class="contMeca">
-
-    </div>
-  </section>
-
-  <section id="strategy">
-    <div>
-      <p>Vous pouvez joindre 2 Sétos par leur couleur et créer un bloc. Attention au bloquent votre adversaires vous risquez de vous bloquer.</p>
-    </div>
-
-    <div class="contStrat">
-
-    </div>
-  </section>
-
-  <section id="play">
-    <div>
-      <p>Ce jeu de stratégie de réflexion et de logique vous permettra de créer des moments privilégiez en famille ou entre amis.</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="btn-group">
-      <div class="btn btn-disabled">
-        Essayer
+    <section id="mecanic">
+      <div>
+        <p>Finissez une rosace, dites "SétoMinos" et gagnez 100 pts bonus. Ce jeu intéractif recèle d'autres bonus de taille.</p>
       </div>
 
-      <div class="btn btn-buy">
-        Achetez
+      <div class="contMeca">
+
       </div>
-    </div>
+    </section>
 
-    <div>
-      <p>Recevez la grille des points du jeu ainsi que l'agenda en avant première chaque mois !</p>
-
-      <span><b>▼ CLIQUEZ ICI ▼</b></span>
-      <div class="btn btn-mbr">
-        Devenez Membre
+    <section id="strategy">
+      <div>
+        <p>Vous pouvez joindre 2 Sétos par leur couleur et créer un bloc. Attention au bloquent votre adversaires vous risquez de vous bloquer.</p>
       </div>
-    </div>
 
-    <!-- FIXME : Font awesome problem-->
-    <div class="btn-group">
-      <a class="fa fa-facebook-square fa-3x" href="https://www.facebook.com/Setominos/" aria-hidden="true"></a>
+      <div class="contStrat">
+
+      </div>
+      <div>
+        <p>Ce jeu de stratégie de réflexion et de logique vous permettra de créer des moments privilégiez en famille ou entre amis.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="btn-group">
+        <div class="btn btn-disabled">
+          Essayer
+        </div>
+
+        <div class="btn btn-buy">
+          Achetez
+        </div>
+      </div>
 
       <div>
-        Suivez-nous
+        <p>Recevez la grille des points du jeu ainsi que l'agenda en avant première chaque mois !</p>
+
+        <span><b>▼ CLIQUEZ ICI ▼</b></span>
+        <div class="btn btn-mbr">
+          Devenez Membre
+        </div>
       </div>
 
-      <a class="fa fa-twitter-square fa-3x" href="https://twitter.com/Addoee" aria-hidden="true"></a>
-    </div>
+      <!-- FIXME : Font awesome problem-->
+      <div class="btn-group">
+        <a class="fa fa-facebook-square fa-3x" href="https://www.facebook.com/Setominos/" aria-hidden="true"></a>
 
-    <div>
-      <p>Pour toute question ou suggestion, contactez nous via le site de la Maison d'Édition Addoée.</p>
+        <div>
+          Suivez-nous
+        </div>
 
-      <span><b>▼ CLIQUEZ ICI ▼</b></span>
-
-      <div class="btn btn-contact">
-        Contactez-nous
+        <a class="fa fa-twitter-square fa-3x" href="https://twitter.com/Addoee" aria-hidden="true"></a>
       </div>
-    </div>
-  </section>
 
-  <footer>
+      <div>
+        <p>Pour toute question ou suggestion, contactez nous via le site de la Maison d'Édition Addoée.</p>
 
-    <p><a class="btn-ml">Mentions légales</a> • <a class="btn-cgv">CGV</a></p>
-    <p>Copyright © 2017 <a onclick="window.open('https://github.com/Mimyka')">Jérémy Le Prunenec</a> - <a onclick="window.open('https://www.linkedin.com/in/rémi-de-grauw-998b1b5b/')">Rémi De Grauw</a>. Tout droit réservé.</p>
+        <span><b>▼ CLIQUEZ ICI ▼</b></span>
 
-  </footer>
+        <div class="btn btn-contact">
+          Contactez-nous
+        </div>
+      </div>
+    </section>
+
+    <footer>
+
+      <p><a class="btn-ml">Mentions légales</a> • <a class="btn-cgv">CGV</a></p>
+      <p>Copyright © 2017 <a onclick="window.open('https://github.com/Mimyka')">Jérémy Le Prunenec</a> - <a onclick="window.open('https://www.linkedin.com/in/rémi-de-grauw-998b1b5b/')">Rémi De Grauw</a>. Tout droit réservé.</p>
+
+    </footer>
+  </main>
 
   <!--
    #     #
@@ -261,9 +234,9 @@
 
 </body>
 
-<script src="https://use.fontawesome.com/1f4d2954e6.js"></script>
 <script src="./js/utils.js"></script>
 <script src="./js/generate.js"></script>
 <script src="./js/script.js"></script>
+<script src="https://use.fontawesome.com/1f4d2954e6.js"></script>
 
 </html>
