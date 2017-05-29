@@ -26,8 +26,7 @@
 *{
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box
+  box-sizing: border-box
 }
 
 html, body{
@@ -72,6 +71,10 @@ a{
 
 svg{
   position: absolute
+}
+
+.fa{
+  text-decoration: none;
 }
 
 /*-------------------------------------------------------------
@@ -259,19 +262,10 @@ header .background{
   background-position: -210px -80px;
   background-size: 800px;
   padding: 2px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end
 }
 
 /*----------------------------------
@@ -304,8 +298,6 @@ header .background{
 }
 
 /*Pieces*/
-
-/*DOING : Position of seto and minos with other technic than pixel*/
 
 .seto_intro{
   top: 40px;
@@ -583,10 +575,6 @@ footer a, footer span{
   line-height: 1.8em
 }
 
-/*.A{
-  display: none
-}*/
-
 .modal-buy b{
   cursor: pointer;
   color: #F82;
@@ -623,12 +611,8 @@ footer a, footer span{
 }
 
 
-/********************************************/
-/***** FOOTER *******************************/
-/********************************************/
-footer{
-  height: 50px;
-  background-color: #2A9A2A
+/*--------------------------------------------------------------------------
+
  ######  #######  #####  ######  ####### #     #  #####  ### #     # #######
  #     # #       #     # #     # #     # ##    # #     #  #  #     # #
  #     # #       #       #     # #     # # #   # #        #  #     # #
