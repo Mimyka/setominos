@@ -162,9 +162,6 @@ svg{
 }
 
 .piece-name{
-  position: absolute;
-  top: 50%;
-  transform: translate(0%, -50%);
   font-size: 30px;
   font-weight: 700;
   color: #E55
@@ -280,12 +277,14 @@ header .background{
 
 ----------------------------------*/
 
-#intro .piece:first-child{
-  height: 180px;
+#intro .piece{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-#intro .piece:first-child span{
-  left: 12.5%;
+#intro .piece:first-child{
+  height: 180px;
 }
 
 #intro .piece:last-child{
@@ -293,24 +292,17 @@ header .background{
   width: 100%;
 }
 
-#intro .piece:last-child span{
-  right: 12.5%;
-}
-
 /*Pieces*/
 
 .seto_intro{
-  top: 40px;
-  right: 20px;
-  -webkit-transform: rotate(30deg);
-          transform: rotate(30deg);
+  position: relative;
+  transform: rotate(30deg);
 }
 
 .minos_intro{
-  top: 30px;
-  left: 40px;
-  -webkit-transform: rotate(-30deg);
-          transform: rotate(-30deg);
+  order: -1;
+  position: relative;
+  transform: rotate(-30deg);
 }
 
 /*----------------------------------------------------
