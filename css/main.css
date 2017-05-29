@@ -133,6 +133,21 @@ svg{
   background-color: #F3A333;
 }
 
+/*piece*/
+
+.piece{
+  position: relative;
+}
+
+.piece-name{
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  font-size: 30px;
+  font-weight: 700;
+  color: #E55
+}
+
 /*Modal*/
 
 .overlay{
@@ -212,29 +227,20 @@ header{
 /***** INTRODUCE ****************************/
 /********************************************/
 
-#intro span{
-  position: absolute;
-  top: 50%;
-  transform: translate(0%, -50%);
-  font-size: 30px;
-  font-weight: 700;
-  color: #E55
-}
-
-#intro .wrapper:first-child{
+#intro .piece:first-child{
   height: 180px;
 }
 
-#intro .wrapper:first-child span{
+#intro .piece:first-child span{
   left: 12.5%;
 }
 
-#intro .wrapper:last-child{
+#intro .piece:last-child{
   height: 150px;
   width: 100%;
 }
 
-#intro .wrapper:last-child span{
+#intro .piece:last-child span{
   right: 12.5%;
 }
 

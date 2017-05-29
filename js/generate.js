@@ -13,8 +13,8 @@ function generate(location, haveClass, type, number, numberLeft, numberTop, numb
 }
 
 //Introduce Séto x1 & Minos x1
-generate("#intro .wrapper:first-child", "intro", "seto", 5, 9, 7, 7);
-generate("#intro .wrapper:last-child", "intro", "minos", 5);
+generate("#intro .piece:first-child", "intro", "seto", 5, 9, 7, 7);
+generate("#intro .piece:last-child", "intro", "minos", 5);
 
 // Containers HowToPlay Séto x1 & Minos x1
 generate(".contHTP", "2", "seto", 5, 9, 7, 7);
