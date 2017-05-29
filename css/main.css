@@ -26,7 +26,8 @@
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box
 }
 
 html, body{
@@ -140,6 +141,8 @@ svg{
 
 .btn-group{
   padding: 20px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around
@@ -164,7 +167,8 @@ svg{
 .piece-name{
   position: absolute;
   top: 50%;
-  transform: translate(0%, -50%);
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
   font-size: 30px;
   font-weight: 700;
   color: #E55
@@ -262,10 +266,19 @@ header .background{
   background-position: -210px -80px;
   background-size: 800px;
   padding: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end
 }
 
 /*----------------------------------
@@ -473,8 +486,8 @@ header .background{
 ------------------------------------------------------*/
 
 #contact > div:nth-of-type(2){
-  height: 230px;
-  text-align: center;
+  height: 200px;
+  text-align: center
 }
 
 #contact p{
@@ -485,16 +498,13 @@ header .background{
   position: relative;
   width: 260px;
   margin: auto;
-  top: 20px;
   color: #FFF;
   background-color: #2A9A2A
 }
 
 #contact div:nth-of-type(3){
   height: 100px;
-  -webkit-box-align: center;
-     -ms-flex-align: center;
-        align-items: center;
+  align-items: center
 }
 
 .fa-facebook-square{
@@ -503,21 +513,6 @@ header .background{
 
 .fa-twitter-square{
   color: #1DA1F2
-}
-
-#contact > div:nth-of-type(4){
-  height: 230px;
-  text-align: center;
-}
-
-.btn-contact{
-  position: relative;
-  width: 200px;
-  top: 20px;
-  margin: auto;
-  padding: 10px 10px;
-  color: #55F;
-  background-color: #FE5
 }
 
 /*----------------------------------------------
@@ -533,18 +528,23 @@ header .background{
 ----------------------------------------------*/
 
 footer{
-  height: 50px;
+  height: 100px;
   background-color: #2A9A2A
 }
 
 footer p{
   padding: 0 20px;
   text-align: center;
-  color: #EEE;
+  font-size: 12px
+}
+
+footer span{
+  display: block;
+  text-align: center;
   font-size: 8px
 }
 
-footer a, footer span{
+footer a{
   cursor: pointer;
   color: #EEE;
   text-decoration: none
@@ -661,13 +661,20 @@ footer a, footer span{
   }
 
   header .btn-group{
-    transform: translate(0%, -50%);
+    -webkit-transform: translate(0%, -50%);
+            transform: translate(0%, -50%);
     position: absolute;
     top: 50%;
     right: 0;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     width: 100%;
     }
 
