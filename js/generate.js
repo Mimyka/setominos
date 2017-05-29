@@ -12,30 +12,28 @@ function generate(location, haveClass, type, number, numberLeft, numberTop, numb
 	}
 }
 
-//Introduce Séto x1 & Minos x1
+// Intro Séto x1 & Minos x1
 generate("#intro .piece:first-child", "intro", "seto", 5, 9, 7, 7);
 generate("#intro .piece:last-child", "intro", "minos", 5);
 
-// Containers HowToPlay Séto x1 & Minos x1
-generate(".contHTP", "2", "seto", 5, 9, 7, 7);
-generate(".contHTP", "2", "minos", 5);
+// Babystep Séto x1 & Minos x1
+generate("#babystep .piece", "2", "seto", 5, 9, 7, 7);
+generate("#babystep .piece", "2", "minos", 5);
 
-// Containers Positions Séto x2
-generate(".contPos", "31", "seto", 5, 9, 7, 7);
-generate(".contPos", "32", "seto", 6, 7, 7, 9);
+// Move Séto x2
+generate("#move .piece", "31", "seto", 5, 9, 7, 7);
+generate("#move .piece", "32", "seto", 6, 7, 7, 9);
 
-// Containers Mecanic SétoMinos complet
-generate(".contMeca", "4", "minos", 6);
-generate(".contMeca", "41", "seto", 6, 7, 7, 9);
-generate(".contMeca", "42", "seto", 6, 9, 8, 2);
-generate(".contMeca", "43", "seto", 6, 2, 9, 1);
-generate(".contMeca", "44", "seto", 6, 1, 1, 3);
-generate(".contMeca", "45", "seto", 6, 3, 2, 5);
-generate(".contMeca", "46", "seto", 6, 5, 3, 7);
+// Mecanic SétoMinos complet
+generate("#mecanic .piece", "4", "minos", 6);
+generate("#mecanic .piece", "41", "seto", 6, 7, 7, 9);
+generate("#mecanic .piece", "42", "seto", 6, 9, 8, 2);
+generate("#mecanic .piece", "43", "seto", 6, 2, 9, 1);
+generate("#mecanic .piece", "44", "seto", 6, 1, 1, 3);
+generate("#mecanic .piece", "45", "seto", 6, 3, 2, 5);
+generate("#mecanic .piece", "46", "seto", 6, 5, 3, 7);
 
 
-// Containers Mecanic Séto x2
-generate(".contStrat", "51", "seto", 9, 9, 5, 8);
-generate(".contStrat", "52", "seto", 9, 5, 3, 7);
-
-//
+// Strategy Séto x2
+generate("#strategy .piece", "51", "seto", 9, 9, 5, 8);
+generate("#strategy .piece", "52", "seto", 9, 5, 3, 7);
