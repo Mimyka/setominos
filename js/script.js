@@ -19,3 +19,32 @@ document.querySelector('.modal-cgv').modalize({
   open: document.querySelectorAll('.btn-cgv'),
   close: document.querySelectorAll('.modal-cgv .cross')
 });
+
+document.querySelector('.a').onclick = display1;
+document.querySelector('.b').onclick = display2;
+
+// var tab = document.querySelectorAll('.A, .B, .C');
+
+// div
+// form
+// form
+// >
+// "classcommune"
+//
+// "btn-act"
+//
+// function functionName() {
+//   querySelectorAll('.classecommune .btn-act')[i]
+//   toggleClass('open')
+//   removeClass('open')
+// }
+
+function display1() {
+  document.querySelector('.A').style.display = "none";
+  document.querySelector('.B').style.display = "block";
+}
+
+function display2() {
+  document.querySelector('.B').style.display = "none";
+  document.querySelector('.C').style.display = "block";
+}
