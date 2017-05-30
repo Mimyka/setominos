@@ -1,233 +1,251 @@
 <!DOCTYPE html>
 <html lang="fr">
 
+<!-- DOING:50 : Html readapt for reusable component and responsive-->
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SétoMinos est le nouveau défi des jeux de société. Jeu de stratégie de 2 à 6 joueurs et à partir de 6ans. Pour les vacances il se transporte dans le grand pochon. Edité par la Maison d'Édition Addoée.">
-    <meta name="keyword" content="SétoMinos, setominos, jeu de société, jeu de stratégie, jeu abstrait, jeu de dominos, jeu de tuiles, jouer en famille, jouer entre amis bordgame, Addoée, addoée">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SétoMinos est le nouveau défi des jeux de société. Jeu de stratégie de 2 à 6 joueurs et à partir de 6ans. Pour les vacances il se transporte dans le grand pochon. Edité par la Maison d'Édition Addoée.">
+  <meta name="keyword" content="SétoMinos, setominos, jeu de société, jeu de stratégie, jeu abstrait, jeu de dominos, jeu de tuiles, jouer en famille, jouer entre amis bordgame, Addoée, addoée">
 
-    <title>SétoMinos, le nouveau défi des jeux de société !</title>
+  <title>SétoMinos, le nouveau défi des jeux de société !</title>
 
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./fontAwesome/css/font-awesome.min.css">
-
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./fontAwesome/css/font-awesome.min.css">
 
 </head>
 
 <body>
 
+  <main>
+
     <header>
-        <div>
-            <img src="./img/home1.jpg" alt="Boîte du jeu de société SétoMinos">
+        <!-- DONE : Image resizing -->
+        <div class="background">
+          <h1>SétoMinos</h1>
+          <h2>Le Nouveau Défi !</h2>
+        </div>
+        <div class="btn-group">
+          <div class="btn-disabled btn">
+            Essayer
+          </div>
+          <div class="btn btn-buy">
+            Achetez
+          </div>
         </div>
 
-        <div>
-            <h1>SétoMinos</h1>
-
-            <h2>Le Nouveau Défi !</h2>
-        </div>
-
-        <div class="allBtn fxArd">
-            <div class="btn">
-                <span>Essayer</span>
-            </div>
-
-            <div class="btn buy-btn">
-                <span>Achetez</span>
-            </div>
-        </div>
     </header>
 
-    <section id="introduce">
+    <div class="line"></div>
 
-        <div>
-            <span>Séto</span>
-
-            <div class="contIntro1">
-
-            </div>
-        </div>
-
-        <div>
-            <p>Ce jeu de tuiles reprend les bases ancestrales des dominos. Il se joue de 2 à 6 joueurs et à partir de 6ans.</p>
-        </div>
-
-        <div>
-            <div class="contIntro2">
-
-            </div>
-            <span>Minos</span>
-        </div>
-
+    <!-- DONE:0 : Adapt cont class for animation and reusable component -->
+    <section id="intro">
+      <div class="piece">
+        <span class="piece-name">Séto</span>
+      </div>
+      <div class="content">
+        <p>Ce jeu de tuiles reprend les bases ancestrales des dominos. Il se joue de 2 à 6 joueurs et à partir de 6ans.</p>
+      </div>
+      <div class="piece">
+        <span class="piece-name">Minos</span>
+      </div>
     </section>
 
-    <section id="howToPlay">
-        <div>
-            <p>Assemblez les Sétos de même couleur à leur bon Minos et reconstituez les 9 rosaces de couleur appelés SétoMinos.</p>
-        </div>
+    <section id="babystep">
+      <div class="content">
+        <p>Assemblez les Sétos de même couleur à leur bon Minos et reconstituez les 9 rosaces de couleur appelés SétoMinos.</p>
+      </div>
+      <div class="piece">
 
-        <div class="contHTP">
-
-        </div>
-
+      </div>
     </section>
 
-    <section id="positions">
-        <div>
-            <p>Les Sétos peuvent se lier entre eux par leur extrémité extérieur si les chiffres sont de même valeur.</p>
-        </div>
+    <section id="move">
+      <div class="content">
+        <p>Les Sétos peuvent se lier entre eux par leur extrémité extérieur si les chiffres sont de même valeur.</p>
+      </div>
+      <div class="piece">
 
-        <div class="contPos">
-
-        </div>
+      </div>
     </section>
 
     <section id="mecanic">
-        <div>
-            <p>Finissez une rosace, dites "SétoMinos" et gagnez 100 pts bonus. Ce jeu intéractif recèle d'autres bonus de taille.</p>
-        </div>
+      <div class="content">
+        <p>Finissez une rosace, dites "SétoMinos" et gagnez 100 pts bonus. Ce jeu intéractif recèle d'autres bonus de taille.</p>
+      </div>
+      <div class="piece">
 
-        <div class="contMeca">
-
-        </div>
+      </div>
     </section>
 
     <section id="strategy">
-        <div>
-            <p>Vous pouvez joindre 2 Sétos par leur couleur et créer un bloc. Attention au bloquent votre adversaires vous risquez de vous bloquer.</p>
-        </div>
+      <div class="content">
+        <p>Vous pouvez joindre 2 Sétos par leur couleur et créer un bloc. Attention, bloquer votre adversaire pourrait bien vous bloquer.</p>
+      </div>
+      <div class="piece">
 
-        <div class="contStrat">
-
-        </div>
+      </div>
     </section>
 
-    <section id="play">
-        <div>
-            <p>Ce jeu de stratégie de réflexion et de logique vous permettra de créer des moments privilégiez en famille ou entre amis.</p>
-        </div>
-    </section>
+    <div class="line"></div>
 
-    <section>
-        <div class="allBtn fxArd">
-            <div class="btn">
-                <span>Essayer</span>
-            </div>
-
-            <div class="btn buy-btn">
-                <span>Achetez</span>
-            </div>
-        </div>
-
-        <div>
-            <p>Recevez la grille des points du jeu ainsi que l'agenda en avant première chaque mois !</p>
-
-            <span><b>▼ CLIQUEZ ICI ▼</b></span>
-
-                <span>Devenez Membre</span>
-            </div>
-        </div>
-
-        <div class="fxArd">
-            <a class="fa fa-facebook-square fa-3x" href="https://www.facebook.com/Setominos/" aria-hidden="true"></a>
-
-            <div>
-                <span>Suivez-nous</span>
-            </div>
-
-            <a class="fa fa-twitter-square fa-3x" href="https://twitter.com/Addoee" aria-hidden="true"></a>
-        </div>
-
-        <div>
-            <p>Pour toute question ou suggestion, contactez nous via le site de la Maison d'Édition Addoée.</p>
-
-            <span><b>▼ CLIQUEZ ICI ▼</b></span>
-
-            <div class="btn_contact">
-                <span>Contactez-nous</span>
-            </div>
-        </div>
-    </section>
-
-    <section>
-      <!-- Modal "Acheter en direct" -->
-      <div class="modal buy-modal">
-        <div>
-          <span class="buy-close">x</span>
-
-          <div>
-            <h4>Achetez votre <span>Jeu de Société SétoMinos</span> en direct <span>c'est moins cher </span>!</h4>
-
-            <span>Achetez directement</span>
-
-            <p>ou sur</p>
-
-            <a><img src="./img/cdiscount.png" alt=""></a>
-
-            <form action="#contact" method="post">
-              <div class="form_1">
-                <input type="text" name="first_name" value="" placeholder="Votre nom">
-                <input type="text" name="last_name" value="" placeholder="Votre prénom">
-                <input type="email" name="email" value="" placeholder="Votre email le plus utilisé" autocomplete="off">
-                <input type="text" name="quantity" value="" placeholder="Votre quantité de jeu commandé" autocomplete="off">
-                <span>►►►</span>
-              </div>
-
-              <div class="form_2">
-                <input type="text" name="street" value="" placeholder="Votre numéro et nom de rue">
-                <input type="text" name="postal_code" value="" placeholder="Votre code postal">
-                <input type="text" name="city" value="" placeholder="Votre ville">
-                <input type="phone" name="phone" value="" placeholder="phone" autocomplete="off">
-                <button type="submit" name="button">Valider</button>
-                <button class="btn" type="submit" name="button">Valider</button>
-              </div>
-            </form>
+    <section id="contact">
+      <div class="background">
+        <div class="btn-group">
+          <div class="btn btn-disabled">
+            Essayer
+          </div>
+          <div class="btn btn-buy">
+            Achetez
           </div>
         </div>
       </div>
 
-      <div class="modal_member close_modal">
-        <div>
-          <span>x</span>
-          <h4>Devenez <span>Membre de la Famille SétoMinos</span> et recevez votre <span>grille de points</span> ainsi qu'un <span>flyer promotionnel</span> du Jeu de Société SétoMinos !</h4>
-          <form action="#contact" method="post">
-            <input type="text" name="first_name" value="" placeholder="Votre prénom ou pseudo" autofocus="on" autocomplete="off">
-            <input type="text" name="email" value="" placeholder="Votre email le plus utilisé" autocomplete="off">
-            <button class="btn" type="submit" name="button">Valider</button>
-          </form>
+      <div class="content">
+        <p>Recevez la grille des points du jeu ainsi que l'agenda en avant première chaque mois !</p>
+      </div>
+
+      <!-- DONE : Font awesome problem-->
+      <div class="follow">
+        <div class="btn btn-mbr">
+          Devenez Membre
         </div>
-      </div>
 
-      <div class="modal_ml">
-        <h1>Société</h1>
-        <p></p>
-        <h1>Éditeur</h1>
-        <p></p>
-        <h1>Hébergement</h1>
-        <p></p>
-      </div>
+        <div class="social">
+          <a class="fa fa-facebook-square fa-3x" href="https://www.facebook.com/Setominos/" aria-hidden="true"></a>
 
-      <div class="modal_cgv">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+          <div>
+            Suivez-nous
+          </div>
+
+          <a class="fa fa-twitter-square fa-3x" href="https://twitter.com/Addoee" aria-hidden="true"></a>
+        </div>
       </div>
 
     </section>
 
     <footer>
 
-        <p><a href="#">Mentions légales</a> • <a href="#">CGV</a></p>
-        <!-- <p><a href="#">Mentions légales</a> • <a href="#">CGV</a></p> -->
-        <p><span>Mentions légales </span> • <span> CGV</span></p>
-        <p>Copyright © 2017 <a onclick="window.open('https://github.com/Mimyka/Rex')">Jérémy Le Prunenec</a> - <a onclick="window.open('https://www.linkedin.com/in/rémi-de-grauw-998b1b5b/')">Rémi De Grauw</a>. Tout droit réservé.</p>
+      <p>Pour toute question ou suggestion, contactez nous via le site de la <a onclick="window.open('http://www.addoee.com/index.php?section=contact')">Maison d'Édition Addoée</a>.</p>
+
+      <span>Copyright © 2017 <a onclick="window.open('https://github.com/Mimyka')">Jérémy Le Prunenec</a> - <a onclick="window.open('https://www.linkedin.com/in/rémi-de-grauw-998b1b5b/')">Rémi De Grauw</a>.</span>
+      <span>Tout droit réservé. <a class="btn-ml">Mentions légales</a> • <a class="btn-cgv">CGV</a></span>
 
     </footer>
+  </main>
+
+  <!--
+   #     #
+   ##   ##  ####  #####    ##   #
+   # # # # #    # #    #  #  #  #
+   #  #  # #    # #    # #    # #
+   #     # #    # #    # ###### #
+   #     # #    # #    # #    # #
+   #     #  ####  #####  #    # ######
+  -->
+
+  <div class="overlay"></div>
+
+  <div class="modal modal-buy">
+    <span class="cross">x</span>
+
+    <h4>Achetez votre <span>Jeu de Société<br><strong>SétoMinos</strong></span></h4>
+
+    <div class="A">
+      <div>
+        <span>en</span>
+        <span class="a"><b>&#x25B9 Direct &#x25B9</b></span>
+        <span>parce que c'est moins cher !</span>
+      </div>
+
+      <div>
+        <span>ou sur</span>
+        <a onclick="window.open('https://www.cdiscount.com/setominos/f-12079-auc0656272960308.html')"><b>Cdiscount</b></a>
+        <span>parce que c'est plus pratique !</span>
+      </div>
+    </div>
+
+    <form class="B">
+      <input type="text" name="first_name" value="" placeholder="Votre nom">
+      <input type="text" name="last_name" value="" placeholder="Votre prénom">
+      <input type="email" name="email" value="" placeholder="Votre email le plus utilisé" autocomplete="off">
+      <input type="text" name="quantity" value="" placeholder="Votre quantité de jeu commandé" autocomplete="off">
+      <button class="btn-form b" type="button">Valider</button>
+    </form>
+
+    <form class="C" action="#" method="post">
+      <input type="text" name="street" value="" placeholder="Votre numéro et nom de rue">
+      <input type="text" name="postal_code" value="" placeholder="Votre code postal">
+      <input type="text" name="city" value="" placeholder="Votre ville">
+      <input type="phone" name="phone" value="" placeholder="phone" autocomplete="off">
+      <button class="btn-form" type="submit" name="button">Valider</button>
+    </form>
+  </div>
+
+  <div class="modal modal-mbr">
+    <span class="cross">x</span>
+    <h4>Devenez <span>Membre de la Famille<br><strong>SétoMinos</strong></span></h4>
+    <form action="#contact" method="post">
+      <input type="text" name="first_name" value="" placeholder="Votre prénom ou pseudo" autofocus="on" autocomplete="off">
+      <input type="text" name="email" value="" placeholder="Votre email le plus utilisé" autocomplete="off">
+      <button class="btn-form" type="submit" name="button">Valider</button>
+    </form>
+  </div>
+
+  <div class="modal modal-ml">
+    <span class="cross">x</span>
+    <h4>Mentions Légales</h4>
+
+    <h5>Société</h5>
+    <ul>
+      <li>Responsable publication : <br>&nbsp Benoît De Grauw</li>
+      <li>SAS Addoée ®</li>
+      <li>Zone d'activité d'Anjou<br>Allée des Gats<br>49160 LONGUÉ-JUMELLES</li>
+      <li>Capital social : 1000€</li>
+      <li>sas.addoee@akeonet.com</li>
+      <li>Tel : 02 53 93 90 14</li>
+      <li>RCS :</li>
+      <li>n° TVA : </li>
+      <li>n° CNIL :</li>
+    </ul>
+
+    <h5>Éditeur</h5>
+    <ul>
+      <li>Site réalisé et édité par : <br>&nbsp Jérémy Le Prunenec, <br>&nbsp Rémi De Grauw</li>
+    </ul>
+
+    <h5>Hébergement</h5>
+    <ul>
+      <li>SAS OVH</li>
+      <li>2 rue Kellermann <br>59100 Roubaix <br>France</li>
+      <li>09 72 10 10 07</li>
+    </ul>
+
+    <p>Le site est protégé par des droits d'auteurs</p>
+  </div>
+
+  <div class="modal modal-cgv">
+    <span class="cross">x</span>
+
+    <h4>Conditions Générales de Ventes</h4>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing
+      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+      dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+      et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+      amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+      in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+      ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+  </div>
 
 </body>
 
-<script src="https://use.fontawesome.com/1f4d2954e6.js"></script>
 <script src="./js/utils.js"></script>
 <script src="./js/generate.js"></script>
 <script src="./js/script.js"></script>
+<script src="https://use.fontawesome.com/1f4d2954e6.js"></script>
 
 </html>

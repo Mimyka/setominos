@@ -26,15 +26,28 @@ Element.prototype.modalize = function(arg) {
 
   for (var i = 0; i < arg.open.length; i++) {
     arg.open[i].onclick = function() {
-      that.toggleClass('open');
-      document.querySelector('html').toggleClass('wrapped');
+			that.addClass('open');
+    	change("addClass");
     }
   }
 
   for (var i = 0; i < arg.close.length; i++) {
     arg.close[i].onclick = function() {
-      that.removeClass('open');
-      document.querySelector('html').removeClass('wrapped');
+			that.removeClass('open');
+    	change("removeClass");
     }
   }
+
+	document.querySelector('.overlay').onclick = function() {
+		for (var i = 0; i < document.querySelectorAll('.modal').length; i++) {
+			document.querySelectorAll('.modal')[i].removeClass('open');
+		}
+		change("removeClass");
+	}
+
+	function change(el) {
+		document.querySelector('.overlay')[el]('open');
+		document.querySelector('html')[el]('hidden');
+		document.querySelector('body')[el]('hidden');
+	}
 }
