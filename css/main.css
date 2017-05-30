@@ -116,8 +116,9 @@ svg{
 .content:after{
   content: "";
   position: absolute;
+  left: 0;
+  right: 0;
   height: 60%;
-  width: 100%;
 }
 
 /*Button*/
@@ -685,7 +686,21 @@ footer a{
 
   /*babystep*/
 
-  
+  #babystep .content{
+    width: 37.5%;
+    height: 220px;
+    float: right;
+  }
+
+  #babystep .content:after{
+    border-left: 1px solid #EDE;
+  }
+
+  #babystep .piece-container{
+    width: 62.5%;
+  }
+
+
 }
 
 @media screen and (min-width: 860px) {
