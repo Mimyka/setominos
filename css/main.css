@@ -62,8 +62,7 @@ h2{
 p{
   font-family: sans-serif;
   line-height: 1.8em;
-  text-align: center;
-  padding: 0 30px
+  text-align: center
 }
 
 a{
@@ -107,8 +106,18 @@ svg{
   background-color: #EDE;
 }
 
-.wrapper{
+.content{
+  padding: 0 20px;
   position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.content:after{
+  content: "";
+  position: absolute;
+  height: 60%;
+  width: 100%;
 }
 
 /*Button*/
@@ -126,26 +135,16 @@ svg{
 }
 
 .btn-form{
-  width: 45%;
   margin: 10px 0;
   padding: 6px 0;
-  color: #FFF;
-  border: none;
-  cursor: pointer;
-  text-align: center;
   border-radius: 3px;
-  letter-spacing: 0.2em;
-  font-family: sans-serif;
   background-color: #F60
 }
 
 .btn-group{
   padding: 20px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around
+  justify-content: space-around
 }
 
 .btn-disabled{
@@ -284,15 +283,7 @@ header .background{
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-
-#intro .piece:first-child{
-  height: 180px;
-}
-
-#intro .piece:last-child{
-  height: 150px;
-  width: 100%;
+  height: 200px;
 }
 
 /*Pieces*/
@@ -319,21 +310,24 @@ header .background{
 
 ----------------------------------------------------*/
 
-#babystep .piece{
+#babystep .piece-container{
   height: 220px;
-  width: 100%
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .seto_2{
-  top: 55px;
-  left: 50px;
-  transform: rotate(-50deg);
+  top: -27px;
+  left: -30px;
+  transform: translate(-50%, -50%) rotate(-50deg);
 }
 
 .minos_2{
-  top: 131px;
-  left: 139px;
-  transform: rotate(10deg);
+  top: 31px;
+  left: 39px;
+  transform: translate(-50%, -50%) rotate(10deg);
 }
 
 /*---------------------------
@@ -649,32 +643,49 @@ footer a{
   }
 
   header .btn-group{
-    -webkit-transform: translate(0%, -50%);
-            transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
     position: absolute;
     top: 50%;
     right: 0;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
     width: 100%;
-    }
+  }
 
   header .btn-group .btn{
     margin: 20px 30px;
     width: 33%;
   }
 
-
   .line{
     display: none;
   }
+
+  /*intro*/
+
+  #intro .piece{
+    height: 200px;
+    width: 62.5%;
+  }
+
+  #intro .piece:first-child{
+    float: right;
+  }
+
+  #intro .content{
+    width: 37.5%;
+    height: 400px;
+    float: left;
+  }
+
+  #intro .content:after{
+    border-right: 1px solid #EDE;
+  }
+
+  /*babystep*/
+
+  
 }
 
 @media screen and (min-width: 860px) {
