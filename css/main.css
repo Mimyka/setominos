@@ -473,25 +473,27 @@ header .background{
 
 ------------------------------------------------------*/
 
-#contact > div:nth-of-type(2){
-  height: 200px;
-  text-align: center
+#contact .content{
+  text-align: center;
+  padding: 15px 20px
 }
 
-#contact p{
-  padding: 15px 30px
+.follow{
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around
 }
 
 .btn-mbr{
-  position: relative;
+  align-self: center;
   width: 260px;
-  margin: auto;
-  color: #FFF;
   background-color: #2A9A2A
 }
 
-#contact div:nth-of-type(3){
-  height: 100px;
+.social{
+  display: flex;
+  justify-content: space-around;
   align-items: center
 }
 
