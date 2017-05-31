@@ -167,10 +167,10 @@
   <div class="modal modal-buy">
     <header>
       <span class="cross">x</span>
-      <h4>Achetez votre Jeu de Société <strong>Sétominos</strong></h4>
+      <h4>Achetez votre Jeu de Société<span>SétoMinos</span></h4>
     </header>
 
-    <div class="btn-modal">
+    <div class="modal-body btn-modal">
       <div class="btn btn-buy">
         Achetez en <b>Direct</b>
         <span>Parce que c'est moins cher !</span>
@@ -180,41 +180,22 @@
         Achetez sur <b>Cdiscount</b>
         <span>Parce que c'est plus pratique !</span>
       </div>
-
-      <div class="piece">
-
-      </div>
     </div>
 
-
-    <form>
-      <div class="form_part1">
-        <input type="text" name="first_name" value="" placeholder="Votre nom">
-        <input type="text" name="last_name" value="" placeholder="Votre prénom">
-        <input type="email" name="email" value="" placeholder="Votre email le plus utilisé" autocomplete="off">
-        <input type="text" name="quantity" value="" placeholder="La quantité de jeu souhaité" autocomplete="off">
-        <button class="btn btn-form" type="button">Valider</button>
-      </div>
-
-      <div class="form_part2">
-        <input type="text" name="street" value="" placeholder="Votre numéro et nom de rue">
-        <input type="text" name="postal_code" value="" placeholder="Votre code postal">
-        <input type="text" name="city" value="" placeholder="Votre ville">
-        <input type="phone" name="phone" value="" placeholder="phone" autocomplete="off">
-        <button class="btn btn-form" type="submit">Valider</button>
-      </div>
+    <form class="form_part1" action="#" method="post">
+      <input type="text" name="first_name" value="" placeholder="Votre nom">
+      <input type="text" name="last_name" value="" placeholder="Votre prénom">
+      <input type="email" name="email" value="" placeholder="Votre email le plus utilisé" autocomplete="off">
+      <input type="text" name="quantity" value="" placeholder="La quantité de jeu souhaité" autocomplete="off">
+      <button class="btn btn-form" type="button">Valider</button>
     </form>
-  </div>
 
-  <div class="modal modal-mbr">
-    <span class="cross">x</span>
-
-    <h4>Devenez <span>Membre de la Famille<br><strong>SétoMinos</strong></span></h4>
-
-    <form action="#contact" method="post">
-      <input type="text" name="first_name" value="" placeholder="Votre prénom ou pseudo" autofocus="on" autocomplete="off">
-      <input type="text" name="email" value="" placeholder="Votre email le plus utilisé" autocomplete="off">
-      <button class="btn btn-form" type="submit" name="button">Valider</button>
+    <form class="form_part2" action="index.html" method="post">
+      <input type="text" name="street" value="" placeholder="Votre adresse">
+      <input type="text" name="postal_code" value="" placeholder="Votre code postal">
+      <input type="text" name="city" value="" placeholder="Votre ville">
+      <input type="phone" name="phone" value="" placeholder="Votre numéro de téléphone" autocomplete="off">
+      <button class="btn btn-form" type="submit">Valider</button>
     </form>
 
     <div class="piece">
@@ -222,62 +203,95 @@
     </div>
   </div>
 
+  <div class="modal modal-mbr">
+    <header>
+      <span class="cross">x</span>
+      <h4>Devenez Membre de la Famille<span>SétoMinos</span></h4>
+    </header>
+
+    <div class="modal-body">
+      <form action="#" method="post">
+        <input type="text" name="first_name" value="" placeholder="Votre prénom ou pseudo" autofocus="on" autocomplete="off">
+        <input type="text" name="email" value="" placeholder="Votre email le plus utilisé" autocomplete="off">
+        <button class="btn btn-form" type="submit" name="button">Valider</button>
+      </form>
+    </div>
+
+    <div class="piece">
+
+    </div>
+  </div>
+
   <div class="modal modal-ml">
-    <span class="cross">x</span>
+    <header>
+      <span class="cross">x</span>
+      <h4>Mentions Légales</h4>
+    </header>
 
-    <h4>Mentions Légales</h4>
+    <div class="piece">
 
-    <h5>Société</h5>
-    <ul>
-      <li>Responsable publication : <br>&nbsp Benoît De Grauw</li>
-      <li>SAS Addoée ®</li>
-      <li>Zone d'activité d'Anjou<br>Allée des Gats<br>49160 LONGUÉ-JUMELLES</li>
-      <li>Capital social : 1000€</li>
-      <li>sas.addoee@akeonet.com</li>
-      <li>Tel : 02 53 93 90 14</li>
-      <li>RCS :</li>
-      <li>n° TVA : </li>
-      <li>n° CNIL :</li>
-    </ul>
+    </div>
 
-    <h5>Éditeur</h5>
-    <ul>
-      <li>Site réalisé et édité par : <br>&nbsp Jérémy Le Prunenec, <br>&nbsp Rémi De Grauw</li>
-    </ul>
+    <div class="">
+      <h5>Société</h5>
+      <ul>
+        <li>Responsable publication : <br>&nbsp Benoît De Grauw</li>
+        <li>SAS Addoée ®</li>
+        <li>Zone d'activité d'Anjou<br>Allée des Gats<br>49160 LONGUÉ-JUMELLES</li>
+        <li>Capital social : 1000€</li>
+        <li>sas.addoee@akeonet.com</li>
+        <li>Tel : 02 53 93 90 14</li>
+        <li>RCS :</li>
+        <li>n° TVA : </li>
+        <li>n° CNIL :</li>
+      </ul>
 
-    <h5>Hébergement</h5>
-    <ul>
-      <li>SAS OVH</li>
-      <li>2 rue Kellermann <br>59100 Roubaix <br>France</li>
-      <li>09 72 10 10 07</li>
-    </ul>
+      <h5>Éditeur</h5>
+      <ul>
+        <li>Site réalisé et édité par : <br>&nbsp Jérémy Le Prunenec, <br>&nbsp Rémi De Grauw</li>
+      </ul>
 
-    <p>Le site est protégé par des droits d'auteurs</p>
+      <h5>Hébergement</h5>
+      <ul>
+        <li>SAS OVH</li>
+        <li>2 rue Kellermann <br>59100 Roubaix <br>France</li>
+        <li>09 72 10 10 07</li>
+      </ul>
+
+      <p>Le site est protégé par des droits d'auteurs</p>
+    </div>
   </div>
 
   <div class="modal modal-cgv">
-    <span class="cross">x</span>
+    <header>
+      <span class="cross">x</span>
+      <h4>Conditions Générales de Vente</h4>
+    </header>
 
-    <h4>Conditions Générales de Ventes</h4>
+    <div class="piece">
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing
-      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-      dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-      et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
-      amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-      in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-      ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
+    </div>
+
+    <div class="">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+        amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+        ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </div>
   </div>
 
 </body>
 
 <script src="./js/utils.js"></script>
+<script src="./js/script.js"></script>
 <script src="./js/gravity.js"></script>
 <script src="./js/generate.js"></script>
-<script src="./js/script.js"></script>
 <script src="https://use.fontawesome.com/1f4d2954e6.js"></script>
 
 </html>

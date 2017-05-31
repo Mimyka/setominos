@@ -12,70 +12,75 @@
 
 /*DOING:50 : CSS of modal*/
 
+/*header*/
+
 .modal header{
   height: 100px
 }
 
 .modal h4{
-  line-height: 1.9em;
-  padding: 30px 0
+  font-family: 'Oxygen', sans-serif;
+  font-size: 16px;
+  line-height: 1.6em;
+  padding-top: 25px
 }
 
 .modal h4 span{
+  display: block;
+  font-size: 24px;
+  line-height: normal;
   color: #2A9A2A
 }
+
 .modal h5{
   padding: 20px 0 5px 0;
   text-align: justify;
   font-size: 16px
 }
 
-.modal li{
-  list-style: none;
-  padding: 5px 0;
-  text-align: justify;
-  font-size: 14px
+/*body*/
+
+.modal-body{
+  height: calc(100% - 200px);
+  min-height: 200px
 }
 
-.modal strong{
-  font-size: 24px;
-  color: #2A9A2A
+.modal form{
+  margin: 40px 0
 }
 
 .modal input{
   width: 90%;
-  margin: 10px 0;
+  display: block;
+  max-width: 400px;
+  margin: 15px auto;
   border: none;
   border-bottom: 2px solid #F60;
-  font-size: 14px;
+  font-size: 14px
+}
+
+.modal .piece{
+  border: 1px solid red;
+  height: 50px;
+  display: flex;
+  justify-content: center
+}
+
+.modal .piece svg{
+  height: 100%;
+  position: relative
 }
 
 /***** MODAL ACHAT **************************/
 
-.modal-buy h4 span{
-  font-size: 20px;
-}
-
-.modal-buy form{
-
-}
-
-.btn-modal{
-  height: calc(100% - 100px);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center
-}
-
-.btn-modal .btn{
-  width: 100%
-}
-
 .btn-modal div{
+  border: 1px solid red;
+  width: 90%;
+  max-width: 400px;
+  margin: 30px auto;
   padding: 10px 0;
   font-size: 14px;
+  letter-spacing: normal;
   line-height: 1.4em
 }
 
@@ -89,30 +94,30 @@
 }
 
 .modal-buy .piece{
-  /*border: 1px solid red;*/
-  height: 100px;
-  width: 100%
+  margin: 20px 0
 }
 
-.form_part1, .form_part2{
+.modal-buy form{
   height: 200px;
   display: none;
   margin-top: 20px
 }
 
-.btn-form{
-  width: 70%;
-  margin-top: 20px
-}
-
 /***** MODAL MEMBER *************************/
-.modal-mbr button{
-  display: inline-block;
+.modal-mbr .piece{
+  margin: 20px 0
 }
 
 /***** MODAL MENTION LEGAL *****************/
-.modal-ml h4{
-  padding: 30px 0 10px 0
+.modal-ml .piece{
+  height: 40px
+}
+
+.modal-ml li{
+  list-style: none;
+  padding: 5px 0;
+  text-align: justify;
+  font-size: 14px
 }
 
 .modal-ml p{
@@ -121,6 +126,11 @@
 }
 
 /***** MODAL CGV **************************/
+.modal-cgv .piece{
+  height: 40px;
+  margin-bottom: 20px
+}
+
 .modal-cgv p{
   padding: 0;
   text-align: justify;
