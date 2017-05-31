@@ -250,7 +250,6 @@ header .background{
 }
 
 /*Pieces*/
-
 #intro .piece-container .piece:after{
   content: "";
   position: absolute;
@@ -259,33 +258,43 @@ header .background{
   z-index: -1;
   left: -100%;
   top: 100%;
-  box-shadow: 175px 30px 40px 20px black;
+}
+
+#intro .piece-container:first-child .piece:after{
+  box-shadow: 170px 30px 65px 35px #888;
+}
+
+#intro .piece-container:last-child .piece:after{
+  box-shadow: 100px 30px 40px 20px #888;
+}
+
+#intro .piece-container:first-child .piece {
+  animation: 3.2s infinite alternate ease-in-out gravity1;
 }
 
 #intro .piece-container:last-child .piece{
+  animation: 2.8s infinite alternate ease-in-out gravity2 ;
   order: -1;
 }
 
 .seto_intro{
   position: relative;
-  animation: 3.2s infinite alternate ease-in-out gravity1;
   transform: rotate(30deg)
 }
 
 .minos_intro{
   position: relative;
-  animation: 2.8s infinite alternate ease-in-out gravity2 ;
   transform: rotate(-30deg)
 }
 
 @keyframes gravity1 {
-  0% { top: -7px; transform: rotate(30deg) rotateY(-10deg) rotateX(10deg);}
-  100% { top: 8px; transform: rotate(34deg) rotateY(-39deg) rotateX(12deg);}
+  0% { top: -7px; transform: rotate(0deg) rotateY(-10deg) rotateX(10deg);}
+  100% { top: 8px; transform: rotate(4deg) rotateY(-30deg) rotateX(12deg);}
 }
 
 @keyframes gravity2 {
-  0% { top: -10px; transform: rotate(-30deg) rotateY(-10deg) rotateX(-15deg);}
-  100% { top: 10px; transform: rotate(-35deg) rotateY(-25deg) rotateX(-30deg);}
+  0% { top: -10px; transform: rotate(0deg) rotateY(-10deg) rotateX(-15deg);}
+  100% { top: 10px; transform: rotate(-5deg) rotateY(-25deg) rotateX(-30deg);}
 }
 
 /*----------------------------------------------------
