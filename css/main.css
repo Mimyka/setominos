@@ -11,17 +11,6 @@
 
 ------------------------------------------------------*/
 
-/*Custom fonts*/
-@font-face {
-  font-family: "orphans";
-  src:url('../font/dreamOrphans.ttf');
-}
-
-@font-face {
-  font-family: "london";
-  src:url('../font/LondonBetween.ttf');
-}
-
 /*Basic reset or adjust*/
 *{
   margin: 0;
@@ -44,14 +33,14 @@ h1,h2{
 
 h1{
   line-height: 1.55em;
-  font-family: orphans;
+  font-family: 'Coming Soon', cursive;
   font-size: 36px;
   color: #259F25;
   letter-spacing: 0.1em
 }
 
 h2{
-  font-family: london;
+  font-family: 'Handlee', cursive;
   font-size: 24px;
   color: #F33;
   line-height: 1.35em;
@@ -59,22 +48,21 @@ h2{
   letter-spacing: 0.03em
 }
 
-p{
-  font-family: sans-serif;
+a, span, p{
   line-height: 1.8em;
+  font-family: 'Oxygen', sans-serif;
+}
+
+p{
   text-align: center
 }
 
-a{
+a, .fa{
   text-decoration: none
 }
 
 svg{
   position: absolute
-}
-
-.fa{
-  text-decoration: none;
 }
 
 /*-------------------------------------------------------------
@@ -132,7 +120,8 @@ svg{
   border-radius: 5px;
   padding: 18px 0;
   letter-spacing: 0.2em;
-  font-family: sans-serif
+  font-family: 'Oxygen', cursive;
+
 }
 
 .btn-form{
@@ -167,6 +156,8 @@ svg{
 .piece-name{
   font-size: 30px;
   font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Handlee', cursive;
   color: #E55
 }
 
@@ -253,24 +244,48 @@ header .background{
 
 ----------------------------------*/
 
-#intro .piece{
+#intro .piece-container{
   height: 200px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center
+  justify-content: space-around
 }
 
 /*Pieces*/
 
+#intro .piece-container .piece:after{
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  z-index: -1;
+  left: -100%;
+  top: 100%;
+  box-shadow: 175px 30px 40px 20px black;
+}
+
+#intro .piece-container:last-child .piece{
+  order: -1;
+}
+
 .seto_intro{
   position: relative;
+  animation: 3.2s infinite alternate ease-in-out gravity1;
   transform: rotate(30deg)
 }
 
 .minos_intro{
   position: relative;
-  order: -1;
+  animation: 2.8s infinite alternate ease-in-out gravity2 ;
   transform: rotate(-30deg)
+}
+
+@keyframes gravity1 {
+  0% { top: -7px; transform: rotate(30deg) rotateY(-10deg) rotateX(10deg);}
+  100% { top: 8px; transform: rotate(34deg) rotateY(-39deg) rotateX(12deg);}
+}
+
+@keyframes gravity2 {
+  0% { top: -10px; transform: rotate(-30deg) rotateY(-10deg) rotateX(-15deg);}
+  100% { top: 10px; transform: rotate(-35deg) rotateY(-25deg) rotateX(-30deg);}
 }
 
 /*----------------------------------------------------
@@ -289,13 +304,13 @@ header .background{
   width: 100%;
 }
 
-.seto_2{
+.seto_babystep{
   top: -27px;
   left: -30px;
   transform: translate(-50%, -50%) rotate(-50deg);
 }
 
-.minos_2{
+.minos_babystep{
   top: 31px;
   left: 39px;
   transform: translate(-50%, -50%) rotate(10deg);
@@ -318,13 +333,13 @@ header .background{
   width: 100%;
 }
 
-.seto_32{
+.seto_move1{
   top: 40px;
   left: -45px;
   transform: translate(-50%, -50%) rotate(60deg);
 }
 
-.seto_31{
+.seto_move2{
   top: -14px;
   left: 48px;
   transform: translate(-50%, -50%) rotate(240deg);
@@ -347,46 +362,41 @@ header .background{
   width: 100%
 }
 
-.minos_4{
+.minos_mecanic{
   top: 0px;
   left: 0px;
   transform: translate(-50%, -50%);
 }
 
-.seto_41{
-  top: -45px;
-  left: -78px;
-  transform: translate(-50%, -50%) rotate(-60deg);
-}
-
-.seto_42{
+.seto_mecanic_top{
   top: -90px;
   left: 0px;
   transform: translate(-50%, -50%);
 }
-
-.seto_43{
+.seto_mecanic_topR{
   top: -45px;
   left: 78px;
   transform: translate(-50%, -50%) rotate(60deg);
 }
-
-.seto_44{
+.seto_mecanic_btmR{
   top: 45px;
   left: 78px;
   transform: translate(-50%, -50%) rotate(120deg);
 }
-
-.seto_45{
+.seto_mecanic_btm{
   top: 90px;
   left: 0px;
   transform: translate(-50%, -50%) rotate(180deg);
 }
-
-.seto_46{
+.seto_mecanic_btmL{
   top: 45px;
   left: -78px;
   transform: translate(-50%, -50%) rotate(240deg);
+}
+.seto_mecanic_topL{
+  top: -45px;
+  left: -78px;
+  transform: translate(-50%, -50%) rotate(-60deg);
 }
 
 /*--------------------------------------------------------------
@@ -406,13 +416,13 @@ header .background{
   width: 100%
 }
 
-.seto_51{
+.seto_strategy1{
   top: 0px;
   left: -53px;
   transform: translate(-50%, -50%) rotate(270deg)
 }
 
-.seto_52{
+.seto_strategy2{
   top: 0px;
   left: 53px;
   transform: translate(-50%, -50%) rotate(90deg)
