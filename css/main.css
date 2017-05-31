@@ -12,10 +12,6 @@
 ------------------------------------------------------*/
 
 /*Custom fonts*/
-@font-face {
-  font-family: "orphans";
-  src:url('../font/dreamOrphans.ttf');
-}
 
 @font-face {
   font-family: "london";
@@ -44,14 +40,14 @@ h1,h2{
 
 h1{
   line-height: 1.55em;
-  font-family: orphans;
+  font-family: 'Coming Soon', cursive;
   font-size: 36px;
   color: #259F25;
   letter-spacing: 0.1em
 }
 
 h2{
-  font-family: london;
+  font-family: 'Handlee', cursive;
   font-size: 24px;
   color: #F33;
   line-height: 1.35em;
@@ -59,23 +55,21 @@ h2{
   letter-spacing: 0.03em
 }
 
-p{
-  font-family: sans-serif;
+a, span, p{
   line-height: 1.8em;
   font-family: 'Oxygen', sans-serif;
+}
+
+p{
   text-align: center
 }
 
-a{
+a, .fa{
   text-decoration: none
 }
 
 svg{
   position: absolute
-}
-
-.fa{
-  text-decoration: none;
 }
 
 /*-------------------------------------------------------------
@@ -133,7 +127,8 @@ svg{
   border-radius: 5px;
   padding: 18px 0;
   letter-spacing: 0.2em;
-  font-family: sans-serif
+  font-family: 'Oxygen', cursive;
+
 }
 
 .btn-form{
@@ -168,6 +163,8 @@ svg{
 .piece-name{
   font-size: 30px;
   font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Handlee', cursive;
   color: #E55
 }
 
@@ -657,7 +654,7 @@ footer a{
 }
 
 @media screen and (min-width: 750px) {
-  p{
+  a, span, p{
     font-family: 'Raleway', sans-serif;
   }
 
