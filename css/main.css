@@ -619,15 +619,15 @@ footer a{
   header .background{
     height: 350px;
     background-position: -180px -80px;
-    background-size: 900px;
+    background-size: 900px
   }
 
   .btn{
-    width: 40%;
+    width: 40%
   }
 
   .btn-group{
-    padding: 25px 0px;
+    padding: 25px 0px
   }
 }
 
@@ -635,7 +635,7 @@ footer a{
   header .background{
     height: 380px;
     background-position: -120px -50px;
-    background-size: 900px;
+    background-size: 900px
   }
 }
 
@@ -643,39 +643,71 @@ footer a{
   header .background{
     height: 450px;
     background-position: -60px 0px;
-    background-size: 935px;
+    background-size: 935px
   }
 
   header h1, header h2{
-    display: none;
+    display: none
   }
 
   header .btn-group{
-    -webkit-transform: translate(0%, -50%);
-            transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
     position: absolute;
     top: 50%;
     right: 0;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    width: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: 100%
     }
 
-  header .btn-group .btn{
-    margin: 20px 30px;
-    width: 33%;
+  header .btn-disabled{
+    order: 1
   }
 
+  /***** Contact *********************************/
+  #contact{
+    display: flex;
+    flex-direction: column
+  }
+
+  #contact .background{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1
+  }
+
+  #contact .content{
+    display: none
+  }
+
+  .follow{
+    width: 37.5%
+  }
+
+  #contact .btn-mbr{
+    width: 80%;
+    order: 1
+  }
+
+  .btn-group{;
+    height: 400px;
+    width: 90%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    justify-content: space-around
+  }
+
+  .btn{
+    margin: 20px 30px;
+    width: 33%
+  }
 
   .line{
-    display: none;
+    display: none
   }
 }
 
@@ -683,12 +715,11 @@ footer a{
   header .background{
     height: 470px;
     background-position: -40px 0px;
-    background-size: 980px;
+    background-size: 980px
   }
 
-  header .btn-group .btn{
-    margin: 30px 30px;
-    width: 30%;
+  .btn{
+    width: 30%
   }
 }
 
@@ -696,13 +727,13 @@ footer a{
   header .background{
     height: 500px;
     background-position: 0px 0px;
-    background-size: 1050px;
+    background-size: 1050px
   }
 
-  header .btn-group .btn{
-    margin: 30px 30px;
-    width: 28.5%;
+  .btn{
+    width: 28.5%
   }
+
 }
 
 
@@ -710,7 +741,7 @@ footer a{
   header .background{
     height: 600px;
     background-position: 0px 0px;
-    background-size: cover;
+    background-size: cover
   }
 
   header .btn-group .btn{
