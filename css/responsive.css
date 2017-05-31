@@ -37,6 +37,12 @@
 }
 
 @media screen and (min-width: 750px) {
+  a, span, p{
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    line-height: 36px;
+  }
+
   section{
     display: flex;
     align-items: center
@@ -73,12 +79,12 @@
     display: block
   }
 
-  #intro .piece{
+  #intro .piece-container{
     height: 200px;
     width: 62.5%;
   }
 
-  #intro .piece:first-child{
+  #intro .piece-container:first-child{
     float: right;
   }
 
