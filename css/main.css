@@ -342,16 +342,38 @@ header .background{
   width: 100%;
 }
 
-.seto_move1{
+.seto_move_top{
+  top: -14px;
+  left: 48px;
+  transform: translate(-50%, -50%) rotate(240deg);
+}
+
+.minos_move.resp{
+  top: 85px;
+  left: -123px;
+  transform: translate(-50%, -50%);
+}
+
+.seto_move_top.resp{
+  top: -5px;
+  left: -123px;
+  transform: translate(-50%, -50%);
+}
+
+.seto_move_topR{
   top: 40px;
   left: -45px;
   transform: translate(-50%, -50%) rotate(60deg);
 }
 
-.seto_move2{
-  top: -14px;
-  left: 48px;
-  transform: translate(-50%, -50%) rotate(240deg);
+.seto_move_btmR.resp{
+  top: 130px;
+  left: -45px;
+  transform: translate(-50%, -50%) rotate(120deg);
+}
+
+.resp{
+  display: none;
 }
 
 /*--------------------------------------------------
@@ -370,6 +392,8 @@ header .background{
   height: 360px;
   width: 100%
 }
+
+/*setominos*/
 
 .minos_mecanic{
   top: 0px;
@@ -407,6 +431,31 @@ header .background{
   left: -78px;
   transform: translate(-50%, -50%) rotate(-60deg);
 }
+
+/*other piece*/
+
+.seto_mecanic_btm2{
+  top: -54px;
+  left: 249px;
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+.seto_mecanic_btmL2{
+  top: -99px;
+  left: 171px;
+  transform: translate(-50%, -50%) rotate(240deg);
+}
+.seto_mecanic_topL2{
+  top: -189px;
+  left: 171px;
+  transform: translate(-50%, -50%) rotate(-60deg);
+}
+
+.seto_mecanic_topL3{
+  top: 99px;
+  left: 171px;
+  transform: translate(-50%, -50%) rotate(-60deg);
+}
+
 
 /*--------------------------------------------------------------
 

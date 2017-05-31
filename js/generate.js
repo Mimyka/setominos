@@ -29,11 +29,18 @@ generate("#babystep .piece", "babystep", "seto", 5, 9, 7, 7);
 generate("#babystep .piece", "babystep", "minos", 5);
 
 // Move Séto x2
-generate("#move .piece", "move1", "seto", 5, 9, 7, 7);
-generate("#move .piece", "move2", "seto", 6, 7, 7, 9);
+generate("#move .piece", "move_top", "seto", 6, 7, 7, 9);
+generate("#move .piece", "move_topR", "seto", 5, 9, 7, 7);
+generate("#move .piece", "move resp", "minos", 5);
+generate("#move .piece", "move_btmR resp", "seto", 5, 9, 7, 7);
+generate("#move .piece", "move_top resp", "seto", 5, 9, 7, 7);
 
 // Mecanic SétoMinos complet
 generate("#mecanic .piece", "mecanic", "setominos", 6);
+generate("#mecanic .piece", "mecanic_btm2 resp", "seto", 5);
+generate("#mecanic .piece", "mecanic_btmL2 resp", "seto", 5);
+generate("#mecanic .piece", "mecanic_topL2 resp", "seto", 5);
+generate("#mecanic .piece", "mecanic_topL3 resp", "seto", 8);
 
 // Strategy Séto x2
 generate("#strategy .piece", "strategy1", "seto", 9, 9, 5, 8);
