@@ -1,0 +1,308 @@
+/*--------------------------------------------------------------------------
+
+ ######  #######  #####  ######  ####### #     #  #####  ### #     # #######
+ #     # #       #     # #     # #     # ##    # #     #  #  #     # #
+ #     # #       #       #     # #     # # #   # #        #  #     # #
+ ######  #####    #####  ######  #     # #  #  #  #####   #  #     # #####
+ #   #   #             # #       #     # #   # #       #  #   #   #  #
+ #    #  #       #     # #       #     # #    ## #     #  #    # #   #
+ #     # #######  #####  #       ####### #     #  #####  ###    #    #######
+
+--------------------------------------------------------------------------*/
+
+/*DONE:10 : Responsive mode*/
+
+@media screen and (min-width: 480px) {
+  header .background{
+    height: 350px;
+    background-position: -180px -80px;
+    background-size: 900px
+  }
+
+  .btn{
+    width: 40%
+  }
+
+  .btn-group{
+    padding: 25px 0px
+  }
+}
+
+@media screen and (min-width: 600px) {
+  header .background{
+    height: 380px;
+    background-position: -120px -50px;
+    background-size: 900px
+  }
+}
+
+@media screen and (min-width: 750px) {
+  a, span, p{
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    line-height: 36px;
+  }
+
+  section{
+    display: flex;
+    align-items: center
+  }
+
+  header .background{
+    height: 450px;
+    background-position: -60px 0px;
+    background-size: 935px
+  }
+
+  header h1, header h2{
+    display: none
+  }
+
+  header .btn-group{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    transform: translate(0%, -50%)
+  }
+
+  header .btn-disabled{
+    order: 1
+  }
+
+  /*intro*/
+
+  #intro{
+    display: block
+  }
+
+  #intro .piece-container{
+    height: 200px;
+    width: 62.5%;
+  }
+
+  #intro .piece-container:first-child{
+    float: right;
+  }
+
+  #intro .content{
+    width: 37.5%;
+    height: 400px;
+    float: left;
+  }
+
+  #intro .content:after{
+    border-right: 1px solid #EDE
+  }
+
+  /*babystep*/
+  #babystep{
+    height: 500px
+  }
+
+  #babystep .content{
+    height: 200px;
+    width: 37.5%;
+    border-left: 1px solid #EDE;
+    order: 1
+  }
+
+  #babystep .piece-container{
+    width: 62.5%
+  }
+
+  .seto_babystep{
+    animation: none;
+  }
+
+  .minos_babystep{
+    animation: none;
+  }
+
+  /*move*/
+  #move{
+    height: 600px
+  }
+
+  #move .piece-container{
+    width: 62.5%
+  }
+
+  #move .piece{
+    transform: translate(55px, -60px)
+  }
+
+  #move .content{
+    height: 200px;
+    width: 37.5%;
+    border-right: 1px solid #EDE
+  }
+
+  .resp{
+    display: block;
+  }
+
+  /*mecanic*/
+
+  #mecanic{
+    height: 650px
+  }
+
+  #mecanic .piece-container{
+    width: 62.5%
+  }
+
+  #mecanic .piece{
+    transform: translate(-75px, 40px)
+  }
+
+  #mecanic .content{
+    height: 250px;
+    width: 37.5%;
+    border-left: 1px solid #EDE;
+    order: 1
+  }
+
+  /*strategy*/
+
+  #strategy{
+    height: 400px
+  }
+
+  #strategy .piece-container{
+    width: 62.5%
+  }
+
+  #strategy .content{
+    height: 200px;
+    width: 37.5%;
+    border-right: 1px solid #EDE
+  }
+
+  /*Contact*/
+
+  .line{
+    display: none
+  }
+
+  #contact{
+    flex-direction: column;
+    align-items: flex-start
+  }
+
+  #contact .background{
+    height: 500px;
+    width: 100%;
+    background-image: url(../img/home1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1
+  }
+
+  #contact .content{
+    display: none
+  }
+
+  .follow{
+    height: 300px;
+    margin-bottom: 100px;
+    width: 37.5%
+  }
+
+  #contact .btn-mbr{
+    width: 80%;
+    order: 1
+  }
+
+  .social{
+    width: 80%;
+    align-self: center
+  }
+
+  .btn-group{;
+    height: 400px;
+    width: 90%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    justify-content: space-around
+  }
+
+  .btn{
+    margin: 20px 30px;
+    width: 33%
+  }
+
+  /*Footer*/
+
+  footer .mentions{
+    flex-direction: row;
+    justify-content: center
+  }
+
+  footer span:first-child{
+    padding-right: 10px
+  }
+
+  /*Modal*/
+
+  .btn-modal .btn{
+    width: 400px
+  }
+
+  .modal input{
+    width: 400px;
+    display: block
+  }
+}
+
+@media screen and (min-width: 860px) {
+  header .background{
+    height: 470px;
+    background-position: -40px 0px;
+    background-size: 980px
+  }
+
+  .btn{
+    width: 30%
+  }
+}
+
+@media screen and (min-width: 950px) {
+  header .background{
+    height: 500px;
+    background-position: 0px 0px;
+    background-size: 1050px
+  }
+
+  .btn{
+    width: 28.5%
+  }
+
+}
+
+
+@media screen and (min-width: 1060px) {
+  header .background{
+    height: 600px;
+    background-position: 0px 0px;
+    background-size: cover
+  }
+
+  header .btn-group .btn{
+    width: 25%
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  header .btn-group .btn{
+    margin: 40px 75px;
+    width: 22.5%
+  }
+}

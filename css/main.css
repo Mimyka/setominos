@@ -1,4 +1,4 @@
-/*DOING : Clean css and do more reusable component*/
+/*DOING:60 : Clean css and do more reusable component*/
 /*------------------------------------------------------
 
   #####  ####### #     # ####### ######     #    #
@@ -10,17 +10,6 @@
   #####  ####### #     # ####### #     # #     # #######
 
 ------------------------------------------------------*/
-
-/*Custom fonts*/
-@font-face {
-  font-family: "orphans";
-  src:url('../font/dreamOrphans.ttf');
-}
-
-@font-face {
-  font-family: "london";
-  src:url('../font/LondonBetween.ttf');
-}
 
 /*Basic reset or adjust*/
 *{
@@ -44,14 +33,14 @@ h1,h2{
 
 h1{
   line-height: 1.55em;
-  font-family: orphans;
+  font-family: 'Coming Soon', cursive;
   font-size: 36px;
   color: #259F25;
   letter-spacing: 0.1em
 }
 
 h2{
-  font-family: london;
+  font-family: 'Handlee', cursive;
   font-size: 24px;
   color: #F33;
   line-height: 1.35em;
@@ -59,22 +48,21 @@ h2{
   letter-spacing: 0.03em
 }
 
-p{
-  font-family: sans-serif;
+a, span, p{
   line-height: 1.8em;
+  font-family: 'Oxygen', sans-serif;
+}
+
+p{
   text-align: center
 }
 
-a{
+a, .fa{
   text-decoration: none
 }
 
 svg{
   position: absolute
-}
-
-.fa{
-  text-decoration: none;
 }
 
 /*-------------------------------------------------------------
@@ -116,9 +104,12 @@ svg{
 .content:after{
   content: "";
   position: absolute;
-  left: 0;
   right: 0;
-  height: 60%;
+  height: 60%
+}
+
+.resp{
+  display: none;
 }
 
 /*Button*/
@@ -132,7 +123,8 @@ svg{
   border-radius: 5px;
   padding: 18px 0;
   letter-spacing: 0.2em;
-  font-family: sans-serif
+  font-family: 'Oxygen', cursive;
+
 }
 
 .btn-form{
@@ -167,6 +159,8 @@ svg{
 .piece-name{
   font-size: 30px;
   font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Handlee', cursive;
   color: #E55
 }
 
@@ -176,6 +170,29 @@ svg{
   justify-content: center;
 }
 
+.top{
+  transform: translate(-50%, -50%);
+}
+
+.topR{
+  transform: translate(-50%, -50%) rotate(60deg);
+}
+
+.btmR{
+  transform: translate(-50%, -50%) rotate(120deg);
+}
+
+.btm{
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.btmL{
+  transform: translate(-50%, -50%) rotate(240deg);
+}
+
+.topL{
+  transform: translate(-50%, -50%) rotate(-60deg);
+}
 /*Modal*/
 
 .overlay{
@@ -193,12 +210,12 @@ svg{
 .modal{
   overflow: scroll;
   position: fixed;
-  top: 0;
-  left: 0;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
   display: none;
   height: 90%;
   width: 80%;
-  margin: 10%;
   padding: 20px;
   z-index: 500;
   text-align: center;
@@ -212,39 +229,6 @@ svg{
   font-family: sans-serif;
   font-size: 20px
 }
-
-.modal h4{
-  line-height: 1.9em;
-  padding: 30px 0
-}
-
-.modal h4 span{
-  color: #2A9A2A
-}
-.modal h5{
-  padding: 20px 0 5px 0;
-  text-align: justify;
-  font-size: 16px
-}
-
-.modal li{
-  list-style: none;
-  padding: 5px 0;
-  text-align: justify;
-  font-size: 14px
-}
-
-.modal strong{
-  font-size: 28px
-}
-
-.modal input{
-  width: 80%;
-  margin: 5px 0;
-  border: none;
-  border-bottom: 2px solid #F60
-}
-
 
 /*----------------------------------------------
 
@@ -286,14 +270,38 @@ header .background{
 
 ----------------------------------*/
 
-#intro .piece{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+#intro .piece-container{
   height: 200px;
+  justify-content: space-around
 }
 
 /*Pieces*/
+#intro .piece-container .piece:after{
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  z-index: -1;
+  left: -100%;
+  top: 100%;
+}
+
+#intro .piece-container:first-child .piece:after{
+  box-shadow: 170px 30px 65px 35px #888;
+}
+
+#intro .piece-container:last-child .piece:after{
+  box-shadow: 100px 30px 40px 20px #888;
+}
+
+#intro .piece-container:first-child .piece {
+  animation: 3.2s infinite alternate ease-in-out gravity1;
+}
+
+#intro .piece-container:last-child .piece{
+  animation: 2.8s infinite alternate ease-in-out gravity2 ;
+  order: -1;
+}
 
 .seto_intro{
   position: relative;
@@ -301,9 +309,18 @@ header .background{
 }
 
 .minos_intro{
-  order: -1;
   position: relative;
   transform: rotate(-30deg)
+}
+
+@keyframes gravity1 {
+  0% { top: -7px; transform: rotate(0deg) rotateY(-10deg) rotateX(10deg);}
+  100% { top: 8px; transform: rotate(4deg) rotateY(-30deg) rotateX(12deg);}
+}
+
+@keyframes gravity2 {
+  0% { top: -10px; transform: rotate(0deg) rotateY(-10deg) rotateX(-15deg);}
+  100% { top: 10px; transform: rotate(-5deg) rotateY(-25deg) rotateX(-30deg);}
 }
 
 /*----------------------------------------------------
@@ -318,20 +335,38 @@ header .background{
 ----------------------------------------------------*/
 
 #babystep .piece-container{
-  height: 220px;
+  height: 360px;
   width: 100%;
 }
 
-.seto_2{
+.seto_babystep{
   top: -27px;
   left: -30px;
   transform: translate(-50%, -50%) rotate(-50deg);
+  animation: 4.5s infinite ease-in-out clock;
 }
 
-.minos_2{
+@keyframes clock {
+  0% { top: -27px; left:-30px; transform: translate(-50%, -50%) rotate(-50deg);}
+  16.6666%{top: 62px; left:-45px; transform: translate(-50%, -50%) rotate(-110deg);}
+  33.3333%{top: 119px; left:23px; transform: translate(-50%, -50%) rotate(-170deg);}
+  50%{top: 88px; left:108px; transform: translate(-50%, -50%) rotate(130deg);}
+  66.6666%{top: 0px; left:124px; transform: translate(-50%, -50%) rotate(70deg);}
+  83.3333%{top: -58px; left:55px; transform: translate(-50%, -50%) rotate(10deg);}
+  100% {top: -27px; left:-30px; transform: translate(-50%, -50%) rotate(-50deg); }
+}
+
+.minos_babystep{
   top: 31px;
   left: 39px;
   transform: translate(-50%, -50%) rotate(10deg);
+  animation: 2.25s infinite 1.75s alternate ease pulse;
+}
+
+@keyframes pulse{
+  0%{transform: translate(-50%, -50%) scale(0.9, 0.9) rotate(10deg);}
+  12%{transform: translate(-50%, -50%) rotate(10deg);}
+  100%{transform: translate(-50%, -50%) rotate(10deg);}
 }
 
 /*---------------------------
@@ -351,16 +386,31 @@ header .background{
   width: 100%;
 }
 
-.seto_32{
-  top: 40px;
-  left: -45px;
-  transform: translate(-50%, -50%) rotate(60deg);
-}
-
-.seto_31{
+.seto_move.btmL{
   top: -14px;
   left: 48px;
-  transform: translate(-50%, -50%) rotate(240deg);
+}
+
+.seto_move.topR{
+  top: 40px;
+  left: -45px;
+}
+
+.minos_move{
+  top: 85px;
+  left: -123px;
+  transform: translate(-50%, -50%);
+}
+
+.seto_move1.top{
+  top: -5px;
+  left: -123px;
+}
+
+
+.seto_move.btmR{
+  top: 130px;
+  left: -45px;
 }
 
 /*--------------------------------------------------
@@ -374,53 +424,64 @@ header .background{
  #     # #######  #####  #     # #     # ###  #####
 
  --------------------------------------------------*/
-
 #mecanic .piece-container{
   height: 360px;
   width: 100%
 }
 
-.minos_4{
+/*setominos*/
+
+.minos_mecanic{
   top: 0px;
   left: 0px;
   transform: translate(-50%, -50%);
 }
 
-.seto_41{
-  top: -45px;
-  left: -78px;
-  transform: translate(-50%, -50%) rotate(-60deg);
-}
-
-.seto_42{
+.seto_mecanic.top{
   top: -90px;
   left: 0px;
-  transform: translate(-50%, -50%);
 }
-
-.seto_43{
+.seto_mecanic.topR{
   top: -45px;
   left: 78px;
-  transform: translate(-50%, -50%) rotate(60deg);
 }
-
-.seto_44{
+.seto_mecanic.btmR{
   top: 45px;
   left: 78px;
-  transform: translate(-50%, -50%) rotate(120deg);
 }
-
-.seto_45{
+.seto_mecanic.btm{
   top: 90px;
   left: 0px;
-  transform: translate(-50%, -50%) rotate(180deg);
 }
-
-.seto_46{
+.seto_mecanic.btmL{
   top: 45px;
   left: -78px;
-  transform: translate(-50%, -50%) rotate(240deg);
 }
+.seto_mecanic.topL{
+  top: -45px;
+  left: -78px;
+}
+
+/*other piece*/
+
+.seto_mecanic2.btm{
+  top: -54px;
+  left: 249px;
+}
+.seto_mecanic2.btmL{
+  top: -99px;
+  left: 171px;
+}
+.seto_mecanic2.topL{
+  top: -189px;
+  left: 171px;
+}
+
+.seto_mecanic3.topL{
+  top: 99px;
+  left: 171px;
+}
+
 
 /*--------------------------------------------------------------
 
@@ -435,21 +496,74 @@ header .background{
 --------------------------------------------------------------*/
 
 #strategy .piece-container{
-  height: 200px;
+  height: 250px;
   width: 100%
 }
 
-.seto_51{
-  top: 0px;
-  left: -53px;
-  transform: translate(-50%, -50%) rotate(270deg)
+.seto_strategy.topL{
+  top: -27px;
+  left: -46px;
 }
 
-.seto_52{
-  top: 0px;
-  left: 53px;
-  transform: translate(-50%, -50%) rotate(90deg)
+.seto_strategy.btmR{
+  top: 27px;
+  left: 46px;
 }
+
+/*resp*/
+
+.minos_strategy2{
+  top: 126px;
+  left: 217px;
+  transform: translate(-50%, -50%);
+}
+
+.seto_strategy2.topL{
+  top: 81px;
+  left: 139px;
+}
+
+.seto_strategy2.btmL{
+  top: 171px;
+  left: 139px;
+}
+
+.seto_strategy2.btm{
+  top: 216px;
+  left: 217px;
+}
+
+.seto_strategy2.btmR{
+  top: 171px;
+  left: 295px;
+}
+
+.minos_strategy3{
+  top: 270px;
+  left: -33px;
+  transform: translate(-50%, -50%);
+}
+
+.seto_strategy3.top{
+  top: 323px;
+  left: 217px;
+}
+
+.seto_strategy3.topR{
+  top: 224px;
+  left: 45px;
+}
+
+.seto_strategy3.topL{
+  top: 224px;
+  left: -111px;
+}
+
+.seto_strategy3.btmL{
+  top: 314px;
+  left: -111px;
+}
+
 
 /*------------------------------------------------------
 
@@ -476,8 +590,8 @@ header .background{
 }
 
 .btn-mbr{
-  align-self: center;
   width: 260px;
+  align-self: center;
   background-color: #2A9A2A
 }
 
@@ -537,321 +651,4 @@ footer a{
   cursor: pointer;
   color: #EEE;
   text-decoration: none
-}
-
-
-/*--------------------------------------
-
- #     # ####### ######     #    #
- ##   ## #     # #     #   # #   #
- # # # # #     # #     #  #   #  #
- #  #  # #     # #     # #     # #
- #     # #     # #     # ####### #
- #     # #     # #     # #     # #
- #     # ####### ######  #     # #######
-
---------------------------------------*/
-
-/*TODO : CSS of modal*/
-
-/***** MODAL ACHAT **************************/
-.modal-buy > div > div{
-  padding: 20px 0
-}
-
-.modal-buy > div span{
-  display: block;
-  line-height: 1.8em
-}
-
-.modal-buy b{
-  cursor: pointer;
-  color: #F82;
-  letter-spacing: 0.2em;
-  font-size: 26px
-}
-
-.modal-buy form{
-  display: none;
-  margin-bottom: 40px
-}
-
-/***** MODAL MEMBER *************************/
-.modal-mbr button{
-  display: inline-block;
-}
-
-/*--------------------------------------------------------------------------
-/***** MODAL MENTION LEGAL *************************/
-.modal-ml h4{
-  padding: 30px 0 10px 0
-}
-
-.modal-ml p{
-  padding: 5px 0;
-  font-size: 10px
-}
-
-/***** MODAL CONDITIONS GENERALES DE VENTES *************************/
-.modal-cgv p{
-  padding: 0;
-  text-align: justify;
-  font-size: 12px
-}
-
-
-/*--------------------------------------------------------------------------
-
- ######  #######  #####  ######  ####### #     #  #####  ### #     # #######
- #     # #       #     # #     # #     # ##    # #     #  #  #     # #
- #     # #       #       #     # #     # # #   # #        #  #     # #
- ######  #####    #####  ######  #     # #  #  #  #####   #  #     # #####
- #   #   #             # #       #     # #   # #       #  #   #   #  #
- #    #  #       #     # #       #     # #    ## #     #  #    # #   #
- #     # #######  #####  #       ####### #     #  #####  ###    #    #######
-
---------------------------------------------------------------------------*/
-
-/*DOING : Responsive mode*/
-
-@media screen and (min-width: 480px) {
-  header .background{
-    height: 350px;
-    background-position: -180px -80px;
-    background-size: 900px
-  }
-
-  .btn{
-    width: 40%
-  }
-
-  .btn-group{
-    padding: 25px 0px
-  }
-}
-
-@media screen and (min-width: 600px) {
-  header .background{
-    height: 380px;
-    background-position: -120px -50px;
-    background-size: 900px
-  }
-}
-
-@media screen and (min-width: 750px) {
-  header .background{
-    height: 450px;
-    background-position: -60px 0px;
-    background-size: 935px
-  }
-
-  header h1, header h2{
-    display: none
-  }
-
-  header .btn-group{
-    transform: translate(0%, -50%);
-    position: absolute;
-    top: 50%;
-    right: 0;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-around;
-    width: 100%;
-  }
-
-  header .btn-disabled{
-    order: 1
-  }
-
-  /***** Contact *********************************/
-  .line{
-    display: none
-  }
-
-  #contact{
-    display: flex;
-    flex-direction: column
-  }
-
-  #contact .background{
-    height: 500px;
-    background-image: url(../img/home1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    order: 1
-  }
-
-  #contact .content{
-    display: none
-  }
-
-  .follow{
-    width: 37.5%
-  }
-
-  #contact .btn-mbr{
-    width: 80%;
-    order: 1
-  }
-
-  .btn-group{;
-    height: 400px;
-    width: 90%;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-end;
-    justify-content: space-around
-  }
-
-  .btn{
-    margin: 20px 30px;
-    width: 33%
-  }
-
-  /***** Footer **********************************/
-  footer .mentions{
-    flex-direction: row;
-    justify-content: center
-  }
-
-  footer span:first-child{
-    padding-right: 10px
-  }
-
-
-  /*intro*/
-
-  #intro .piece{
-    height: 200px;
-    width: 62.5%;
-  }
-
-  #intro .piece:first-child{
-    float: right;
-  }
-
-  #intro .content{
-    width: 37.5%;
-    height: 400px;
-    float: left;
-  }
-
-  #intro .content:after{
-    border-right: 1px solid #EDE;
-  }
-
-  /*babystep*/
-
-  #babystep .content{
-    width: 37.5%;
-    height: 220px;
-    float: right;
-  }
-
-  #babystep .content:after{
-    border-left: 1px solid #EDE;
-  }
-
-  #babystep .piece-container{
-    width: 62.5%;
-  }
-
-  /*move*/
-
-  #move .piece-container{
-    width: 62.5%;
-  }
-
-  #move .content{
-    float: left;
-    height: 220px;
-    width: 37.5%;
-  }
-
-  #move .content:after{
-    border-right: 1px solid #EDE;
-  }
-
-  /*mecanic*/
-
-  #mecanic .piece-container{
-    width: 62.5%;
-  }
-
-  #mecanic .content{
-    float: right;
-    height: 360px;
-    width: 37.5%;
-  }
-
-  #mecanic .content:after{
-    border-left: 1px solid #EDE;
-  }
-
-  /*strategy*/
-
-  #strategy .piece-container{
-    width: 62.5%;
-  }
-
-  #strategy .content{
-    float: left;
-    height: 200px;
-    width: 37.5%;
-  }
-
-  #strategy .content:after{
-    border-right: 1px solid #EDE;
-  }
-
-
-}
-
-@media screen and (min-width: 860px) {
-  header .background{
-    height: 470px;
-    background-position: -40px 0px;
-    background-size: 980px
-  }
-
-  .btn{
-    width: 30%
-  }
-}
-
-@media screen and (min-width: 950px) {
-  header .background{
-    height: 500px;
-    background-position: 0px 0px;
-    background-size: 1050px
-  }
-
-  .btn{
-    width: 28.5%
-  }
-
-}
-
-
-@media screen and (min-width: 1060px) {
-  header .background{
-    height: 600px;
-    background-position: 0px 0px;
-    background-size: cover
-  }
-
-  header .btn-group .btn{
-    width: 25%;
-  }
-}
-
-@media screen and (min-width: 1150px) {
-  header .btn-group .btn{
-    margin: 40px 75px;
-    width: 22.5%;
-  }
 }

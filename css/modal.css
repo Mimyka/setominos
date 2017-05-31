@@ -1,0 +1,128 @@
+/*--------------------------------------
+
+ #     # ####### ######     #    #
+ ##   ## #     # #     #   # #   #
+ # # # # #     # #     #  #   #  #
+ #  #  # #     # #     # #     # #
+ #     # #     # #     # ####### #
+ #     # #     # #     # #     # #
+ #     # ####### ######  #     # #######
+
+--------------------------------------*/
+
+/*DOING:50 : CSS of modal*/
+
+.modal header{
+  height: 100px
+}
+
+.modal h4{
+  line-height: 1.9em;
+  padding: 30px 0
+}
+
+.modal h4 span{
+  color: #2A9A2A
+}
+.modal h5{
+  padding: 20px 0 5px 0;
+  text-align: justify;
+  font-size: 16px
+}
+
+.modal li{
+  list-style: none;
+  padding: 5px 0;
+  text-align: justify;
+  font-size: 14px
+}
+
+.modal strong{
+  font-size: 24px;
+  color: #2A9A2A
+}
+
+.modal input{
+  width: 90%;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #F60;
+  font-size: 14px;
+}
+
+/***** MODAL ACHAT **************************/
+
+.modal-buy h4 span{
+  font-size: 20px;
+}
+
+.modal-buy form{
+
+}
+
+.btn-modal{
+  height: calc(100% - 100px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center
+}
+
+.btn-modal .btn{
+  width: 100%
+}
+
+.btn-modal div{
+  padding: 10px 0;
+  font-size: 14px;
+  line-height: 1.4em
+}
+
+.btn-modal span{
+  display: block;
+  font-size: 8px
+}
+
+.btn-discount{
+  background-color: #323232
+}
+
+.modal-buy .piece{
+  /*border: 1px solid red;*/
+  height: 100px;
+  width: 100%
+}
+
+.form_part1, .form_part2{
+  height: 200px;
+  display: none;
+  margin-top: 20px
+}
+
+.btn-form{
+  width: 70%;
+  margin-top: 20px
+}
+
+/***** MODAL MEMBER *************************/
+.modal-mbr button{
+  display: inline-block;
+}
+
+/***** MODAL MENTION LEGAL *****************/
+.modal-ml h4{
+  padding: 30px 0 10px 0
+}
+
+.modal-ml p{
+  padding: 5px 0;
+  font-size: 10px
+}
+
+/***** MODAL CGV **************************/
+.modal-cgv p{
+  padding: 0;
+  text-align: justify;
+  font-size: 12px
+}

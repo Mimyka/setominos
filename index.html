@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<!-- DOING:50 : Html readapt for reusable component and responsive-->
+<!-- DONE:0 : Html readapt for reusable component and responsive-->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,10 @@
   <title>SétoMinos, le nouveau défi des jeux de société !</title>
 
   <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/modal.css">
+  <link rel="stylesheet" href="./css/responsive.css">
   <link rel="stylesheet" href="./fontAwesome/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Oxygen|Raleway|Coming+Soon|Handlee" rel="stylesheet">
 
 </head>
 
@@ -20,7 +23,7 @@
   <main>
 
     <header>
-        <!-- DONE : Image resizing -->
+        <!-- DONE:40 : Image resizing -->
         <div class="background">
           <h1>SétoMinos</h1>
           <h2>Le Nouveau Défi !</h2>
@@ -37,16 +40,22 @@
 
     <div class="line"></div>
 
-    <!-- DONE:0 : Adapt cont class for animation and reusable component -->
+    <!-- DONE:20 : Adapt cont class for animation and reusable component -->
     <section id="intro">
-      <div class="piece">
+      <div class="piece-container">
         <span class="piece-name">Séto</span>
+        <div class="piece">
+
+        </div>
       </div>
       <div class="content">
         <p>Ce jeu de tuiles reprend les bases ancestrales des dominos. Il se joue de 2 à 6 joueurs et à partir de 6ans.</p>
       </div>
-      <div class="piece">
+      <div class="piece-container">
         <span class="piece-name">Minos</span>
+        <div class="piece">
+
+        </div>
       </div>
     </section>
 
@@ -112,7 +121,7 @@
         <p>Recevez la grille des points du jeu ainsi que l'agenda en avant première chaque mois !</p>
       </div>
 
-      <!-- DONE : Font awesome problem-->
+      <!-- DONE:30 : Font awesome problem-->
       <div class="follow">
         <div class="btn btn-mbr">
           Devenez Membre
@@ -156,53 +165,66 @@
   <div class="overlay"></div>
 
   <div class="modal modal-buy">
-    <span class="cross">x</span>
+    <header>
+      <span class="cross">x</span>
+      <h4>Achetez votre Jeu de Société <strong>Sétominos</strong></h4>
+    </header>
 
-    <h4>Achetez votre <span>Jeu de Société<br><strong>SétoMinos</strong></span></h4>
-
-    <div class="A">
-      <div>
-        <span>en</span>
-        <span class="a"><b>&#x25B9 Direct &#x25B9</b></span>
-        <span>parce que c'est moins cher !</span>
+    <div class="btn-modal">
+      <div class="btn btn-buy">
+        Achetez en <b>Direct</b>
+        <span>Parce que c'est moins cher !</span>
       </div>
 
-      <div>
-        <span>ou sur</span>
-        <a onclick="window.open('https://www.cdiscount.com/setominos/f-12079-auc0656272960308.html')"><b>Cdiscount</b></a>
-        <span>parce que c'est plus pratique !</span>
+      <div class="btn btn-discount" onclick="window.open('https://www.cdiscount.com/setominos/f-12079-auc0656272960308.html')">
+        Achetez sur <b>Cdiscount</b>
+        <span>Parce que c'est plus pratique !</span>
+      </div>
+
+      <div class="piece">
+
       </div>
     </div>
 
-    <form class="B">
-      <input type="text" name="first_name" value="" placeholder="Votre nom">
-      <input type="text" name="last_name" value="" placeholder="Votre prénom">
-      <input type="email" name="email" value="" placeholder="Votre email le plus utilisé" autocomplete="off">
-      <input type="text" name="quantity" value="" placeholder="Votre quantité de jeu commandé" autocomplete="off">
-      <button class="btn btn-form b" type="button">Valider</button>
-    </form>
 
-    <form class="C" action="#" method="post">
-      <input type="text" name="street" value="" placeholder="Votre numéro et nom de rue">
-      <input type="text" name="postal_code" value="" placeholder="Votre code postal">
-      <input type="text" name="city" value="" placeholder="Votre ville">
-      <input type="phone" name="phone" value="" placeholder="phone" autocomplete="off">
-      <button class="btn btn-form" type="submit" name="button">Valider</button>
+    <form>
+      <div class="form_part1">
+        <input type="text" name="first_name" value="" placeholder="Votre nom">
+        <input type="text" name="last_name" value="" placeholder="Votre prénom">
+        <input type="email" name="email" value="" placeholder="Votre email le plus utilisé" autocomplete="off">
+        <input type="text" name="quantity" value="" placeholder="La quantité de jeu souhaité" autocomplete="off">
+        <button class="btn btn-form" type="button">Valider</button>
+      </div>
+
+      <div class="form_part2">
+        <input type="text" name="street" value="" placeholder="Votre numéro et nom de rue">
+        <input type="text" name="postal_code" value="" placeholder="Votre code postal">
+        <input type="text" name="city" value="" placeholder="Votre ville">
+        <input type="phone" name="phone" value="" placeholder="phone" autocomplete="off">
+        <button class="btn btn-form" type="submit">Valider</button>
+      </div>
     </form>
   </div>
 
   <div class="modal modal-mbr">
     <span class="cross">x</span>
+
     <h4>Devenez <span>Membre de la Famille<br><strong>SétoMinos</strong></span></h4>
+
     <form action="#contact" method="post">
       <input type="text" name="first_name" value="" placeholder="Votre prénom ou pseudo" autofocus="on" autocomplete="off">
       <input type="text" name="email" value="" placeholder="Votre email le plus utilisé" autocomplete="off">
       <button class="btn btn-form" type="submit" name="button">Valider</button>
     </form>
+
+    <div class="piece">
+
+    </div>
   </div>
 
   <div class="modal modal-ml">
     <span class="cross">x</span>
+
     <h4>Mentions Légales</h4>
 
     <h5>Société</h5>
@@ -253,6 +275,7 @@
 </body>
 
 <script src="./js/utils.js"></script>
+<script src="./js/gravity.js"></script>
 <script src="./js/generate.js"></script>
 <script src="./js/script.js"></script>
 <script src="https://use.fontawesome.com/1f4d2954e6.js"></script>
