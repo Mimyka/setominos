@@ -104,9 +104,12 @@ svg{
 .content:after{
   content: "";
   position: absolute;
-  left: 0;
   right: 0;
-  height: 60%;
+  height: 60%
+}
+
+.resp{
+  display: none;
 }
 
 /*Button*/
@@ -167,6 +170,29 @@ svg{
   justify-content: center;
 }
 
+.top{
+  transform: translate(-50%, -50%);
+}
+
+.topR{
+  transform: translate(-50%, -50%) rotate(60deg);
+}
+
+.btmR{
+  transform: translate(-50%, -50%) rotate(120deg);
+}
+
+.btm{
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.btmL{
+  transform: translate(-50%, -50%) rotate(240deg);
+}
+
+.topL{
+  transform: translate(-50%, -50%) rotate(-60deg);
+}
 /*Modal*/
 
 .overlay{
@@ -342,16 +368,31 @@ header .background{
   width: 100%;
 }
 
-.seto_move1{
-  top: 40px;
-  left: -45px;
-  transform: translate(-50%, -50%) rotate(60deg);
-}
-
-.seto_move2{
+.seto_move.btmL{
   top: -14px;
   left: 48px;
-  transform: translate(-50%, -50%) rotate(240deg);
+}
+
+.seto_move.topR{
+  top: 40px;
+  left: -45px;
+}
+
+.minos_move{
+  top: 85px;
+  left: -123px;
+  transform: translate(-50%, -50%);
+}
+
+.seto_move1.top{
+  top: -5px;
+  left: -123px;
+}
+
+
+.seto_move.btmR{
+  top: 130px;
+  left: -45px;
 }
 
 /*--------------------------------------------------
@@ -365,11 +406,12 @@ header .background{
  #     # #######  #####  #     # #     # ###  #####
 
  --------------------------------------------------*/
-
 #mecanic .piece-container{
   height: 360px;
   width: 100%
 }
+
+/*setominos*/
 
 .minos_mecanic{
   top: 0px;
@@ -377,36 +419,51 @@ header .background{
   transform: translate(-50%, -50%);
 }
 
-.seto_mecanic_top{
+.seto_mecanic.top{
   top: -90px;
   left: 0px;
-  transform: translate(-50%, -50%);
 }
-.seto_mecanic_topR{
+.seto_mecanic.topR{
   top: -45px;
   left: 78px;
-  transform: translate(-50%, -50%) rotate(60deg);
 }
-.seto_mecanic_btmR{
+.seto_mecanic.btmR{
   top: 45px;
   left: 78px;
-  transform: translate(-50%, -50%) rotate(120deg);
 }
-.seto_mecanic_btm{
+.seto_mecanic.btm{
   top: 90px;
   left: 0px;
-  transform: translate(-50%, -50%) rotate(180deg);
 }
-.seto_mecanic_btmL{
+.seto_mecanic.btmL{
   top: 45px;
   left: -78px;
-  transform: translate(-50%, -50%) rotate(240deg);
 }
-.seto_mecanic_topL{
+.seto_mecanic.topL{
   top: -45px;
   left: -78px;
-  transform: translate(-50%, -50%) rotate(-60deg);
 }
+
+/*other piece*/
+
+.seto_mecanic2.btm{
+  top: -54px;
+  left: 249px;
+}
+.seto_mecanic2.btmL{
+  top: -99px;
+  left: 171px;
+}
+.seto_mecanic2.topL{
+  top: -189px;
+  left: 171px;
+}
+
+.seto_mecanic3.topL{
+  top: 99px;
+  left: 171px;
+}
+
 
 /*--------------------------------------------------------------
 
@@ -421,21 +478,74 @@ header .background{
 --------------------------------------------------------------*/
 
 #strategy .piece-container{
-  height: 200px;
+  height: 250px;
   width: 100%
 }
 
-.seto_strategy1{
-  top: 0px;
-  left: -53px;
-  transform: translate(-50%, -50%) rotate(270deg)
+.seto_strategy.topL{
+  top: -27px;
+  left: -46px;
 }
 
-.seto_strategy2{
-  top: 0px;
-  left: 53px;
-  transform: translate(-50%, -50%) rotate(90deg)
+.seto_strategy.btmR{
+  top: 27px;
+  left: 46px;
 }
+
+/*resp*/
+
+.minos_strategy2{
+  top: 126px;
+  left: 217px;
+  transform: translate(-50%, -50%);
+}
+
+.seto_strategy2.topL{
+  top: 81px;
+  left: 139px;
+}
+
+.seto_strategy2.btmL{
+  top: 171px;
+  left: 139px;
+}
+
+.seto_strategy2.btm{
+  top: 216px;
+  left: 217px;
+}
+
+.seto_strategy2.btmR{
+  top: 171px;
+  left: 295px;
+}
+
+.minos_strategy3{
+  top: 270px;
+  left: -33px;
+  transform: translate(-50%, -50%);
+}
+
+.seto_strategy3.top{
+  top: 323px;
+  left: 217px;
+}
+
+.seto_strategy3.topR{
+  top: 224px;
+  left: 45px;
+}
+
+.seto_strategy3.topL{
+  top: 224px;
+  left: -111px;
+}
+
+.seto_strategy3.btmL{
+  top: 314px;
+  left: -111px;
+}
+
 
 /*------------------------------------------------------
 

@@ -116,11 +116,15 @@
 
   /*move*/
   #move{
-    height: 300px
+    height: 400px
   }
 
   #move .piece-container{
     width: 62.5%
+  }
+
+  #move .piece{
+    transform: translate(55px, -60px)
   }
 
   #move .content{
@@ -129,14 +133,22 @@
     border-right: 1px solid #EDE
   }
 
+  .resp{
+    display: block;
+  }
+
   /*mecanic*/
 
   #mecanic{
-    height: 500px
+    height: 600px
   }
 
   #mecanic .piece-container{
     width: 62.5%
+  }
+
+  #mecanic .piece{
+    transform: translate(-75px, 40px)
   }
 
   #mecanic .content{
