@@ -20,31 +20,23 @@ document.querySelector('.modal-cgv').modalize({
   close: document.querySelectorAll('.modal-cgv .cross')
 });
 
-document.querySelector('.a').onclick = display1;
-document.querySelector('.b').onclick = display2;
+document.querySelector('.modal-buy .btn-buy').onclick = showPart1;
+document.querySelector('.form_part1 .btn-form').onclick = showPart2;
 
-// var tab = document.querySelectorAll('.A, .B, .C');
-
-// div
-// form
-// form
-// >
-// "classcommune"
-//
-// "btn-act"
-//
-// function functionName() {
-//   querySelectorAll('.classecommune .btn-act')[i]
-//   toggleClass('open')
-//   removeClass('open')
-// }
-
-function display1() {
-  document.querySelector('.A').style.display = "none";
-  document.querySelector('.B').style.display = "block";
+function resetDisplay() {
+  document.querySelector('.btn-modal').style.display = "flex";
+  document.querySelector('.form_part1').style.display = "none";
+  document.querySelector('.form_part2').style.display = "none";
 }
 
-function display2() {
-  document.querySelector('.B').style.display = "none";
-  document.querySelector('.C').style.display = "block";
+function showPart1() {
+  document.querySelector('.btn-modal').style.display = "none";
+  document.querySelector('.form_part1').style.display = "block";
+  document.querySelector('.form_part2').style.display = "none";
+}
+
+function showPart2() {
+  document.querySelector('.btn-modal').style.display = "none";
+  document.querySelector('.form_part1').style.display = "none";
+  document.querySelector('.form_part2').style.display = "block";
 }

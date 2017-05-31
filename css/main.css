@@ -1,4 +1,4 @@
-/*DOING : Clean css and do more reusable component*/
+/*DOING:60 : Clean css and do more reusable component*/
 /*------------------------------------------------------
 
   #####  ####### #     # ####### ######     #    #
@@ -193,12 +193,12 @@ svg{
 .modal{
   overflow: scroll;
   position: fixed;
-  top: 0;
-  left: 0;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
   display: none;
   height: 90%;
   width: 80%;
-  margin: 10%;
   padding: 20px;
   z-index: 500;
   text-align: center;
@@ -212,39 +212,6 @@ svg{
   font-family: sans-serif;
   font-size: 20px
 }
-
-.modal h4{
-  line-height: 1.9em;
-  padding: 30px 0
-}
-
-.modal h4 span{
-  color: #2A9A2A
-}
-.modal h5{
-  padding: 20px 0 5px 0;
-  text-align: justify;
-  font-size: 16px
-}
-
-.modal li{
-  list-style: none;
-  padding: 5px 0;
-  text-align: justify;
-  font-size: 14px
-}
-
-.modal strong{
-  font-size: 28px
-}
-
-.modal input{
-  width: 80%;
-  margin: 5px 0;
-  border: none;
-  border-bottom: 2px solid #F60
-}
-
 
 /*----------------------------------------------
 
@@ -552,9 +519,64 @@ footer a{
 
 --------------------------------------*/
 
-/*TODO : CSS of modal*/
+/*DOING:50 : CSS of modal*/
+
+.modal header{
+  height: 100px;
+}
+
+.btn-modal{
+  height: calc(100% - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-modal .btn{
+  width: 100%;
+  margin: 15px 0;
+}
+
+
+.modal h4{
+  line-height: 1.9em;
+  padding: 30px 0
+}
+
+.modal h4 span{
+  color: #2A9A2A
+}
+.modal h5{
+  padding: 20px 0 5px 0;
+  text-align: justify;
+  font-size: 16px
+}
+
+.modal li{
+  list-style: none;
+  padding: 5px 0;
+  text-align: justify;
+  font-size: 14px
+}
+
+.modal strong{
+  font-size: 28px
+}
+
+.modal input{
+  width: 80%;
+  margin: 5px 0;
+  border: none;
+  border-bottom: 2px solid #F60
+}
 
 /***** MODAL ACHAT **************************/
+
+.btn-discount{
+  background-color: #323232;
+}
+
 .modal-buy > div > div{
   padding: 20px 0
 }
@@ -571,7 +593,7 @@ footer a{
   font-size: 26px
 }
 
-.modal-buy form{
+.form_part1, .form_part2{
   display: none;
   margin-bottom: 40px
 }
@@ -612,7 +634,7 @@ footer a{
 
 --------------------------------------------------------------------------*/
 
-/*DOING : Responsive mode*/
+/*DONE:10 : Responsive mode*/
 
 @media screen and (min-width: 480px) {
   header .background{
