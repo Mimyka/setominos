@@ -123,6 +123,10 @@
     width: 62.5%
   }
 
+  #move .piece{
+    transform: translate(55px, -60px)
+  }
+
   #move .content{
     height: 200px;
     width: 37.5%;
@@ -141,6 +145,10 @@
 
   #mecanic .piece-container{
     width: 62.5%
+  }
+
+  #mecanic .piece{
+    transform: translate(-75px, 40px)
   }
 
   #mecanic .content{

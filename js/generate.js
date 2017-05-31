@@ -11,12 +11,12 @@ function generate(location, haveClass, type, number, numberLeft, numberTop, numb
 		document.querySelector(location).innerHTML += '<svg width="126px" class="seto_' + haveClass + '" height="110px" viewBox="0 0 126 110"><g><polygon stroke-linejoin="round" stroke-width="4px" stroke="' + border_seto[number - 1] + '" fill="white" points="23,3 103,3 123,37.6 83,106.8 43,106.8 3,37.6"/><text font-size="30px" font-family="sans-serif" fill="black" y="56" x="18" >' + numberLeft + '</text><text font-size="30px" font-family="sans-serif" fill="black" y="31" x="55">' + numberTop + '</text><text font-size="30px" font-family="sans-serif" fill="black" y="56" x="93">' + numberRight + '</text><path fill="' + fill_colors[number - 1] + '" d="M 24.5,71 q 34,-19.5 77,0 l -19,34 h -38.2 z"/><path fill="none" stroke-width="6px" stroke="' + border_intr[number - 1] + '" d="M 24.5,71 q 37,-21.5 77,0"/><text font-size="36px" font-family="sans-serif" fill="black" y="95" x="53">' + number + '</text></g></svg>';
 	} else if (type.toLowerCase() == "setominos"){
 		generate(location, haveClass, "minos", number);
-		generate(location, haveClass + "_top", "seto", number, 9, 8, 2);
-		generate(location, haveClass + "_topL", "seto", number, 7, 7, 9);
-		generate(location, haveClass + "_topR", "seto", number, 2, 9, 1);
-		generate(location, haveClass + "_btmR", "seto", number, 1, 1, 3);
-		generate(location, haveClass + "_btm", "seto", number, 3, 2, 5);
-		generate(location, haveClass + "_btmL", "seto", number, 5, 3, 7);
+		generate(location, haveClass + " top", "seto", number, 9, 8, 2);
+		generate(location, haveClass + " topL", "seto", number, 7, 7, 9);
+		generate(location, haveClass + " topR", "seto", number, 2, 9, 1);
+		generate(location, haveClass + " btmR", "seto", number, 1, 1, 3);
+		generate(location, haveClass + " btm", "seto", number, 3, 2, 5);
+		generate(location, haveClass + " btmL", "seto", number, 5, 3, 7);
 	}
 }
 
@@ -24,27 +24,42 @@ function generate(location, haveClass, type, number, numberLeft, numberTop, numb
 generate("#intro .piece-container:first-child .piece", "intro", "seto", 5, 9, 7, 7);
 generate("#intro .piece-container:last-child .piece", "intro", "minos", 5);
 
-// Babystep Séto x1 & Minos x1
+// Babystep
 generate("#babystep .piece", "babystep", "seto", 5, 9, 7, 7);
 generate("#babystep .piece", "babystep", "minos", 5);
 
-// Move Séto x2
-generate("#move .piece", "move_top", "seto", 6, 7, 7, 9);
-generate("#move .piece", "move_topR", "seto", 5, 9, 7, 7);
+// Move
+generate("#move .piece", "move btmL", "seto", 6, 7, 7, 9);
+generate("#move .piece", "move topR", "seto", 5, 9, 7, 7);
+// resp
 generate("#move .piece", "move resp", "minos", 5);
-generate("#move .piece", "move_btmR resp", "seto", 5, 9, 7, 7);
-generate("#move .piece", "move_top resp", "seto", 5, 9, 7, 7);
+generate("#move .piece", "move btmR resp", "seto", 5, 9, 7, 7);
+generate("#move .piece", "move1 top resp", "seto", 5, 9, 7, 7);
 
-// Mecanic SétoMinos complet
+// Mecanic
 generate("#mecanic .piece", "mecanic", "setominos", 6);
-generate("#mecanic .piece", "mecanic_btm2 resp", "seto", 5);
-generate("#mecanic .piece", "mecanic_btmL2 resp", "seto", 5);
-generate("#mecanic .piece", "mecanic_topL2 resp", "seto", 5);
-generate("#mecanic .piece", "mecanic_topL3 resp", "seto", 8);
+// resp
+generate("#mecanic .piece", "mecanic2 btm resp", "seto", 5);
+generate("#mecanic .piece", "mecanic2 btmL resp", "seto", 5);
+generate("#mecanic .piece", "mecanic2 topL resp", "seto", 5);
+generate("#mecanic .piece", "mecanic3 topL resp", "seto", 8);
 
-// Strategy Séto x2
-generate("#strategy .piece", "strategy1", "seto", 9, 9, 5, 8);
-generate("#strategy .piece", "strategy2", "seto", 9, 5, 3, 7);
+// Strategy
+generate("#strategy .piece", "strategy topL", "seto", 8, 9, 5, 8);
+generate("#strategy .piece", "strategy btmR", "seto", 8, 5, 3, 7);
+// resp
+generate("#strategy .piece", "strategy2 resp", "minos", 7);
+generate("#strategy .piece", "strategy2 topL resp", "seto", 7);
+generate("#strategy .piece", "strategy2 btmL resp", "seto", 7);
+generate("#strategy .piece", "strategy2 btm resp", "seto", 7);
+generate("#strategy .piece", "strategy2 btmR resp", "seto", 7);
 
-// Modal Minos x1
+generate("#strategy .piece", "strategy3 top resp", "seto", 4);
+generate("#strategy .piece", "strategy3 topR resp", "seto", 3);
+generate("#strategy .piece", "strategy3 resp", "minos", 3);
+generate("#strategy .piece", "strategy3 topL resp", "seto", 3);
+generate("#strategy .piece", "strategy3 btmL resp", "seto", 3);
+
+
+// Modal
 generate(".modal .piece", "modalMinos", "minos", 1);
