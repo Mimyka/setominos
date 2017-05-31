@@ -37,7 +37,7 @@
 }
 
 @media screen and (min-width: 750px) {
-  a, span, p{
+  p{
     font-family: 'Raleway', sans-serif;
     font-size: 22px;
     line-height: 36px;
@@ -231,14 +231,8 @@
 
   /*Modal*/
 
-  .btn-modal .btn{
-    width: 400px
-  }
+  
 
-  .modal input{
-    width: 400px;
-    display: block
-  }
 }
 
 @media screen and (min-width: 860px) {

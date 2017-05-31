@@ -40,4 +40,7 @@ generate("#strategy .piece", "strategy1", "seto", 9, 9, 5, 8);
 generate("#strategy .piece", "strategy2", "seto", 9, 5, 3, 7);
 
 // Modal Minos x1
-generate(".modal .piece", "modalMinos", "minos", 1);
+generate(".modal-buy .piece", "modalMinos", "minos", 1);
+generate(".modal-mbr .piece", "modalMinos", "minos", 1);
+generate(".modal-ml .piece", "modalMinos", "minos", 1);
+generate(".modal-cgv .piece", "modalMinos", "minos", 1);
