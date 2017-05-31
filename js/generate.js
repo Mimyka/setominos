@@ -21,8 +21,8 @@ function generate(location, haveClass, type, number, numberLeft, numberTop, numb
 }
 
 // Intro Séto x1 & Minos x1
-generate("#intro .piece:first-child", "intro", "seto", 5, 9, 7, 7);
-generate("#intro .piece:last-child", "intro", "minos", 5);
+generate("#intro .piece-container:first-child .piece", "intro", "seto", 5, 9, 7, 7);
+generate("#intro .piece-container:last-child .piece", "intro", "minos", 5);
 
 // Babystep Séto x1 & Minos x1
 generate("#babystep .piece", "babystep", "seto", 5, 9, 7, 7);

@@ -244,24 +244,48 @@ header .background{
 
 ----------------------------------*/
 
-#intro .piece{
+#intro .piece-container{
   height: 200px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center
+  justify-content: space-around
 }
 
 /*Pieces*/
 
+#intro .piece-container .piece:after{
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  z-index: -1;
+  left: -100%;
+  top: 100%;
+  box-shadow: 175px 30px 40px 20px black;
+}
+
+#intro .piece-container:last-child .piece{
+  order: -1;
+}
+
 .seto_intro{
   position: relative;
+  animation: 3.2s infinite alternate ease-in-out gravity1;
   transform: rotate(30deg)
 }
 
 .minos_intro{
   position: relative;
-  order: -1;
+  animation: 2.8s infinite alternate ease-in-out gravity2 ;
   transform: rotate(-30deg)
+}
+
+@keyframes gravity1 {
+  0% { top: -7px; transform: rotate(30deg) rotateY(-10deg) rotateX(10deg);}
+  100% { top: 8px; transform: rotate(34deg) rotateY(-39deg) rotateX(12deg);}
+}
+
+@keyframes gravity2 {
+  0% { top: -10px; transform: rotate(-30deg) rotateY(-10deg) rotateX(-15deg);}
+  100% { top: 10px; transform: rotate(-35deg) rotateY(-25deg) rotateX(-30deg);}
 }
 
 /*----------------------------------------------------
@@ -649,6 +673,8 @@ footer a{
 @media screen and (min-width: 750px) {
   a, span, p{
     font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    line-height: 36px;
   }
 
   section{
@@ -687,12 +713,12 @@ footer a{
     display: block
   }
 
-  #intro .piece{
+  #intro .piece-container{
     height: 200px;
     width: 62.5%;
   }
 
-  #intro .piece:first-child{
+  #intro .piece-container:first-child{
     float: right;
   }
 
