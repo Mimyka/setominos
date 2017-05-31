@@ -253,7 +253,7 @@ svg{
 ----------------------------------------------*/
 
 header{
-  position: relative;
+  position: relative
 }
 
 header .background{
@@ -283,29 +283,29 @@ header .background{
 #intro .piece{
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: center
 }
 
 #intro .piece:first-child{
-  height: 180px;
+  height: 180px
 }
 
 #intro .piece:last-child{
   height: 150px;
-  width: 100%;
+  width: 100%
 }
 
 /*Pieces*/
 
 .seto_intro{
   position: relative;
-  transform: rotate(30deg);
+  transform: rotate(30deg)
 }
 
 .minos_intro{
   order: -1;
   position: relative;
-  transform: rotate(-30deg);
+  transform: rotate(-30deg)
 }
 
 /*----------------------------------------------------
@@ -333,7 +333,7 @@ header .background{
 .minos_2{
   top: 131px;
   left: 139px;
-  transform: rotate(10deg);
+  transform: rotate(10deg)
 }
 
 /*---------------------------
@@ -357,14 +357,14 @@ header .background{
   top: 80px;
   left: 40px;
   -webkit-transform: rotate(60deg);
-          transform: rotate(60deg);
+          transform: rotate(60deg)
 }
 
 .seto_31{
   top: 26px;
   left: 133px;
   -webkit-transform: rotate(240deg);
-          transform: rotate(240deg);
+          transform: rotate(240deg)
 }
 
 /*--------------------------------------------------
@@ -386,47 +386,47 @@ header .background{
 
 .minos_4{
   top: 140px;
-  left: 120px;
+  left: 120px
 }
 
 .seto_41{
   top: 78px;
   left: 22px;
   -webkit-transform: rotate(-60deg);
-  transform: rotate(-60deg);
+  transform: rotate(-60deg)
 }
 
 .seto_42{
   top: 33px;
-  left: 100px;
+  left: 100px
 }
 
 .seto_43{
   top: 77px;
   left: 178px;
   -webkit-transform: rotate(60deg);
-          transform: rotate(60deg);
+          transform: rotate(60deg)
 }
 
 .seto_44{
   top: 167px;
   left: 178px;
   -webkit-transform: rotate(120deg);
-          transform: rotate(120deg);
+          transform: rotate(120deg)
 }
 
 .seto_45{
   top: 212px;
   left: 100px;
   -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+          transform: rotate(180deg)
 }
 
 .seto_46{
   top: 168px;
   left: 22px;
   -webkit-transform: rotate(240deg);
-          transform: rotate(240deg);
+          transform: rotate(240deg)
 }
 
 /*--------------------------------------------------------------
@@ -518,20 +518,29 @@ header .background{
 ----------------------------------------------*/
 
 footer{
-  height: 100px;
+  height: 150px;
   background-color: #2A9A2A
 }
 
 footer p{
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 0 20px;
   text-align: center;
-  font-size: 12px
+  font-size: 14px
+}
+
+.mentions{
+  width: 100%;
+  display: flex;
+  flex-direction: column
 }
 
 footer span{
-  display: block;
   text-align: center;
-  font-size: 8px
+  font-size: 12px
 }
 
 footer a{
@@ -666,6 +675,10 @@ footer a{
   }
 
   /***** Contact *********************************/
+  .line{
+    display: none
+  }
+
   #contact{
     display: flex;
     flex-direction: column
@@ -706,9 +719,16 @@ footer a{
     width: 33%
   }
 
-  .line{
-    display: none
+  /***** Footer **********************************/
+  footer .mentions{
+    flex-direction: row;
+    justify-content: center
   }
+
+  footer span:first-child{
+    padding-right: 10px
+  }
+
 }
 
 @media screen and (min-width: 860px) {
