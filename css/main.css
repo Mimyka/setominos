@@ -522,22 +522,8 @@ footer a{
 /*DOING:50 : CSS of modal*/
 
 .modal header{
-  height: 100px;
+  height: 100px
 }
-
-.btn-modal{
-  height: calc(100% - 100px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.btn-modal .btn{
-  width: 100%;
-  margin: 15px 0;
-}
-
 
 .modal h4{
   line-height: 1.9em;
@@ -561,41 +547,71 @@ footer a{
 }
 
 .modal strong{
-  font-size: 28px
+  font-size: 24px;
+  color: #2A9A2A
 }
 
 .modal input{
-  width: 80%;
-  margin: 5px 0;
+  width: 90%;
+  margin: 10px 0;
   border: none;
-  border-bottom: 2px solid #F60
+  border-bottom: 2px solid #F60;
+  font-size: 14px;
 }
 
 /***** MODAL ACHAT **************************/
 
-.btn-discount{
-  background-color: #323232;
+.modal-buy h4 span{
+  font-size: 20px;
 }
 
-.modal-buy > div > div{
-  padding: 20px 0
+.modal-buy form{
+
 }
 
-.modal-buy > div span{
+.btn-modal{
+  height: calc(100% - 100px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center
+}
+
+.btn-modal .btn{
+  width: 100%
+}
+
+.btn-modal div{
+  padding: 10px 0;
+  font-size: 14px;
+  line-height: 1.4em
+}
+
+.btn-modal span{
   display: block;
-  line-height: 1.8em
+  font-size: 8px
 }
 
-.modal-buy b{
-  cursor: pointer;
-  color: #F82;
-  letter-spacing: 0.2em;
-  font-size: 26px
+.btn-discount{
+  background-color: #323232
+}
+
+.modal-buy .piece{
+  /*border: 1px solid red;*/
+  height: 100px;
+  width: 100%
 }
 
 .form_part1, .form_part2{
+  height: 200px;
   display: none;
-  margin-bottom: 40px
+  margin-top: 20px
+}
+
+.btn-form{
+  width: 70%;
+  margin-top: 20px
 }
 
 /***** MODAL MEMBER *************************/
@@ -603,8 +619,7 @@ footer a{
   display: inline-block;
 }
 
-/*--------------------------------------------------------------------------
-/***** MODAL MENTION LEGAL *************************/
+/***** MODAL MENTION LEGAL *****************/
 .modal-ml h4{
   padding: 30px 0 10px 0
 }
@@ -614,283 +629,9 @@ footer a{
   font-size: 10px
 }
 
-/***** MODAL CONDITIONS GENERALES DE VENTES *************************/
+/***** MODAL CGV **************************/
 .modal-cgv p{
   padding: 0;
   text-align: justify;
   font-size: 12px
-}
-
-
-/*--------------------------------------------------------------------------
-
- ######  #######  #####  ######  ####### #     #  #####  ### #     # #######
- #     # #       #     # #     # #     # ##    # #     #  #  #     # #
- #     # #       #       #     # #     # # #   # #        #  #     # #
- ######  #####    #####  ######  #     # #  #  #  #####   #  #     # #####
- #   #   #             # #       #     # #   # #       #  #   #   #  #
- #    #  #       #     # #       #     # #    ## #     #  #    # #   #
- #     # #######  #####  #       ####### #     #  #####  ###    #    #######
-
---------------------------------------------------------------------------*/
-
-/*DONE:10 : Responsive mode*/
-
-@media screen and (min-width: 480px) {
-  header .background{
-    height: 350px;
-    background-position: -180px -80px;
-    background-size: 900px
-  }
-
-  .btn{
-    width: 40%
-  }
-
-  .btn-group{
-    padding: 25px 0px
-  }
-}
-
-@media screen and (min-width: 600px) {
-  header .background{
-    height: 380px;
-    background-position: -120px -50px;
-    background-size: 900px
-  }
-}
-
-@media screen and (min-width: 750px) {
-  section{
-    display: flex;
-    align-items: center
-  }
-
-  header .background{
-    height: 450px;
-    background-position: -60px 0px;
-    background-size: 935px
-  }
-
-  header h1, header h2{
-    display: none
-  }
-
-  header .btn-group{
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    right: 0;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-around;
-    transform: translate(0%, -50%)
-  }
-
-  header .btn-disabled{
-    order: 1
-  }
-
-  /*intro*/
-
-  #intro{
-    display: block
-  }
-
-  #intro .piece{
-    height: 200px;
-    width: 62.5%;
-  }
-
-  #intro .piece:first-child{
-    float: right;
-  }
-
-  #intro .content{
-    width: 37.5%;
-    height: 400px;
-    float: left;
-  }
-
-  #intro .content:after{
-    border-right: 1px solid #EDE
-  }
-
-  /*babystep*/
-  #babystep{
-    height: 300px
-  }
-
-  #babystep .content{
-    height: 200px;
-    width: 37.5%;
-    border-left: 1px solid #EDE;
-    order: 1
-  }
-
-  #babystep .piece-container{
-    width: 62.5%
-  }
-
-  /*move*/
-  #move{
-    height: 300px
-  }
-
-  #move .piece-container{
-    width: 62.5%
-  }
-
-  #move .content{
-    height: 200px;
-    width: 37.5%;
-    border-right: 1px solid #EDE
-  }
-
-  /*mecanic*/
-
-  #mecanic{
-    height: 500px
-  }
-
-  #mecanic .piece-container{
-    width: 62.5%
-  }
-
-  #mecanic .content{
-    height: 250px;
-    width: 37.5%;
-    border-left: 1px solid #EDE;
-    order: 1
-  }
-
-  /*strategy*/
-
-  #strategy{
-    height: 300px
-  }
-
-  #strategy .piece-container{
-    width: 62.5%
-  }
-
-  #strategy .content{
-    height: 200px;
-    width: 37.5%;
-    border-right: 1px solid #EDE
-  }
-
-  /*Contact*/
-
-  .line{
-    display: none
-  }
-
-  #contact{
-    flex-direction: column;
-    align-items: flex-start
-  }
-
-  #contact .background{
-    height: 500px;
-    width: 100%;
-    background-image: url(../img/home1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    order: 1
-  }
-
-  #contact .content{
-    display: none
-  }
-
-  .follow{
-    height: 300px;
-    width: 37.5%
-  }
-
-  #contact .btn-mbr{
-    width: 80%;
-    order: 1
-  }
-
-  .social{
-    width: 80%;
-    align-self: center
-  }
-
-  .btn-group{;
-    height: 400px;
-    width: 90%;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-end;
-    justify-content: space-around
-  }
-
-  .btn{
-    margin: 20px 30px;
-    width: 33%
-  }
-
-  /*Footer*/
-
-  footer .mentions{
-    flex-direction: row;
-    justify-content: center
-  }
-
-  footer span:first-child{
-    padding-right: 10px
-  }
-
-
-}
-
-@media screen and (min-width: 860px) {
-  header .background{
-    height: 470px;
-    background-position: -40px 0px;
-    background-size: 980px
-  }
-
-  .btn{
-    width: 30%
-  }
-}
-
-@media screen and (min-width: 950px) {
-  header .background{
-    height: 500px;
-    background-position: 0px 0px;
-    background-size: 1050px
-  }
-
-  .btn{
-    width: 28.5%
-  }
-
-}
-
-
-@media screen and (min-width: 1060px) {
-  header .background{
-    height: 600px;
-    background-position: 0px 0px;
-    background-size: cover
-  }
-
-  header .btn-group .btn{
-    width: 25%
-  }
-}
-
-@media screen and (min-width: 1150px) {
-  header .btn-group .btn{
-    margin: 40px 75px;
-    width: 22.5%
-  }
 }

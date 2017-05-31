@@ -37,3 +37,6 @@ generate("#mecanic .piece", "46", "seto", 6, 5, 3, 7);
 // Strategy Séto x2
 generate("#strategy .piece", "51", "seto", 9, 9, 5, 8);
 generate("#strategy .piece", "52", "seto", 9, 5, 3, 7);
+
+// Modal Minos x1
+generate(".modal .piece", "modalMinos", "minos", 1);
