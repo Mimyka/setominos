@@ -11,13 +11,6 @@
 
 ------------------------------------------------------*/
 
-/*Custom fonts*/
-
-@font-face {
-  font-family: "london";
-  src:url('../font/LondonBetween.ttf');
-}
-
 /*Basic reset or adjust*/
 *{
   margin: 0;
