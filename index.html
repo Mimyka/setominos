@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<!-- DOING:50 : Html readapt for reusable component and responsive-->
+<!-- DONE:0 : Html readapt for reusable component and responsive-->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
   <main>
 
     <header>
-        <!-- DONE : Image resizing -->
+        <!-- DONE:40 : Image resizing -->
         <div class="background">
           <h1>SétoMinos</h1>
           <h2>Le Nouveau Défi !</h2>
@@ -37,7 +37,7 @@
 
     <div class="line"></div>
 
-    <!-- DONE:0 : Adapt cont class for animation and reusable component -->
+    <!-- DONE:20 : Adapt cont class for animation and reusable component -->
     <section id="intro">
       <div class="piece">
         <span class="piece-name">Séto</span>
@@ -112,7 +112,7 @@
         <p>Recevez la grille des points du jeu ainsi que l'agenda en avant première chaque mois !</p>
       </div>
 
-      <!-- DONE : Font awesome problem-->
+      <!-- DONE:30 : Font awesome problem-->
       <div class="follow">
         <div class="btn btn-mbr">
           Devenez Membre
@@ -156,38 +156,33 @@
   <div class="overlay"></div>
 
   <div class="modal modal-buy">
-    <span class="cross">x</span>
-
-    <h4>Achetez votre <span>Jeu de Société<br><strong>SétoMinos</strong></span></h4>
-
-    <div class="A">
-      <div>
-        <span>en</span>
-        <span class="a"><b>&#x25B9 Direct &#x25B9</b></span>
-        <span>parce que c'est moins cher !</span>
+    <header>
+      <span class="cross">x</span>
+      <h4>Achetez votre Jeu de Société Sétominos</h4>
+    </header>
+    <div class="btn-modal">
+      <div class="btn btn-buy">
+        Achetez en Direct
       </div>
-
-      <div>
-        <span>ou sur</span>
-        <a onclick="window.open('https://www.cdiscount.com/setominos/f-12079-auc0656272960308.html')"><b>Cdiscount</b></a>
-        <span>parce que c'est plus pratique !</span>
+      <div class="btn btn-discount" onclick="window.open('https://www.cdiscount.com/setominos/f-12079-auc0656272960308.html')">
+        Achetez sur Cdiscount
       </div>
     </div>
-
-    <form class="B">
-      <input type="text" name="first_name" value="" placeholder="Votre nom">
-      <input type="text" name="last_name" value="" placeholder="Votre prénom">
-      <input type="email" name="email" value="" placeholder="Votre email le plus utilisé" autocomplete="off">
-      <input type="text" name="quantity" value="" placeholder="Votre quantité de jeu commandé" autocomplete="off">
-      <button class="btn btn-form b" type="button">Valider</button>
-    </form>
-
-    <form class="C" action="#" method="post">
-      <input type="text" name="street" value="" placeholder="Votre numéro et nom de rue">
-      <input type="text" name="postal_code" value="" placeholder="Votre code postal">
-      <input type="text" name="city" value="" placeholder="Votre ville">
-      <input type="phone" name="phone" value="" placeholder="phone" autocomplete="off">
-      <button class="btn btn-form" type="submit" name="button">Valider</button>
+    <form>
+      <div class="form_part1">
+        <input type="text" name="first_name" value="" placeholder="Votre nom">
+        <input type="text" name="last_name" value="" placeholder="Votre prénom">
+        <input type="email" name="email" value="" placeholder="Votre email le plus utilisé" autocomplete="off">
+        <input type="text" name="quantity" value="" placeholder="Votre quantité de jeu commandé" autocomplete="off">
+        <button class="btn btn-form" type="button">Valider</button>
+      </div>
+      <div class="form_part2">
+        <input type="text" name="street" value="" placeholder="Votre numéro et nom de rue">
+        <input type="text" name="postal_code" value="" placeholder="Votre code postal">
+        <input type="text" name="city" value="" placeholder="Votre ville">
+        <input type="phone" name="phone" value="" placeholder="phone" autocomplete="off">
+        <button class="btn btn-form" type="submit">Valider</button>
+      </div>
     </form>
   </div>
 

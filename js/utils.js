@@ -35,6 +35,7 @@ Element.prototype.modalize = function(arg) {
     arg.close[i].onclick = function() {
 			that.removeClass('open');
     	change("removeClass");
+			resetDisplay();
     }
   }
 
@@ -43,6 +44,7 @@ Element.prototype.modalize = function(arg) {
 			document.querySelectorAll('.modal')[i].removeClass('open');
 		}
 		change("removeClass");
+		resetDisplay();
 	}
 
 	function change(el) {
