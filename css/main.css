@@ -686,6 +686,9 @@ footer a{
 
   #contact .background{
     height: 500px;
+    background-image: url(../img/home1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
