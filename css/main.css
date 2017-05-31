@@ -434,24 +434,21 @@ header .background{
 
 --------------------------------------------------------------*/
 
-#strategy .piece{
-  position: relative;
+#strategy .piece-container{
   height: 200px;
   width: 100%
 }
 
 .seto_51{
-  top: 40px;
-  left: 43px;
-  -webkit-transform: rotate(270deg);
-          transform: rotate(270deg)
+  top: 0px;
+  left: -53px;
+  transform: translate(-50%, -50%) rotate(270deg)
 }
 
 .seto_52{
-  top: 40px;
-  left: 150px;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg)
+  top: 0px;
+  left: 53px;
+  transform: translate(-50%, -50%) rotate(90deg)
 }
 
 /*------------------------------------------------------
@@ -728,6 +725,22 @@ footer a{
 
   #mecanic .content:after{
     border-left: 1px solid #EDE;
+  }
+
+  /*strategy*/
+
+  #strategy .piece-container{
+    width: 62.5%;
+  }
+
+  #strategy .content{
+    float: left;
+    height: 200px;
+    width: 37.5%;
+  }
+
+  #strategy .content:after{
+    border-right: 1px solid #EDE;
   }
 
 
