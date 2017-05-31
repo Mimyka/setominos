@@ -287,10 +287,10 @@ header .background{
 ----------------------------------*/
 
 #intro .piece{
+  height: 200px;
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  height: 200px;
+  align-items: center
 }
 
 /*Pieces*/
@@ -301,8 +301,8 @@ header .background{
 }
 
 .minos_intro{
-  order: -1;
   position: relative;
+  order: -1;
   transform: rotate(-30deg)
 }
 
@@ -476,8 +476,8 @@ header .background{
 }
 
 .btn-mbr{
-  align-self: center;
   width: 260px;
+  align-self: center;
   background-color: #2A9A2A
 }
 
@@ -639,6 +639,11 @@ footer a{
 }
 
 @media screen and (min-width: 750px) {
+  section{
+    display: flex;
+    align-items: center
+  }
+
   header .background{
     height: 450px;
     background-position: -60px 0px;
@@ -650,80 +655,25 @@ footer a{
   }
 
   header .btn-group{
-    transform: translate(0%, -50%);
     position: absolute;
+    width: 100%;
     top: 50%;
     right: 0;
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-around;
-    width: 100%;
+    transform: translate(0%, -50%)
   }
 
   header .btn-disabled{
     order: 1
   }
 
-  /***** Contact *********************************/
-  .line{
-    display: none
-  }
-
-  #contact{
-    display: flex;
-    flex-direction: column
-  }
-
-  #contact .background{
-    height: 500px;
-    background-image: url(../img/home1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    order: 1
-  }
-
-  #contact .content{
-    display: none
-  }
-
-  .follow{
-    width: 37.5%
-  }
-
-  #contact .btn-mbr{
-    width: 80%;
-    order: 1
-  }
-
-  .btn-group{;
-    height: 400px;
-    width: 90%;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-end;
-    justify-content: space-around
-  }
-
-  .btn{
-    margin: 20px 30px;
-    width: 33%
-  }
-
-  /***** Footer **********************************/
-  footer .mentions{
-    flex-direction: row;
-    justify-content: center
-  }
-
-  footer span:first-child{
-    padding-right: 10px
-  }
-
-
   /*intro*/
+
+  #intro{
+    display: block
+  }
 
   #intro .piece{
     height: 200px;
@@ -741,71 +691,138 @@ footer a{
   }
 
   #intro .content:after{
-    border-right: 1px solid #EDE;
+    border-right: 1px solid #EDE
   }
 
   /*babystep*/
-
-  #babystep .content{
-    width: 37.5%;
-    height: 220px;
-    float: right;
+  #babystep{
+    height: 300px
   }
 
-  #babystep .content:after{
+  #babystep .content{
+    height: 200px;
+    width: 37.5%;
     border-left: 1px solid #EDE;
+    order: 1
   }
 
   #babystep .piece-container{
-    width: 62.5%;
+    width: 62.5%
   }
 
   /*move*/
+  #move{
+    height: 300px
+  }
 
   #move .piece-container{
-    width: 62.5%;
+    width: 62.5%
   }
 
   #move .content{
-    float: left;
-    height: 220px;
+    height: 200px;
     width: 37.5%;
-  }
-
-  #move .content:after{
-    border-right: 1px solid #EDE;
+    border-right: 1px solid #EDE
   }
 
   /*mecanic*/
 
+  #mecanic{
+    height: 500px
+  }
+
   #mecanic .piece-container{
-    width: 62.5%;
+    width: 62.5%
   }
 
   #mecanic .content{
-    float: right;
-    height: 360px;
+    height: 250px;
     width: 37.5%;
-  }
-
-  #mecanic .content:after{
     border-left: 1px solid #EDE;
+    order: 1
   }
 
   /*strategy*/
 
+  #strategy{
+    height: 300px
+  }
+
   #strategy .piece-container{
-    width: 62.5%;
+    width: 62.5%
   }
 
   #strategy .content{
-    float: left;
     height: 200px;
     width: 37.5%;
+    border-right: 1px solid #EDE
   }
 
-  #strategy .content:after{
-    border-right: 1px solid #EDE;
+  /*Contact*/
+
+  .line{
+    display: none
+  }
+
+  #contact{
+    flex-direction: column;
+    align-items: flex-start
+  }
+
+  #contact .background{
+    height: 500px;
+    width: 100%;
+    background-image: url(../img/home1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1
+  }
+
+  #contact .content{
+    display: none
+  }
+
+  .follow{
+    height: 300px;
+    width: 37.5%
+  }
+
+  #contact .btn-mbr{
+    width: 80%;
+    order: 1
+  }
+
+  .social{
+    width: 80%;
+    align-self: center
+  }
+
+  .btn-group{;
+    height: 400px;
+    width: 90%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    justify-content: space-around
+  }
+
+  .btn{
+    margin: 20px 30px;
+    width: 33%
+  }
+
+  /*Footer*/
+
+  footer .mentions{
+    flex-direction: row;
+    justify-content: center
+  }
+
+  footer span:first-child{
+    padding-right: 10px
   }
 
 
@@ -845,13 +862,13 @@ footer a{
   }
 
   header .btn-group .btn{
-    width: 25%;
+    width: 25%
   }
 }
 
 @media screen and (min-width: 1150px) {
   header .btn-group .btn{
     margin: 40px 75px;
-    width: 22.5%;
+    width: 22.5%
   }
 }
