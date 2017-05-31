@@ -519,12 +519,14 @@ footer a{
 
 --------------------------------------*/
 
+/*DOING:50 : CSS of modal*/
+
 .modal header{
-  height: 20%;
+  height: 100px;
 }
 
 .btn-modal{
-  height: 80%;
+  height: calc(100% - 100px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -536,7 +538,6 @@ footer a{
   margin: 15px 0;
 }
 
-/*DOING:50 : CSS of modal*/
 
 .modal h4{
   line-height: 1.9em;

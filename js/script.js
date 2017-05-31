@@ -24,7 +24,7 @@ document.querySelector('.modal-buy .btn-buy').onclick = showPart1;
 document.querySelector('.form_part1 .btn-form').onclick = showPart2;
 
 function resetDisplay() {
-  document.querySelector('.btn-modal').style.display = "block";
+  document.querySelector('.btn-modal').style.display = "flex";
   document.querySelector('.form_part1').style.display = "none";
   document.querySelector('.form_part2').style.display = "none";
 }
