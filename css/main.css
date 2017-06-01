@@ -22,6 +22,10 @@ html, body{
   height: 100%
 }
 
+main{
+  overflow: hidden;
+}
+
 h1,h2{
   position: relative;
   float: right;
@@ -432,7 +436,6 @@ header .background{
 ----------------------------------------------------*/
 
 #babystep .piece-container{
-  overflow: hidden;
   height: 370px;
   width: 100%;
 }
@@ -523,7 +526,6 @@ header .background{
 
  --------------------------------------------------*/
 #mecanic .piece-container{
-  overflow: hidden;
   height: 360px;
   width: 100%
 }
@@ -596,7 +598,6 @@ header .background{
 
 #strategy .piece-container{
   height: 250px;
-  overflow: hidden;
   width: 100%
 }
 

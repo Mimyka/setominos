@@ -34,7 +34,22 @@ function animate(x){
 			target: document.querySelector('.seto_strategy.topL'),
 			css: [['transform', 'translate(-50%, -50%) rotate(-60deg)'],['left', -46+'px']]
 		});
+		styleList({
+			target: document.querySelector('.seto_move.btmL'),
+			css: [['transform', 'translate(-50%, -50%) rotate(240deg)'],['left', 48+'px']]
+		});
 	} else {
+		if (x <= 52.5) {
+			styleList({
+				target: document.querySelector('.seto_move.btmL'),
+				css: [['transform', 'translate(-50%, -50%) rotate(240deg) rotateX('+(52.5-x)*5+'deg)'],['left', 258-(x*4)+'px']]
+			});
+		}else{
+			styleList({
+				target: document.querySelector('.seto_move.btmL'),
+				css: [['transform', 'translate(-50%, -50%) rotate(240deg)'],['left', 48+'px']]
+			});
+		}
 		styleList({
 			target: document.querySelector('#mecanic .piece'),
 			css: [['transform', 'rotate('+(x-50)*5+'deg)']]
@@ -50,7 +65,6 @@ function animate(x){
 				css: [['transform', 'translate(-50%, -50%) rotate(-60deg)'],['left', -46+'px'],['top', -27+'px']]
 			});
 		}
-		// target 82%
 	}
 }
 

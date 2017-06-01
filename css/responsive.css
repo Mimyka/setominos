@@ -111,7 +111,6 @@
   }
 
   #babystep .piece-container{
-    overflow: visible;
     width: 62.5%
   }
 
@@ -153,7 +152,6 @@
   }
 
   #mecanic .piece-container{
-    overflow: visible;
     width: 62.5%
   }
 
@@ -175,7 +173,6 @@
   }
 
   #strategy .piece-container{
-    overflow: visible;
     width: 62.5%
   }
 
