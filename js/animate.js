@@ -17,37 +17,40 @@ function styleList(object) {
 	}
 };
 
-function curve(x, f, w, s, o) {
-	if (o == null) {
-		o = "+";
-	}
-	return (o == "+") ? ((Math.sin(x * f) * w) + s) : (-(Math.sin(x * f) * w) + s);
-}
+// function curve(x, freq, width) {
+// 	return Math.sin(x * freq) * width);
+// }
 
 function animate(x){
 	var posScroll = (document.querySelector('body').scrollTop != 0) ? document.querySelector('body').scrollTop : document.querySelector('html').scrollTop;
 	var x = ((posScroll / totalH) * 100).toFixed(2);
-	// console.log(x);
+	console.log(x);
 	if (window.matchMedia("(min-width: 750px)").matches) {
 		styleList({
 			target: document.querySelector('#mecanic .piece'),
 			css: [['transform', 'translate(-75px, 40px) rotate(0deg)']]
 		});
-		// styleList({
-		// 	target: document.querySelector('.seto_strategy.topL'),
-		// 	css: [['transform', 'translate(-50%, -50%) rotate(-60deg)'],['left', -46+'px']]
-		// });
+		styleList({
+			target: document.querySelector('.seto_strategy.topL'),
+			css: [['transform', 'translate(-50%, -50%) rotate(-60deg)'],['left', -46+'px']]
+		});
 	} else {
-		if (x >50) {
+		styleList({
+			target: document.querySelector('#mecanic .piece'),
+			css: [['transform', 'rotate('+(x-50)*5+'deg)']]
+		});
+		if (x <= 81) {
 			styleList({
-				target: document.querySelector('#mecanic .piece'),
-				css: [['transform', 'rotate('+(x-50)*5+'deg)']]
+				target: document.querySelector('.seto_strategy.topL'),
+				css: [['transform', 'translate(-50%, -50%) rotate(-'+x*5.2+'deg)'],['left', (Math.cos(x * 0.3029) * 80)-120+'px']]
 			});
-			// styleList({
-			// 	target: document.querySelector('.seto_strategy.topL'),
-			// 	css: [['transform', 'translate(-50%, -50%) rotate(-60deg)'],['left', -46+'px']]
-			// });
+		} else{
+			styleList({
+				target: document.querySelector('.seto_strategy.topL'),
+				css: [['transform', 'translate(-50%, -50%) rotate(-60deg)'],['left', -46+'px'],['top', -27+'px']]
+			});
 		}
+		// target 82%
 	}
 }
 

@@ -175,6 +175,7 @@
   }
 
   #strategy .piece-container{
+    overflow: visible;
     width: 62.5%
   }
 
