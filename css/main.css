@@ -81,6 +81,7 @@ svg{
 .open{
   visibility: visible !important;
   opacity: 1 !important;
+  display: block;
 }
 
 .line{
