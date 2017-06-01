@@ -10,6 +10,7 @@ var ModalEffects = (function() {
           document.querySelectorAll('.modal')[i].removeClass('open');
         }
         overlay.removeClass('open');
+        setTimeout(resetDisplay, 250);
 			}
 			el.onclick = function() {
         modal.addClass('open');
@@ -23,3 +24,25 @@ var ModalEffects = (function() {
 	init();
 
 })();
+
+var choice = document.querySelector('#modal-buy .choice');
+var form1 = document.querySelector('#modal-buy .form_part1');
+var form2 = document.querySelector('#modal-buy .form_part2');
+
+choice.querySelector('.btn').onclick = function() {
+  choice.style.display = "none";
+  form1.style.display = "block";
+  form2.style.display = "none";
+}
+
+form1.querySelector('.btn').onclick = function() {
+  choice.style.display = "none";
+  form1.style.display = "none";
+  form2.style.display = "block";
+}
+
+function resetDisplay() {
+  choice.style.display = "block";
+  form1.style.display = "none";
+  form2.style.display = "none";
+}
