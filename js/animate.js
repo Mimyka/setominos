@@ -1,8 +1,6 @@
 var scrH =  document.documentElement.clientHeight || document.body.clientHeight;
 var scrW =  document.documentElement.clientWidth || document.body.clientWidth;
-var totalH = document.querySelector('body').clientHeight - scrH;
-var topSetominos = ((totalH) * 0.546) + (scrH * ((0.65 * 55.5) / 100));
-var leftSetominos = 39.5;
+var totalH = document.querySelector('html').scrollHeight - scrH;
 
 function styleList(object) {
 	var domTarget = null;
@@ -26,18 +24,38 @@ function curve(x, f, w, s, o) {
 	return (o == "+") ? ((Math.sin(x * f) * w) + s) : (-(Math.sin(x * f) * w) + s);
 }
 
-document.onscroll = function() {
+function animate(x){
 	var posScroll = (document.querySelector('body').scrollTop != 0) ? document.querySelector('body').scrollTop : document.querySelector('html').scrollTop;
 	var x = ((posScroll / totalH) * 100).toFixed(2);
+	// console.log(x);
+	if (window.matchMedia("(min-width: 750px)").matches) {
+		styleList({
+			target: document.querySelector('#mecanic .piece'),
+			css: [['transform', 'translate(-75px, 40px) rotate(0deg)']]
+		});
+		// styleList({
+		// 	target: document.querySelector('.seto_strategy.topL'),
+		// 	css: [['transform', 'translate(-50%, -50%) rotate(-60deg)'],['left', -46+'px']]
+		// });
+	} else {
+		if (x >50) {
+			styleList({
+				target: document.querySelector('#mecanic .piece'),
+				css: [['transform', 'rotate('+(x-50)*5+'deg)']]
+			});
+			// styleList({
+			// 	target: document.querySelector('.seto_strategy.topL'),
+			// 	css: [['transform', 'translate(-50%, -50%) rotate(-60deg)'],['left', -46+'px']]
+			// });
+		}
+	}
 }
 
+document.onscroll = animate;
 
-
-styleList({
-	target: document.querySelectorAll('.seto_rosace')[0],
-	css: [["position","absolute"],["top",(topSetominos+3) + "px"],["left",(scrW * (leftSetominos / 100) + (100+43)) + "px"],['transform', 'rotate(60deg) scale(1,1)']]
-});
-styleList({
-	target: document.querySelectorAll('.minos_rosace')[0],
-	css: [["position","absolute"],["top",(topSetominos + 65) + "px"],["left",(scrW * (leftSetominos / 100) + 85) + "px"],['transform', 'rotate(0deg) scale(1,1)']]
-});
+window.onresize = function() {
+	scrH =  document.documentElement.clientHeight || document.body.clientHeight;
+	scrW =  document.documentElement.clientWidth || document.body.clientWidth;
+	totalH = document.querySelector('html').scrollHeight - scrH;
+	animate();
+}

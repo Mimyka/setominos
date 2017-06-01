@@ -15,13 +15,11 @@
 *{
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box
+  box-sizing: border-box
 }
 
 html, body{
-  height: 100%;
-  overflow-x: hidden
+  height: 100%
 }
 
 h1,h2{
@@ -393,7 +391,8 @@ header .background{
 ----------------------------------------------------*/
 
 #babystep .piece-container{
-  height: 360px;
+  overflow: hidden;
+  height: 370px;
   width: 100%;
 }
 
@@ -483,6 +482,7 @@ header .background{
 
  --------------------------------------------------*/
 #mecanic .piece-container{
+  overflow: hidden;
   height: 360px;
   width: 100%
 }
