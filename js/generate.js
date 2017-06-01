@@ -59,10 +59,3 @@ generate("#strategy .piece", "strategy3 topL resp", "seto", 3);
 generate("#strategy .piece", "strategy3 resp", "minos", 3);
 generate("#strategy .piece", "strategy3 topR resp", "seto", 3);
 generate("#strategy .piece", "strategy3 top resp", "seto", 4);
-// Modal Minos x1
-generate(".modal-buy .piece", "modalMinos", "minos", 1);
-generate(".modal-mbr .piece", "modalMinos", "minos", 1);
-generate(".modal-ml .piece", "modalMinos", "minos", 1);
-generate(".modal-cgv .piece", "modalMinos", "minos", 1);
-
-

@@ -18,38 +18,3 @@ Element.prototype.removeClass = function(b) {
 Element.prototype.toggleClass = function(a) {
 	this[this.hasClass(a) ? "removeClass" : "addClass"](a);
 };
-
-Element.prototype.modalize = function(arg) {
-  var that = this;
-  arg = arg || {};
-  arg.close = arg.close || that;
-
-  for (var i = 0; i < arg.open.length; i++) {
-    arg.open[i].onclick = function() {
-			that.addClass('open');
-    	change("addClass");
-    }
-  }
-
-  for (var i = 0; i < arg.close.length; i++) {
-    arg.close[i].onclick = function() {
-			that.removeClass('open');
-    	change("removeClass");
-			resetDisplay();
-    }
-  }
-
-	document.querySelector('.overlay').onclick = function() {
-		for (var i = 0; i < document.querySelectorAll('.modal').length; i++) {
-			document.querySelectorAll('.modal')[i].removeClass('open');
-		}
-		change("removeClass");
-		resetDisplay();
-	}
-
-	function change(el) {
-		document.querySelector('.overlay')[el]('open');
-		document.querySelector('html')[el]('hidden');
-		document.querySelector('body')[el]('hidden');
-	}
-}
