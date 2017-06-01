@@ -1,6 +1,32 @@
 var scrH =  document.documentElement.clientHeight || document.body.clientHeight;
 var scrW =  document.documentElement.clientWidth || document.body.clientWidth;
 var totalH = document.querySelector('html').scrollHeight - scrH;
+var posScroll;
+var ctx = {
+	a: getCoordOf(document.querySelector('#babystep .piece')),
+	b: getCoordOf(document.querySelector('#move .piece')),
+	c: getCoordOf(document.querySelector('#mecanic .piece')),
+	d: getCoordOf(document.querySelector('#strategy .piece'))
+};
+
+ctx.ab = {
+	x: ctx.b.x - ctx.a.x,
+	y: ctx.b.y - ctx.a.y
+};
+
+ctx.bc = {
+	x: ctx.c.x - ctx.b.x,
+	y: ctx.c.y - ctx.b.y
+};
+
+ctx.cd = {
+	x: ctx.d.x - ctx.c.x,
+	y: ctx.d.y - ctx.c.y
+};
+
+function getCoordOf(target) {
+	return {x: Number(target.offsetLeft), y: Number(target.offsetTop)}
+}
 
 function styleList(object) {
 	var domTarget = null;
@@ -17,14 +43,22 @@ function styleList(object) {
 	}
 };
 
-// function curve(x, freq, width) {
-// 	return Math.sin(x * freq) * width);
-// }
+function link(obj) {
+	obj.top = obj.top || 0;
+	obj.left = obj.left || 0;
+	if (posScroll >= obj.from.y && posScroll <= obj.to.y ) {
+		alternate = (((posScroll-obj.from.y)/obj.distance.y));
+		styleList({
+			target: document.querySelector(obj.target),
+			css: [['left', (obj.distance.x)*alternate+(obj.left)+'px'],['top', (obj.distance.y)*alternate+(obj.top)+'px']]
+		});
+	}
+}
 
 function animate(x){
-	var posScroll = (document.querySelector('body').scrollTop != 0) ? document.querySelector('body').scrollTop : document.querySelector('html').scrollTop;
+	posScroll = (document.querySelector('body').scrollTop != 0) ? document.querySelector('body').scrollTop : document.querySelector('html').scrollTop;
 	var x = ((posScroll / totalH) * 100).toFixed(2);
-	console.log(x);
+
 	if (window.matchMedia("(min-width: 750px)").matches) {
 		styleList({
 			target: document.querySelector('#mecanic .piece'),
@@ -38,6 +72,34 @@ function animate(x){
 			target: document.querySelector('.seto_move.btmL'),
 			css: [['transform', 'translate(-50%, -50%) rotate(240deg)'],['left', 48+'px']]
 		});
+
+		link({
+			target: '.seto_babystep',
+			from: ctx.a,
+			to: ctx.b,
+			distance: ctx.ab,
+			top: 0,
+			left: 0
+		});
+
+		link({
+			target: '.seto_move.topR',
+			from: ctx.b,
+			to: ctx.c,
+			distance: ctx.bc,
+			top: 200,
+			left: 0
+		});
+
+		link({
+			target: '.seto_mecanic',
+			from: ctx.c,
+			to: ctx.d,
+			distance: ctx.cd,
+			top: 0,
+			left: 0
+		});
+
 	} else {
 		if (x <= 52.5) {
 			styleList({
