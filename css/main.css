@@ -596,6 +596,7 @@ header .background{
 
 #strategy .piece-container{
   height: 250px;
+  overflow: hidden;
   width: 100%
 }
 
