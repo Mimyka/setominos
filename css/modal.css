@@ -9,130 +9,49 @@
  #     # ####### ######  #     # #######
 
 --------------------------------------*/
-
-/*DOING:50 : CSS of modal*/
-
-/*header*/
-
-.modal header{
-  height: 100px
-}
-
-.modal h4{
-  font-family: 'Oxygen', sans-serif;
-  font-size: 16px;
-  line-height: 1.6em;
-  padding-top: 25px
-}
-
-.modal h4 span{
-  display: block;
-  font-size: 24px;
-  line-height: normal;
-  color: #2A9A2A
-}
-
-.modal h5{
-  padding: 20px 0 5px 0;
-  text-align: justify;
-  font-size: 16px
-}
-
-/*body*/
-
-.modal-body{
-  height: calc(100% - 200px);
-  min-height: 200px
-}
-
-.modal form{
-  margin: 40px 0
-}
-
-.modal input{
-  width: 90%;
-  display: block;
-  max-width: 400px;
-  margin: 15px auto;
-  border: none;
-  border-bottom: 2px solid #F60;
-  font-size: 14px
-}
-
-.modal .piece{
-  border: 1px solid red;
-  height: 50px;
-  display: flex;
-  justify-content: center
-}
-
-.modal .piece svg{
+#modal-buy .choice{
+  /*border: 1px solid red;*/
   height: 100%;
-  position: relative
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center
 }
 
-/***** MODAL ACHAT **************************/
-
-.btn-modal div{
-  border: 1px solid red;
+#modal-buy .choice .btn{
+  /*border: 1px solid red;*/
   width: 90%;
-  max-width: 400px;
-  margin: 30px auto;
+  max-width: 390px;
+  margin-top: 40px;
   padding: 10px 0;
-  font-size: 14px;
-  letter-spacing: normal;
-  line-height: 1.4em
+  letter-spacing: normal
 }
 
-.btn-modal span{
-  display: block;
-  font-size: 8px
-}
-
-.btn-discount{
+#modal-buy .choice > div:last-child{
   background-color: #323232
 }
 
-.modal-buy .piece{
-  margin: 20px 0
-}
-
-.modal-buy form{
-  height: 200px;
-  display: none;
-  margin-top: 20px
-}
-
-/***** MODAL MEMBER *************************/
-.modal-mbr .piece{
-  margin: 20px 0
-}
-
-/***** MODAL MENTION LEGAL *****************/
-.modal-ml .piece{
-  height: 40px
-}
-
-.modal-ml li{
-  list-style: none;
-  padding: 5px 0;
-  text-align: justify;
+#modal-buy .btn span{
+  display: block;
   font-size: 14px
 }
 
-.modal-ml p{
-  padding: 5px 0;
-  font-size: 10px
+#modal-buy form{
+  /*border: 1px solid red;*/
+  display: none
 }
 
-/***** MODAL CGV **************************/
-.modal-cgv .piece{
-  height: 40px;
-  margin-bottom: 20px
+#modal-ml h3{
+  padding-top: 25px
 }
 
-.modal-cgv p{
-  padding: 0;
-  text-align: justify;
-  font-size: 12px
+#modal-ml h5{
+  padding: 20px 20px 0 20px;
+  text-transform: uppercase;
+  color: #000
+}
+
+#modal-cgv p{
+  padding: 0 10px;
+  text-align: justify
 }
