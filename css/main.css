@@ -65,6 +65,11 @@ svg{
   position: absolute
 }
 
+.svgDefs{
+  position: absolute;
+  left: -100%
+}
+
 /*-------------------------------------------------------------
 
   #####
@@ -106,26 +111,26 @@ svg{
 }
 
 .resp{
-  display: none;
+  display: none
 }
 
 /*Button*/
 
 .btn{
-  color: #FFF;
-  border: none;
   cursor: pointer;
-  text-align: center;
-  border-radius: 5px;
+  display: inline-block;
   padding: 18px 0;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
   letter-spacing: 0.2em;
   font-family: 'Oxygen', sans-serif;
   background-color: #F3A333;
-  display: inline-block;
+  color: #FFF
 }
 
 .btn-group .btn{
-  width: 45%;
+  width: 45%
 }
 
 .btn-group{
@@ -143,7 +148,7 @@ svg{
 /*piece*/
 
 .piece{
-  position: relative;
+  position: relative
 }
 
 .piece-name{
@@ -157,7 +162,7 @@ svg{
 .piece-container{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center
 }
 
 .top{
@@ -221,48 +226,50 @@ svg{
 
 .cross{
   cursor: pointer;
-  color: #F60;
+  padding-right: 5px;
   font-family: sans-serif;
   font-size: 40px;
   line-height: 1;
+  color: #F60;
 }
 
 /* Content styles */
 .modal-content {
   position: relative;
 	color: #fff;
-	background: #4cb73c;
+	background: #3A9F23;
 	border-radius: 3px;
 	margin: 0 auto;
 }
 
 .modal-content header{
-	background: rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 	padding: 0.4em;
 	margin: 0;
 	border-radius: 3px 3px 0 0;
 	opacity: 0.8;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  background: rgba(0,0,0,0.1)
 }
 
 .modal-content > .modal-header h3{
+  text-align: center;
 	font-family: 'Oxygen', sans-serif;
 	font-size: 22px;
-	font-weight: 200;
+	font-weight: 200
 }
 
 .modal-content > .modal-body{
 	padding: 15px 40px 30px;
 	margin: 0;
 	font-weight: 300;
-	font-size: 20px;
+	font-size: 20px
 }
 
 .modal-content > .modal-body p {
 	margin: 0;
-	padding: 10px 0;
+	padding: 10px 0
 }
 
 .modal-content > .modal-body ul {
@@ -680,12 +687,11 @@ header .background{
 ----------------------------------------------*/
 
 footer{
-  height: 150px;
   background-color: #2A9A2A
 }
 
 footer p{
-  height: 80%;
+  height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -694,7 +700,8 @@ footer p{
   font-size: 14px
 }
 
-.mentions{
+footer .mentions{
+  height: 50px;
   width: 100%;
   display: flex;
   flex-direction: column
