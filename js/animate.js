@@ -72,7 +72,6 @@ function link(obj) {
 function animate(x){
 	posScroll = (document.querySelector('body').scrollTop != 0) ? document.querySelector('body').scrollTop : document.querySelector('html').scrollTop;
 	var x = ((posScroll / totalH) * 100).toFixed(2);
-
 	if (window.matchMedia("(min-width: 750px)").matches) {
 		styleList({
 			target: document.querySelector('#mecanic .piece'),
@@ -111,6 +110,30 @@ function animate(x){
 			});
 		}
 
+		if (x <= 58) {
+			styleList({
+				target: document.querySelector('.seto_mecanic.topL'),
+				css: [['transform', 'translate(-50%, -50%) rotate(-60deg)'],['left', -1600+(x*26.4)+'px'],['top', -840+(x*13.7)+'px']]
+			});
+		}else{
+			styleList({
+				target: document.querySelector('.seto_mecanic.topL'),
+				css: [['transform', 'translate(-50%, -50%) rotate(-60deg)'],['left', -78+'px'],['top', -45+'px']]
+			});
+		}
+
+		if (x >= 60) {
+			styleList({
+				target: document.querySelector('.seto_mecanic.btmL'),
+				css: [['transform', 'translate(-50%, -50%) rotate(240deg)'],['left', 1600-(x*28)+'px'],['top', -840+(x*14.7)+'px']]
+			});
+		}else{
+			styleList({
+				target: document.querySelector('.seto_mecanic.btmL'),
+				css: [['transform', 'translate(-50%, -50%) rotate(240deg)'],['left', -78+'px'],['top', 45+'px']]
+			});
+		}
+
 		link({
 			target: document.querySelector('.minos_babystep'),
 			from: ctx.a,
@@ -121,23 +144,28 @@ function animate(x){
 			transform: 'translate(-50%, -50%) rotate('+(10-(10*document.querySelector('.minos_babystep').alternate))+'deg)',
 			where: 300
 		});
-		// link({
-		// 	target: document.querySelector('.seto_move.topR'),
-		// 	from: ctx.b,
-		// 	to: ctx.c,
-		// 	distance: ctx.bc,
-		// 	top: 200,
-		// 	left: 0
-		// });
-		//
-		// link({
-		// 	target: document.querySelector('.seto_mecanic'),
-		// 	from: ctx.c,
-		// 	to: ctx.d,
-		// 	distance: ctx.cd,
-		// 	top: 0,
-		// 	left: 0
-		// });
+
+		link({
+			target: document.querySelector('.minos_move'),
+			from: ctx.b,
+			to: ctx.c,
+			distance: ctx.bc,
+			top: 85 + document.querySelector('.minos_move').alternate*(-130),
+			left: -123 + document.querySelector('.minos_move').alternate*(245),
+			transform: 'translate(-50%, -50%)',
+			where: 300
+		});
+
+		link({
+			target: document.querySelector('.seto_mecanic3.topL'),
+			from: ctx.c,
+			to: ctx.d,
+			distance: ctx.cd,
+			top: 99 + document.querySelector('.seto_mecanic3.topL').alternate*(-167),
+			left: 171 + document.querySelector('.seto_mecanic3.topL').alternate*(-144),
+			transform: 'translate(-50%, -50%) rotate(-60deg)',
+			where: 200
+		});
 
 	} else {
 		if (x <= 52.5) {
