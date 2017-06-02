@@ -46,11 +46,25 @@ function styleList(object) {
 function link(obj) {
 	obj.top = obj.top || 0;
 	obj.left = obj.left || 0;
-	if (posScroll >= obj.from.y && posScroll <= obj.to.y ) {
-		alternate = (((posScroll-obj.from.y)/obj.distance.y));
+	obj.target.alternate = obj.target.alternate || 0;
+	obj.transform = (obj.transform)?['transform', obj.transform] : [];
+	obj.where = obj.where || 0;
+	if (posScroll+obj.where >= obj.from.y && posScroll+obj.where <= obj.to.y ) {
+		obj.target.alternate = (((posScroll+obj.where-obj.from.y)/obj.distance.y));
 		styleList({
-			target: document.querySelector(obj.target),
-			css: [['left', (obj.distance.x)*alternate+(obj.left)+'px'],['top', (obj.distance.y)*alternate+(obj.top)+'px']]
+			target: obj.target,
+			css: [['left', (obj.distance.x)*obj.target.alternate+(obj.left)+'px'],['top', (obj.distance.y)*obj.target.alternate+(obj.top)+'px'], obj.transform]
+		});
+	}else if (posScroll+obj.where < obj.from.y) {
+		styleList({
+			target: obj.target,
+			css: [['left', (obj.left)+'px'],['top', (obj.top)+'px'], obj.transform]
+		});
+			obj.target.alternate = 0;
+	}else{
+		styleList({
+			target: obj.target,
+			css: [['left', (obj.distance.x)+(obj.left)+'px'],['top', (obj.distance.y)+(obj.top)+'px'], obj.transform]
 		});
 	}
 }
@@ -74,31 +88,32 @@ function animate(x){
 		});
 
 		link({
-			target: '.seto_babystep',
+			target: document.querySelector('.minos_babystep'),
 			from: ctx.a,
 			to: ctx.b,
 			distance: ctx.ab,
-			top: 0,
-			left: 0
+			top: 31 + document.querySelector('.minos_babystep').alternate*(-5),
+			left: 39 + document.querySelector('.minos_babystep').alternate*(-107),
+			transform: 'translate(-50%, -50%) rotate('+(10-(10*document.querySelector('.minos_babystep').alternate))+'deg)',
+			where: 300
 		});
-
-		link({
-			target: '.seto_move.topR',
-			from: ctx.b,
-			to: ctx.c,
-			distance: ctx.bc,
-			top: 200,
-			left: 0
-		});
-
-		link({
-			target: '.seto_mecanic',
-			from: ctx.c,
-			to: ctx.d,
-			distance: ctx.cd,
-			top: 0,
-			left: 0
-		});
+		// link({
+		// 	target: document.querySelector('.seto_move.topR'),
+		// 	from: ctx.b,
+		// 	to: ctx.c,
+		// 	distance: ctx.bc,
+		// 	top: 200,
+		// 	left: 0
+		// });
+		//
+		// link({
+		// 	target: document.querySelector('.seto_mecanic'),
+		// 	from: ctx.c,
+		// 	to: ctx.d,
+		// 	distance: ctx.cd,
+		// 	top: 0,
+		// 	left: 0
+		// });
 
 	} else {
 		if (x <= 52.5) {
