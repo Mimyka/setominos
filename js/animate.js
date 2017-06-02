@@ -135,10 +135,10 @@ function animate(x){
 			});
 		}
 
-		if (x >= 70) {
+		if (x >= 75) {
 			styleList({
 				target: document.querySelector('.seto_strategy2.btmR'),
-				css: [['transform', 'translate(-50%, -50%) rotate(120deg)'],['left', 150+(x*2)+'px'],['top', 30+(x*2)+'px']]
+				css: [['transform', 'translate(-50%, -50%) rotate(120deg)'],['left', -1200+(x*20)+'px'],['top', -730+(x*12)+'px']]
 			});
 		}else{
 			styleList({

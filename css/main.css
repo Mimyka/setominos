@@ -11,6 +11,28 @@
 
 ------------------------------------------------------*/
 
+/*font family*/
+
+@font-face {
+  src: url(../font/ComingSoon.ttf);
+  font-family: 'Coming Soon';
+}
+
+@font-face {
+  src: url(../font/Oxygen-Regular.ttf);
+  font-family: 'Oxygen';
+}
+
+@font-face {
+  src: url(../font/Handlee-Regular.ttf);
+  font-family: 'Handlee';
+}
+
+@font-face {
+  src: url(../font/Raleway-Regular.ttf);
+  font-family: 'Raleway';
+}
+
 /*Basic reset or adjust*/
 *{
   margin: 0;
