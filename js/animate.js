@@ -2,27 +2,28 @@ var scrH =  document.documentElement.clientHeight || document.body.clientHeight;
 var scrW =  document.documentElement.clientWidth || document.body.clientWidth;
 var totalH = document.querySelector('html').scrollHeight - scrH;
 var posScroll;
-var ctx = {
-	a: getCoordOf(document.querySelector('#babystep .piece')),
-	b: getCoordOf(document.querySelector('#move .piece')),
-	c: getCoordOf(document.querySelector('#mecanic .piece')),
-	d: getCoordOf(document.querySelector('#strategy .piece'))
-};
+var ctx;
 
-ctx.ab = {
-	x: ctx.b.x - ctx.a.x,
-	y: ctx.b.y - ctx.a.y
-};
-
-ctx.bc = {
-	x: ctx.c.x - ctx.b.x,
-	y: ctx.c.y - ctx.b.y
-};
-
-ctx.cd = {
-	x: ctx.d.x - ctx.c.x,
-	y: ctx.d.y - ctx.c.y
-};
+function defineCtx() {
+	ctx = {
+		a: getCoordOf(document.querySelector('#babystep .piece')),
+		b: getCoordOf(document.querySelector('#move .piece')),
+		c: getCoordOf(document.querySelector('#mecanic .piece')),
+		d: getCoordOf(document.querySelector('#strategy .piece'))
+	};
+	ctx.ab = {
+		x: ctx.b.x - ctx.a.x,
+		y: ctx.b.y - ctx.a.y
+	};
+	ctx.bc = {
+		x: ctx.c.x - ctx.b.x,
+		y: ctx.c.y - ctx.b.y
+	};
+	ctx.cd = {
+		x: ctx.d.x - ctx.c.x,
+		y: ctx.d.y - ctx.c.y
+	};
+}
 
 function getCoordOf(target) {
 	return {x: Number(target.offsetLeft), y: Number(target.offsetTop)}
@@ -86,10 +87,10 @@ function animate(x){
 			css: [['transform', 'translate(-50%, -50%) rotate(240deg)'],['left', 48+'px']]
 		});
 
-		if (x <= 24.5) {
+		if (x <= 22.5) {
 			styleList({
 				target: document.querySelector('.seto_babystep'),
-				css: [['transform', 'translate(-50%, -50%) rotate(-50deg)'],['left', -680+(x*26)+'px'],['top', -600+(x*23)+'px']]
+				css: [['transform', 'translate(-50%, -50%) rotate('+(120-(x*6))+'deg)'],['left', -680+(x*27)+'px'],['top', -600+(x*24)+'px']]
 			});
 		}else{
 			styleList({
@@ -197,11 +198,14 @@ function animate(x){
 	}
 }
 
+defineCtx();
+
 document.onscroll = animate;
 
 window.onresize = function() {
 	scrH =  document.documentElement.clientHeight || document.body.clientHeight;
 	scrW =  document.documentElement.clientWidth || document.body.clientWidth;
 	totalH = document.querySelector('html').scrollHeight - scrH;
+ 	defineCtx();
 	animate();
 }
