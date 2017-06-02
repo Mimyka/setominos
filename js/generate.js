@@ -32,7 +32,7 @@ generate("#babystep .piece", "babystep", "minos", 5);
 generate("#move .piece", "move btmL", "seto", 6, 7, 7, 9);
 generate("#move .piece", "move topR", "seto", 5, 9, 7, 7);
 // resp
-generate("#move .piece", "move resp", "minos", 5);
+// generate("#move .piece", "move resp", "minos", 5);
 generate("#move .piece", "move btmR resp", "seto", 5, 9, 7, 7);
 generate("#move .piece", "move1 top resp", "seto", 5, 9, 7, 7);
 
