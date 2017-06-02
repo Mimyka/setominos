@@ -25,37 +25,37 @@ generate("#intro .piece-container:first-child .piece", "intro", "seto", 5, 9, 7,
 generate("#intro .piece-container:last-child .piece", "intro", "minos", 5);
 
 // Babystep
-generate("#babystep .piece", "babystep", "seto", 5, 9, 7, 7);
+generate("#babystep .piece", "babystep", "seto", 5, 5, 5, 7);
 generate("#babystep .piece", "babystep", "minos", 5);
 
 // Move
-generate("#move .piece", "move btmL", "seto", 6, 7, 7, 9);
-generate("#move .piece", "move topR", "seto", 5, 9, 7, 7);
+generate("#move .piece", "move btmL", "seto", 9, 8, 6, 1);
+generate("#move .piece", "move topR", "seto", 5, 7, 6, 9);
 // resp
 generate("#move .piece", "move resp", "minos", 5);
 generate("#move .piece", "move btmR resp", "seto", 5, 9, 7, 7);
-generate("#move .piece", "move1 top resp", "seto", 5, 9, 7, 7);
+generate("#move .piece", "move1 top resp", "seto", 5, 5, 5, 7);
 
 // Mecanic
 generate("#mecanic .piece", "mecanic", "setominos", 6);
 // resp
-generate("#mecanic .piece", "mecanic2 btm resp", "seto", 5);
-generate("#mecanic .piece", "mecanic2 btmL resp", "seto", 5);
-generate("#mecanic .piece", "mecanic2 topL resp", "seto", 5);
-generate("#mecanic .piece", "mecanic3 topL resp", "seto", 8);
+generate("#mecanic .piece", "mecanic2 btm resp", "seto", 5, 7, 8, 2);
+generate("#mecanic .piece", "mecanic2 btmL resp", "seto", 5, 2, 9, 3);
+generate("#mecanic .piece", "mecanic2 topL resp", "seto", 5, 3, 4, 5);
+generate("#mecanic .piece", "mecanic3 topL resp", "seto", 8, 6, 1, 5);
 
 // Strategy
-generate("#strategy .piece", "strategy topL", "seto", 8, 9, 5, 8);
-generate("#strategy .piece", "strategy btmR", "seto", 8, 5, 3, 7);
+generate("#strategy .piece", "strategy topL", "seto", 8, 6, 1, 5);
+generate("#strategy .piece", "strategy btmR", "seto", 8, 1, 2, 6);
 // resp
 generate("#strategy .piece", "strategy2 resp", "minos", 7);
-generate("#strategy .piece", "strategy2 topL resp", "seto", 7);
-generate("#strategy .piece", "strategy2 btmL resp", "seto", 7);
-generate("#strategy .piece", "strategy2 btm resp", "seto", 7);
-generate("#strategy .piece", "strategy2 btmR resp", "seto", 7);
+generate("#strategy .piece", "strategy2 topL resp", "seto", 7, 1, 2, 3);
+generate("#strategy .piece", "strategy2 btmL resp", "seto", 7, 3, 3, 1);
+generate("#strategy .piece", "strategy2 btm resp", "seto", 7, 2, 4, 3);
+generate("#strategy .piece", "strategy2 btmR resp", "seto", 7, 7, 5, 2);
 
-generate("#strategy .piece", "strategy3 btmL resp", "seto", 3);
-generate("#strategy .piece", "strategy3 topL resp", "seto", 3);
+generate("#strategy .piece", "strategy3 btmL resp", "seto", 3, 5, 6, 7);
+generate("#strategy .piece", "strategy3 topL resp", "seto", 3, 7, 5, 9);
 generate("#strategy .piece", "strategy3 resp", "minos", 3);
-generate("#strategy .piece", "strategy3 topR resp", "seto", 3);
-generate("#strategy .piece", "strategy3 top resp", "seto", 4);
+generate("#strategy .piece", "strategy3 topR resp", "seto", 3, 7, 3, 1);
+generate("#strategy .piece", "strategy3 top resp", "seto", 4, 9, 4, 7);

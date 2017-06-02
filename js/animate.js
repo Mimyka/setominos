@@ -135,6 +135,18 @@ function animate(x){
 			});
 		}
 
+		if (x >= 70) {
+			styleList({
+				target: document.querySelector('.seto_strategy2.btmR'),
+				css: [['transform', 'translate(-50%, -50%) rotate(120deg)'],['left', 150+(x*2)+'px'],['top', 30+(x*2)+'px']]
+			});
+		}else{
+			styleList({
+				target: document.querySelector('.seto_strategy2.btmR'),
+				css: [['transform', 'translate(-50%, -50%) rotate(120deg)'],['left', 295+'px'],['top', 171+'px']]
+			});
+		}
+
 		link({
 			target: document.querySelector('.minos_babystep'),
 			from: ctx.a,
