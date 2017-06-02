@@ -87,6 +87,30 @@ function animate(x){
 			css: [['transform', 'translate(-50%, -50%) rotate(240deg)'],['left', 48+'px']]
 		});
 
+		if (x <= 24.5) {
+			styleList({
+				target: document.querySelector('.seto_babystep'),
+				css: [['transform', 'translate(-50%, -50%) rotate(-50deg)'],['left', -680+(x*26)+'px'],['top', -600+(x*23)+'px']]
+			});
+		}else{
+			styleList({
+				target: document.querySelector('.seto_babystep'),
+				css: [['transform', 'translate(-50%, -50%) rotate(-50deg)'],['left', -30+'px'],['top', -27+'px']]
+			});
+		}
+
+		if (x <= 42.5) {
+			styleList({
+				target: document.querySelector('.seto_move.btmL'),
+				css: [['transform', 'translate(-50%, -50%) rotate(240deg)'],['left', 2000-(x*46.25)+'px'],['top', -1070+(x*25)+'px']]
+			});
+		}else{
+			styleList({
+				target: document.querySelector('.seto_move.btmL'),
+				css: [['transform', 'translate(-50%, -50%) rotate(240deg)'],['left', 48+'px'],['top', -14+'px']]
+			});
+		}
+
 		link({
 			target: document.querySelector('.minos_babystep'),
 			from: ctx.a,
