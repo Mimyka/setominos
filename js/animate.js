@@ -2,32 +2,6 @@ var scrH =  document.documentElement.clientHeight || document.body.clientHeight;
 var scrW =  document.documentElement.clientWidth || document.body.clientWidth;
 var totalH = document.querySelector('html').scrollHeight - scrH;
 var posScroll;
-var ctx;
-
-function defineCtx() {
-	ctx = {
-		a: getCoordOf(document.querySelector('#babystep .piece')),
-		b: getCoordOf(document.querySelector('#move .piece')),
-		c: getCoordOf(document.querySelector('#mecanic .piece')),
-		d: getCoordOf(document.querySelector('#strategy .piece'))
-	};
-	ctx.ab = {
-		x: ctx.b.x - ctx.a.x,
-		y: ctx.b.y - ctx.a.y
-	};
-	ctx.bc = {
-		x: ctx.c.x - ctx.b.x,
-		y: ctx.c.y - ctx.b.y
-	};
-	ctx.cd = {
-		x: ctx.d.x - ctx.c.x,
-		y: ctx.d.y - ctx.c.y
-	};
-}
-
-function getCoordOf(target) {
-	return {x: Number(target.offsetLeft), y: Number(target.offsetTop)}
-}
 
 function styleList(object) {
 	var domTarget = null;
@@ -44,40 +18,118 @@ function styleList(object) {
 	}
 };
 
-function link(obj) {
-	obj.top = obj.top || 0;
-	obj.left = obj.left || 0;
-	obj.target.alternate = obj.target.alternate || 0;
-	obj.transform = (obj.transform)?['transform', obj.transform] : [];
-	obj.where = obj.where || 0;
-	if (posScroll+obj.where >= obj.from.y && posScroll+obj.where <= obj.to.y ) {
-		obj.target.alternate = (((posScroll+obj.where-obj.from.y)/obj.distance.y));
-		styleList({
-			target: obj.target,
-			css: [['left', (obj.distance.x)*obj.target.alternate+(obj.left)+'px'],['top', (obj.distance.y)*obj.target.alternate+(obj.top)+'px'], obj.transform]
-		});
-	}else if (posScroll+obj.where < obj.from.y) {
-		styleList({
-			target: obj.target,
-			css: [['left', (obj.left)+'px'],['top', (obj.top)+'px'], obj.transform]
-		});
-			obj.target.alternate = 0;
-	}else{
-		styleList({
-			target: obj.target,
-			css: [['left', (obj.distance.x)+(obj.left)+'px'],['top', (obj.distance.y)+(obj.top)+'px'], obj.transform]
-		});
+function linkObject(obj) {
+	var _ = this;
+	_.target = obj.target;
+	_.from = obj.from;
+	_.to = obj.to;
+	_.start = obj.animation.start || {'x':0,'y':0};
+	_.end = obj.animation.end || {'x':0,'y':0};
+	_.onstart = obj.animation.onstart || function(){};
+	_.onprogress = obj.animation.onprogress || function(){};
+	_.onend = obj.animation.onend || function(){};
+
+	// optimise a/b declaration to prepare simple scroll object
+	_.a = {x: (Number(obj.from.offsetLeft) + _.start.x), y: (Number(obj.from.offsetTop) + _.start.y)};
+	_.b = {x: (Number(obj.to.offsetLeft) + _.end.x), y: (Number(obj.to.offsetTop) + _.end.y)};
+	_.ab = {
+		x: _.b.x - _.a.x,
+		y: _.b.y - _.a.y
+	};
+	_.translate = obj.translate || "-50%, -50%";
+	transformValue("rotate", obj.animation.rotate);
+	_.begin = obj.animation.begin || 0;
+
+	function transformValue(trgt, eql) {
+		_[trgt] = eql || {"start":0,"end":0};
+		_[trgt] = (typeof(_[trgt]) == "number")? {"start":_[trgt],"end":_[trgt]} : _[trgt];
 	}
+
+	_.animate = function(y) {
+		var executed = false;
+		y += _.begin;
+		if (y < _.a.y) {
+			_.progress = 0;
+			if(!executed){
+				_.onstart()
+				_.mv();
+			}
+			executed = true;
+		}else if (y >= _.a.y && y <= _.b.y) {
+			_.onprogress();
+			_.progress = (y-_.a.y)/_.ab.y;
+			_.mv();
+			executed = false;
+		}else {
+			_.progress = 1;
+			if(!executed){
+				_.onend()
+				_.mv();
+			}
+			executed = true;
+		}
+	}
+	_.mv = function() {
+		_.target.style.left = ((_.ab.x*_.progress)+(_.start.x))+'px';
+		_.target.style.top = ((_.ab.y*_.progress)+(_.start.y))+'px';
+		_.target.style.transform = "translate("+_.translate+") rotate(" + ((_.rotate.start*(1-_.progress)) + (_.rotate.end*_.progress)) + "deg)";
+	}
+
 }
+
+var toAnimate = [
+	new linkObject({
+		target: document.querySelector('.minos_babystep'),
+		from: document.querySelector('#babystep .piece'),
+		to: document.querySelector('#move .piece'),
+		animation: {
+			begin: 300,
+			start: {"x":39,"y":31},
+			end: {"x":-123,"y":85},
+			rotate: {
+				start: 10,
+				end: 0
+			}
+		}
+	}),
+	new linkObject({
+		target: document.querySelector('.minos_move'),
+		from: document.querySelector('#move .piece'),
+		to: document.querySelector('#mecanic .piece'),
+		animation: {
+			begin: 250,
+			onstart: function() {
+				document.querySelector('.minos_move').style.display = "none";
+				document.querySelector('.minos_babystep').style.display = "";
+			},
+			onprogress: function() {
+				document.querySelector('.minos_move').style.display = "";
+				document.querySelector('.minos_babystep').style.display = "none";
+			},
+			onend: function() {
+				document.querySelector('.minos_move').style.display = "";
+			},
+			start: {"x":-123,"y":85},
+			end: {"x":249,"y":-144}
+		}
+	}),
+	new linkObject({
+		target: document.querySelector('.seto_mecanic3.topL'),
+		from: document.querySelector('#mecanic .piece'),
+		to: document.querySelector('#strategy .piece'),
+		animation: {
+			begin: 200,
+			start: {"x":171,"y":99},
+			end: {"x":-46,"y":-27},
+			rotate: -60
+		}
+	})
+];
 
 function animate(x){
 	posScroll = (document.querySelector('body').scrollTop != 0) ? document.querySelector('body').scrollTop : document.querySelector('html').scrollTop;
 	var x = ((posScroll / totalH) * 100).toFixed(2);
 	if (window.matchMedia("(min-width: 750px)").matches) {
-		styleList({
-			target: document.querySelector('#mecanic .piece'),
-			css: [['transform', 'translate(-75px, 40px) rotate(0deg)']]
-		});
 		styleList({
 			target: document.querySelector('.seto_strategy.topL'),
 			css: [['transform', 'translate(-50%, -50%) rotate(-60deg)'],['left', -46+'px']]
@@ -147,38 +199,9 @@ function animate(x){
 			});
 		}
 
-		link({
-			target: document.querySelector('.minos_babystep'),
-			from: ctx.a,
-			to: ctx.b,
-			distance: ctx.ab,
-			top: 31 + document.querySelector('.minos_babystep').alternate*(-5),
-			left: 39 + document.querySelector('.minos_babystep').alternate*(-107),
-			transform: 'translate(-50%, -50%) rotate('+(10-(10*document.querySelector('.minos_babystep').alternate))+'deg)',
-			where: 300
-		});
-
-		link({
-			target: document.querySelector('.minos_move'),
-			from: ctx.b,
-			to: ctx.c,
-			distance: ctx.bc,
-			top: 85 + document.querySelector('.minos_move').alternate*(-130),
-			left: -123 + document.querySelector('.minos_move').alternate*(245),
-			transform: 'translate(-50%, -50%)',
-			where: 300
-		});
-
-		link({
-			target: document.querySelector('.seto_mecanic3.topL'),
-			from: ctx.c,
-			to: ctx.d,
-			distance: ctx.cd,
-			top: 99 + document.querySelector('.seto_mecanic3.topL').alternate*(-167),
-			left: 171 + document.querySelector('.seto_mecanic3.topL').alternate*(-144),
-			transform: 'translate(-50%, -50%) rotate(-60deg)',
-			where: 200
-		});
+		for (var i = 0; i < toAnimate.length; i++) {
+			toAnimate[i].animate(posScroll);
+		}
 
 	} else {
 		if (x <= 52.5) {
@@ -210,14 +233,11 @@ function animate(x){
 	}
 }
 
-defineCtx();
-
 document.onscroll = animate;
 
 window.onresize = function() {
 	scrH =  document.documentElement.clientHeight || document.body.clientHeight;
 	scrW =  document.documentElement.clientWidth || document.body.clientWidth;
 	totalH = document.querySelector('html').scrollHeight - scrH;
- 	defineCtx();
 	animate();
 }

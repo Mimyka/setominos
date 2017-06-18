@@ -45,7 +45,7 @@ generate("#mecanic .piece", "mecanic2 topL resp", "seto", 5, 3, 4, 5);
 generate("#mecanic .piece", "mecanic3 topL resp", "seto", 8, 6, 1, 5);
 
 // Strategy
-generate("#strategy .piece", "strategy topL", "seto", 8, 6, 1, 5);
+generate("#strategy .piece", "strategy topL resp2", "seto", 8, 6, 1, 5);
 generate("#strategy .piece", "strategy btmR", "seto", 8, 1, 2, 6);
 // resp
 generate("#strategy .piece", "strategy2 resp", "minos", 7);
