@@ -27,6 +27,7 @@ function scrollObject(obj) {
 	_.end = obj.animation.end || {'x':0,'y':0};
 	_.start.unit = (obj.animation.start.unit && obj.animation.start.unit == "%")?"%":"px";
 	_.end.unit = (obj.animation.end.unit && obj.animation.end.unit == "%")?"%":"px";
+	_.reset = obj.reset || "end";
 	if (_.start.unit == "%") {
 		_.start = {x: (obj.animation.start.x/100)*Number(_.from.offsetLeft), y: (obj.animation.start.y/100)*Number(_.from.offsetLeft)};
 	}
@@ -82,6 +83,23 @@ function scrollObject(obj) {
 		_.target.style.top = ((_.ab.y*_.progress)+(_.start.y))+"px";
 		_.target.style.transform = "translate("+_.translate+") rotateZ(" + ((_.rotateZ.start*(1-_.progress)) + (_.rotateZ.end*_.progress)) + "deg) rotateX(" + ((_.rotateX.start*(1-_.progress)) + (_.rotateX.end*_.progress)) + "deg) rotateY(" + ((_.rotateY.start*(1-_.progress)) + (_.rotateY.end*_.progress)) + "deg)";
 	}
+	_.update = function() {
+		if (_.start.unit == "%") {
+			_.start = {x: (obj.animation.start.x/100)*Number(_.from.offsetLeft), y: (obj.animation.start.y/100)*Number(_.from.offsetLeft)};
+		}
+		if (_.end.unit == "%") {
+			_.end = {x: (obj.animation.end.x/100)*Number(_.to.offsetLeft), y: (obj.animation.end.y/100)*Number(_.to.offsetLeft)};
+		}
+		_.a = {x: (Number(_.from.offsetLeft) + _.start.x), y: (Number(_.from.offsetTop) + _.start.y)};
+		_.b = {x: (Number(_.to.offsetLeft) + _.end.x), y: (Number(_.to.offsetTop) + _.end.y)};
+		_.ab = {
+			x: _.b.x - _.a.x,
+			y: _.b.y - _.a.y
+		};
+		_.target.style.left = _[_.reset].x+"px";
+		_.target.style.top = _[_.reset].y+"px";
+		_.target.style.transform = "translate("+_.translate+") rotateZ(" + _.rotateZ[_.reset] + "deg) rotateX(" + _.rotateX[_.reset] + "deg) rotateY(" + _.rotateY[_.reset] + "deg)";
+	}
 
 }
 
@@ -103,6 +121,7 @@ var desktopAnimation = [
 		target: document.querySelector('.minos_babystep'),
 		from: document.querySelector('#babystep .piece'),
 		to: document.querySelector('#move .piece'),
+		reset: "start",
 		animation: {
 			begin: 300,
 			start: {"x":39,"y":31},
@@ -154,6 +173,7 @@ var desktopAnimation = [
 	}),
 	new scrollObject({
 		target: document.querySelector('.seto_mecanic.btmL'),
+		reset: "start",
 		animation: {
 			begin: 300,
 			start: {"x":-78,"y":45},
@@ -212,27 +232,11 @@ function animate(x){
 	posScroll = (document.querySelector('body').scrollTop != 0) ? document.querySelector('body').scrollTop : document.querySelector('html').scrollTop;
 	var x = ((posScroll / totalH) * 100).toFixed(2);
 	if (window.matchMedia("(min-width: 750px)").matches) {
-
-		// improve scrollObject to replace them when media match
-		styleList({
-			target: document.querySelector('.seto_strategy.topL'),
-			css: [['transform', 'translate(-50%, -50%) rotate(-60deg)'],['left', -46+'px']]
-		});
-		styleList({
-			target: document.querySelector('.seto_move.btmL'),
-			css: [['transform', 'translate(-50%, -50%) rotate(240deg)'],['left', 48+'px']]
-		});
-
 		for (var i = 0; i < desktopAnimation.length; i++) {
 			desktopAnimation[i].animate(posScroll);
 		}
-
 	} else {
-		styleList({
-			target: document.querySelector('#mecanic .piece'),
-			css: [['transform', 'rotate('+(x-50)*5+'deg)']]
-		});
-
+		document.querySelector('#mecanic .piece').style.transform = 'rotate('+(x-50)*5+'deg)';
 		for (var i = 0; i < mobileAnimation.length; i++) {
 			mobileAnimation[i].animate(posScroll);
 		}
@@ -245,5 +249,11 @@ window.onresize = function() {
 	scrH =  document.documentElement.clientHeight || document.body.clientHeight;
 	scrW =  document.documentElement.clientWidth || document.body.clientWidth;
 	totalH = document.querySelector('html').scrollHeight - scrH;
+	for (var i = 0; i < mobileAnimation.length; i++) {
+		mobileAnimation[i].update();
+	}
+	for (var i = 0; i < desktopAnimation.length; i++) {
+		desktopAnimation[i].update();
+	}
 	animate();
 }
