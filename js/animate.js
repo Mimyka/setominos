@@ -1,108 +1,7 @@
+//////////////////////////// VARIABLE DEFINITIONS ////////////////////////////
 var scrH =  document.documentElement.clientHeight || document.body.clientHeight;
-var scrW =  document.documentElement.clientWidth || document.body.clientWidth;
 var totalH = document.querySelector('html').scrollHeight - scrH;
 var posScroll;
-
-function styleList(object) {
-	var domTarget = null;
-	for (var prop in object) {
-		if (prop === "target") {
-			domTarget = object[prop];
-		}else if (prop === "css") {
-			if (typeof(domTarget) === "object") {
-				for (cssTab of object[prop]) {
-					domTarget.style[cssTab[0]] = cssTab[1];
-				}
-			}else{console.warn("Unvalid target.");}
-		}else{console.warn("Unvalid argument.");}
-	}
-};
-
-function scrollObject(obj) {
-	var _ = this;
-	_.target = obj.target;
-	_.from = obj.from || obj.target.parentNode;
-	_.to = obj.to || obj.target.parentNode;
-	_.start = obj.animation.start || {'x':0,'y':0};
-	_.end = obj.animation.end || {'x':0,'y':0};
-	_.start.unit = (obj.animation.start.unit && obj.animation.start.unit == "%")?"%":"px";
-	_.end.unit = (obj.animation.end.unit && obj.animation.end.unit == "%")?"%":"px";
-	_.reset = obj.reset || "end";
-	if (_.start.unit == "%") {
-		_.start = {x: (obj.animation.start.x/100)*Number(_.from.offsetLeft), y: (obj.animation.start.y/100)*Number(_.from.offsetLeft)};
-	}
-	if (_.end.unit == "%") {
-		_.end = {x: (obj.animation.end.x/100)*Number(_.to.offsetLeft), y: (obj.animation.end.y/100)*Number(_.to.offsetLeft)};
-	}
-	_.onstart = obj.animation.onstart || function(){};
-	_.onprogress = obj.animation.onprogress || function(){};
-	_.onend = obj.animation.onend || function(){};
-	_.a = {x: (Number(_.from.offsetLeft) + _.start.x), y: (Number(_.from.offsetTop) + _.start.y)};
-	_.b = {x: (Number(_.to.offsetLeft) + _.end.x), y: (Number(_.to.offsetTop) + _.end.y)};
-	_.ab = {
-		x: _.b.x - _.a.x,
-		y: _.b.y - _.a.y
-	};
-	_.translate = obj.translate || "-50%, -50%";
-	transformValue("rotateZ", obj.animation.rotateZ);
-	transformValue("rotateX", obj.animation.rotateX);
-	transformValue("rotateY", obj.animation.rotateY);
-	_.begin = obj.animation.begin || 0;
-
-	function transformValue(trgt, eql) {
-		_[trgt] = eql || {"start":0,"end":0};
-		_[trgt] = (typeof(_[trgt]) == "number")? {"start":_[trgt],"end":_[trgt]} : _[trgt];
-	}
-
-	_.animate = function(y) {
-		var executed = false;
-		y += _.begin;
-		if (y < _.a.y) {
-			_.progress = 0;
-			if(!executed){
-				_.onstart()
-				_.mv();
-			}
-			executed = true;
-		}else if (y >= _.a.y && y <= _.b.y) {
-			_.onprogress();
-			_.progress = (y-_.a.y)/_.ab.y;
-			_.mv();
-			executed = false;
-		}else {
-			_.progress = 1;
-			if(!executed){
-				_.onend()
-				_.mv();
-			}
-			executed = true;
-		}
-	}
-	_.mv = function() {
-		_.target.style.left = ((_.ab.x*_.progress)+(_.start.x))+"px";
-		_.target.style.top = ((_.ab.y*_.progress)+(_.start.y))+"px";
-		_.target.style.transform = "translate("+_.translate+") rotateZ(" + ((_.rotateZ.start*(1-_.progress)) + (_.rotateZ.end*_.progress)) + "deg) rotateX(" + ((_.rotateX.start*(1-_.progress)) + (_.rotateX.end*_.progress)) + "deg) rotateY(" + ((_.rotateY.start*(1-_.progress)) + (_.rotateY.end*_.progress)) + "deg)";
-	}
-	_.update = function() {
-		if (_.start.unit == "%") {
-			_.start = {x: (obj.animation.start.x/100)*Number(_.from.offsetLeft), y: (obj.animation.start.y/100)*Number(_.from.offsetLeft)};
-		}
-		if (_.end.unit == "%") {
-			_.end = {x: (obj.animation.end.x/100)*Number(_.to.offsetLeft), y: (obj.animation.end.y/100)*Number(_.to.offsetLeft)};
-		}
-		_.a = {x: (Number(_.from.offsetLeft) + _.start.x), y: (Number(_.from.offsetTop) + _.start.y)};
-		_.b = {x: (Number(_.to.offsetLeft) + _.end.x), y: (Number(_.to.offsetTop) + _.end.y)};
-		_.ab = {
-			x: _.b.x - _.a.x,
-			y: _.b.y - _.a.y
-		};
-		_.target.style.left = _[_.reset].x+"px";
-		_.target.style.top = _[_.reset].y+"px";
-		_.target.style.transform = "translate("+_.translate+") rotateZ(" + _.rotateZ[_.reset] + "deg) rotateX(" + _.rotateX[_.reset] + "deg) rotateY(" + _.rotateY[_.reset] + "deg)";
-	}
-
-}
-
 
 var desktopAnimation = [
 	new scrollObject({
@@ -228,6 +127,98 @@ var mobileAnimation = [
 	})
 ];
 
+///////////////////////////////// FUNCTIONS /////////////////////////////////
+
+function scrollObject(obj) {
+	var _ = this;
+	_.target = obj.target;
+	_.from = obj.from || obj.target.parentNode;
+	_.to = obj.to || obj.target.parentNode;
+	_.start = obj.animation.start || {'x':0,'y':0};
+	_.end = obj.animation.end || {'x':0,'y':0};
+	_.start.unit = (obj.animation.start.unit && obj.animation.start.unit == "%")?"%":"px";
+	_.end.unit = (obj.animation.end.unit && obj.animation.end.unit == "%")?"%":"px";
+	_.reset = obj.reset || "end";
+	if (_.start.unit == "%") {
+		_.start = {x: (obj.animation.start.x/100)*Number(_.from.offsetLeft), y: (obj.animation.start.y/100)*Number(_.from.offsetLeft)};
+	}
+	if (_.end.unit == "%") {
+		_.end = {x: (obj.animation.end.x/100)*Number(_.to.offsetLeft), y: (obj.animation.end.y/100)*Number(_.to.offsetLeft)};
+	}
+	_.onstart = obj.animation.onstart || function(){};
+	_.onprogress = obj.animation.onprogress || function(){};
+	_.onend = obj.animation.onend || function(){};
+	_.a = {x: (Number(_.from.offsetLeft) + _.start.x), y: (Number(_.from.offsetTop) + _.start.y)};
+	_.b = {x: (Number(_.to.offsetLeft) + _.end.x), y: (Number(_.to.offsetTop) + _.end.y)};
+	_.ab = {
+		x: _.b.x - _.a.x,
+		y: _.b.y - _.a.y
+	};
+	_.translate = obj.translate || "-50%, -50%";
+	tV("rotateZ", obj.animation.rotateZ);
+	tV("rotateX", obj.animation.rotateX);
+	tV("rotateY", obj.animation.rotateY);
+	_.begin = obj.animation.begin || 0;
+
+	function tV(trgt, eql, unit) {
+		_[trgt] = eql || {"start":0,"end":0};
+		_[trgt] = (typeof(_[trgt]) == "number")? {"start":_[trgt],"end":_[trgt]} : _[trgt];
+	}
+
+	function gettV(tV, unit) {
+		unit = unit || "%";
+		return tV + "(" + ((_[tV].start*(1-_.progress)) + (_[tV].end*_.progress)) + unit + ")";
+	}
+
+	_.animate = function(y) {
+		var executed = false;
+		y += _.begin;
+		if (y < _.a.y) {
+			_.progress = 0;
+			if(!executed){
+				_.onstart()
+				_.mv();
+			}
+			executed = true;
+		}else if (y >= _.a.y && y <= _.b.y) {
+			_.progress = (y-_.a.y)/_.ab.y;
+			_.onprogress();
+			_.mv();
+			executed = false;
+		}else {
+			_.progress = 1;
+			if(!executed){
+				_.onend()
+				_.mv();
+			}
+			executed = true;
+		}
+	}
+	_.mv = function() {
+		_.target.style.left = ((_.ab.x*_.progress)+(_.start.x))+"px";
+		_.target.style.top = ((_.ab.y*_.progress)+(_.start.y))+"px";
+		_.target.style.transform = "translate("+_.translate+") " + gettV("rotateZ", "deg") + " " + gettV("rotateX", "deg") + " " + gettV("rotateY", "deg");
+	}
+	_.update = function() {
+		if (_.start.unit == "%") {
+			_.start = {x: (obj.animation.start.x/100)*Number(_.from.offsetLeft), y: (obj.animation.start.y/100)*Number(_.from.offsetLeft)};
+		}
+		if (_.end.unit == "%") {
+			_.end = {x: (obj.animation.end.x/100)*Number(_.to.offsetLeft), y: (obj.animation.end.y/100)*Number(_.to.offsetLeft)};
+		}
+		_.a = {x: (Number(_.from.offsetLeft) + _.start.x), y: (Number(_.from.offsetTop) + _.start.y)};
+		_.b = {x: (Number(_.to.offsetLeft) + _.end.x), y: (Number(_.to.offsetTop) + _.end.y)};
+		_.ab = {
+			x: _.b.x - _.a.x,
+			y: _.b.y - _.a.y
+		};
+		_.target.style.left = _[_.reset].x+"px";
+		_.target.style.top = _[_.reset].y+"px";
+		_.target.style.transform = "translate("+_.translate+") rotateZ(" + _.rotateZ[_.reset] + "deg) rotateX(" + _.rotateX[_.reset] + "deg) rotateY(" + _.rotateY[_.reset] + "deg)";
+	}
+
+}
+
 function animate(x){
 	posScroll = (document.querySelector('body').scrollTop != 0) ? document.querySelector('body').scrollTop : document.querySelector('html').scrollTop;
 	var x = ((posScroll / totalH) * 100).toFixed(2);
@@ -243,11 +234,12 @@ function animate(x){
 	}
 }
 
+/////////////////////////////// EVENT LISTENER ///////////////////////////////
+
 document.onscroll = animate;
 
 window.onresize = function() {
 	scrH =  document.documentElement.clientHeight || document.body.clientHeight;
-	scrW =  document.documentElement.clientWidth || document.body.clientWidth;
 	totalH = document.querySelector('html').scrollHeight - scrH;
 	for (var i = 0; i < mobileAnimation.length; i++) {
 		mobileAnimation[i].update();
@@ -255,5 +247,6 @@ window.onresize = function() {
 	for (var i = 0; i < desktopAnimation.length; i++) {
 		desktopAnimation[i].update();
 	}
+	document.querySelector('#mecanic .piece').style.transform = '';
 	animate();
 }

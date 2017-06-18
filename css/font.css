@@ -1,0 +1,31 @@
+/*------------------------------------*\
+    $FONT
+\*------------------------------------*/
+/**
+ * FONT..............Vous êtes en train de le lire
+ * BASE..............Reset et propriétés de base
+ * COMPONENT.........Les composants réutilisables
+ * KEYFRAMES.........Les keyframes utilisés en version mobile
+ * MAIN..............Style global de la page
+ * PIECE.............Positionnement des pièces et divers effets
+ */
+
+ @font-face {
+  src: url(../font/ComingSoon.ttf);
+  font-family: 'Coming Soon';
+}
+
+@font-face {
+  src: url(../font/Oxygen-Regular.ttf);
+  font-family: 'Oxygen';
+}
+
+@font-face {
+  src: url(../font/Handlee-Regular.ttf);
+  font-family: 'Handlee';
+}
+
+@font-face {
+  src: url(../font/Raleway-Regular.ttf);
+  font-family: 'Raleway';
+}

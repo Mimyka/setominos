@@ -1,777 +1,162 @@
-/*DOING:60 : Clean css and do more reusable component*/
-/*------------------------------------------------------
-
-  #####  ####### #     # ####### ######     #    #
- #     # #       ##    # #       #     #   # #   #
- #       #       # #   # #       #     #  #   #  #
- #  #### #####   #  #  # #####   ######  #     # #
- #     # #       #   # # #       #   #   ####### #
- #     # #       #    ## #       #    #  #     # #
-  #####  ####### #     # ####### #     # #     # #######
-
-------------------------------------------------------*/
-
-/*font family*/
-
-@font-face {
-  src: url(../font/ComingSoon.ttf);
-  font-family: 'Coming Soon';
-}
-
-@font-face {
-  src: url(../font/Oxygen-Regular.ttf);
-  font-family: 'Oxygen';
-}
-
-@font-face {
-  src: url(../font/Handlee-Regular.ttf);
-  font-family: 'Handlee';
-}
-
-@font-face {
-  src: url(../font/Raleway-Regular.ttf);
-  font-family: 'Raleway';
-}
-
-/*Basic reset or adjust*/
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box
-}
-
-html, body{
-  height: 100%
-}
-
-main{
-  overflow: hidden;
-}
-
-h1,h2{
-  position: relative;
-  float: right;
-  padding-right: 10px;
-  text-shadow: 0 0 2px #FFF;
-}
-
-h1{
-  line-height: 1.55em;
-  font-family: 'Coming Soon', cursive;
-  font-size: 36px;
-  color: #259F25;
-  letter-spacing: 0.1em
-}
-
-h2{
-  font-family: 'Handlee', cursive;
-  font-size: 24px;
-  color: #F33;
-  line-height: 1.35em;
-  text-transform: uppercase;
-  letter-spacing: 0.03em
-}
-
-a, span, p{
-  line-height: 1.8em;
-  font-family: 'Oxygen', sans-serif;
-}
-
-p{
-  text-align: center
-}
-
-a, .fa{
-  text-decoration: none
-}
-
-svg{
-  position: absolute
-}
-
-.svgDefs{
-  position: absolute;
-  left: -100%
-}
-
-/*-------------------------------------------------------------
-
-  #####
- #     #  ####  #    # #####   ####  #    # ###### #    # #####
- #       #    # ##  ## #    # #    # ##   # #      ##   #   #
- #       #    # # ## # #    # #    # # #  # #####  # #  #   #
- #       #    # #    # #####  #    # #  # # #      #  # #   #
- #     # #    # #    # #      #    # #   ## #      #   ##   #
-  #####   ####  #    # #       ####  #    # ###### #    #   #
-
--------------------------------------------------------------*/
-
-/*Generic*/
-.open{
-  visibility: visible !important;
-  opacity: 1 !important;
-  display: block;
-}
-
-.line{
-  height: 1px;
-  width: 90%;
-  margin: auto;
-  background-color: #EDE;
-}
-
-.content{
-  padding: 0 20px;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.content:after{
-  content: "";
-  position: absolute;
-  right: 0;
-  height: 60%
-}
-
-.resp{
-  display: none
-}
-
-/*Button*/
-
-.btn{
-  cursor: pointer;
-  display: inline-block;
-  padding: 18px 0;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-  letter-spacing: 0.2em;
-  font-family: 'Oxygen', sans-serif;
-  background-color: #F3A333;
-  color: #FFF
-}
-
-.btn-group .btn{
-  width: 45%
-}
-
-.btn-group{
-  padding: 20px 0px;
-  display: flex;
-  justify-content: space-around
-}
-
-.btn-disabled{
-  cursor: not-allowed;
-  color: #EEE;
-  background-color: #BBB
-}
-
-/*piece*/
-
-.piece{
-  position: relative
-}
-
-.piece-name{
-  font-size: 30px;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-family: 'Handlee', cursive;
-  color: #E55
-}
-
-.piece-container{
-  display: flex;
-  align-items: center;
-  justify-content: center
-}
-
-.top{
-  transform: translate(-50%, -50%);
-}
-
-.topR{
-  transform: translate(-50%, -50%) rotate(60deg);
-}
-
-.btmR{
-  transform: translate(-50%, -50%) rotate(120deg);
-}
-
-.btm{
-  transform: translate(-50%, -50%) rotate(180deg);
-}
-
-.btmL{
-  transform: translate(-50%, -50%) rotate(240deg);
-}
-
-.topL{
-  transform: translate(-50%, -50%) rotate(-60deg);
-}
-
-
-/*Modal*/
-
-/*DOING:50 : CSS of modal*/
-
-.overlay{
-  position: fixed;
-	width: 100%;
-	height: 100%;
-	visibility: hidden;
-	top: 0;
-	left: 0;
-	z-index: 1000;
-	opacity: 0;
-	background-color: rgba(53,53,53,0.65);
-	transition: all 0.3s;
-}
-
-.modal{
-  /*border: 1px solid red;*/
-  position: fixed;
-	top: 50%;
-	left: 50%;
-  min-height: 280px;
-  height: 80%;
-  min-width: 280px;
-	width: 50%;
-  max-width: 630px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-	z-index: 2000;
-	visibility: hidden;
-	backface-visibility: hidden;
-	transform: translate(-50%,-50%);
-}
-
-.cross{
-  /*border: 1px solid red;*/
-  width: 40px;
-  float: right;
-  padding-top: 5px;
-  cursor: pointer;
-  text-align: center;
-  font-family: sans-serif;
-  font-size: 40px;
-  line-height: 1;
-  color: #F60
-}
-
-/* Content styles */
-.modal-content{
-  position: relative;
-  height: 100%;
-  margin: 0 auto;
-  border-radius: 5px;
-	background: #3A9F23;
-  color: #fff
-}
-
-.modal-content header{
-  height: 75px;
-	border-radius: 5px 5px 0 0;
-  background: rgba(0,0,0,0.1)
-}
-
-.modal-content header h3{
-  /*border: 1px solid red;*/
-  width: calc(100% - 40px);
-  display: inline-block;
-  padding-top: 10px;
-  text-align: center;
-	font-family: 'Oxygen', sans-serif;
-	font-size: 22px;
-  line-height: 1.3;
-	font-weight: 200
-}
-
-.modal-content > .modal-body{
-  height: calc(100% - 75px);
-  overflow-y: scroll;
-	font-weight: 300;
-	font-size: 20px
-}
-
-.modal-content > .modal-body p {
-  font-size: 12px
-}
-
-.modal-content > .modal-body ul {
-	margin: 0;
-	padding: 0 0 30px 20px;
-}
-
-.modal-content > .modal-body ul li {
-  list-style: none;
-  font-size: 16px;
-	padding: 5px 0
-}
-
-.modal-content form{
-  /*border: 1px solid red;*/
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center
-}
-
-.modal-content input{
-  width: 90%;
-  max-width: 390px;
-  margin-bottom: 20px;
-  padding: 5px;
-  border: none;
-  border-radius: 2px;
-  font-size: 14px
-}
-
-.modal-content button{
-  width: 70%;
-  max-width: 300px;
-  margin-top: 20px;
-  padding: 12px 0;
-  font-weight: 700;
-}
-
-/*effect*/
-
-.modal .modal-content{
-	transform: scale(0.7);
-	opacity: 0;
-	transition: all 0.3s;
-}
-
-.open.modal .modal-content{
-	transform: scale(1);
-	opacity: 1;
-}
-
-
-/*----------------------------------------------
-
- #     # #######    #    ######  ####### ######
- #     # #         # #   #     # #       #     #
- #     # #        #   #  #     # #       #     #
- ####### #####   #     # #     # #####   ######
- #     # #       ####### #     # #       #   #
- #     # #       #     # #     # #       #    #
- #     # ####### #     # ######  ####### #     #
-
-----------------------------------------------*/
-
-header{
-  position: relative
-}
-
-header .background{
-  height: 300px;
-  background-image: url(../img/home1.jpg);
-  background-position: -210px -80px;
-  background-size: 800px;
-  padding: 2px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end
-}
-
-/*----------------------------------
-
- ### #     # ####### ######  #######
-  #  ##    #    #    #     # #     #
-  #  # #   #    #    #     # #     #
-  #  #  #  #    #    ######  #     #
-  #  #   # #    #    #   #   #     #
-  #  #    ##    #    #    #  #     #
- ### #     #    #    #     # #######
-
-----------------------------------*/
+/*------------------------------------*\
+    $MAIN
+\*------------------------------------*/
+/**
+ * MAIN..............Vous êtes en train de le lire
+ * BASE..............Reset et propriétés de base
+ * COMPONENT.........Les composants réutilisables
+ * FONT..............Les polices de caractère
+ * KEYFRAMES.........Les keyframes utilisés en version mobile
+ * PIECE.............Positionnement des pièces et divers effets
+ */
 
 #intro .piece-container{
   height: 200px;
   justify-content: space-around
 }
 
-/*Pieces*/
-#intro .piece-container .piece:after{
-  content: "";
-  position: absolute;
-  height: 5px;
-  width: 5px;
-  z-index: -1;
-  left: -100%;
-  top: 100%;
-}
-
-#intro .piece-container:first-child .piece:after{
-  box-shadow: 170px 30px 65px 35px #888;
-}
-
-#intro .piece-container:last-child .piece:after{
-  box-shadow: 100px 30px 40px 20px #888;
-}
-
-#intro .piece-container:first-child .piece {
-  animation: 3.2s infinite alternate ease-in-out gravity1;
-}
-
-#intro .piece-container:last-child .piece{
-  animation: 2.8s infinite alternate ease-in-out gravity2 ;
-  order: -1;
-}
-
-.seto_intro{
-  position: relative;
-  transform: rotate(30deg)
-}
-
-.minos_intro{
-  position: relative;
-  transform: rotate(-30deg)
-}
-
-@keyframes gravity1 {
-  0% { top: -7px; transform: rotate(0deg) rotateY(-10deg) rotateX(10deg);}
-  100% { top: 8px; transform: rotate(4deg) rotateY(-30deg) rotateX(12deg);}
-}
-
-@keyframes gravity2 {
-  0% { top: -10px; transform: rotate(0deg) rotateY(-10deg) rotateX(-15deg);}
-  100% { top: 10px; transform: rotate(-5deg) rotateY(-25deg) rotateX(-30deg);}
-}
-
-/*----------------------------------------------------
-
- #####    ##   #####  #   #  ####  ##### ###### #####
- #    #  #  #  #    #  # #  #        #   #      #    #
- #####  #    # #####    #    ####    #   #####  #    #
- #    # ###### #    #   #        #   #   #      #####
- #    # #    # #    #   #   #    #   #   #      #
- #####  #    # #####    #    ####    #   ###### #
-
-----------------------------------------------------*/
-
 #babystep .piece-container{
   height: 370px;
   width: 100%;
 }
-
-.seto_babystep{
-  top: -27px;
-  left: -30px;
-  transform: translate(-50%, -50%) rotate(-50deg);
-  animation: 4.5s infinite ease-in-out clock;
-}
-
-@keyframes clock {
-  0% { top: -27px; left:-30px; transform: translate(-50%, -50%) rotate(-50deg);}
-  16.6666%{top: 62px; left:-45px; transform: translate(-50%, -50%) rotate(-110deg);}
-  33.3333%{top: 119px; left:23px; transform: translate(-50%, -50%) rotate(-170deg);}
-  50%{top: 88px; left:108px; transform: translate(-50%, -50%) rotate(130deg);}
-  66.6666%{top: 0px; left:124px; transform: translate(-50%, -50%) rotate(70deg);}
-  83.3333%{top: -58px; left:55px; transform: translate(-50%, -50%) rotate(10deg);}
-  100% {top: -27px; left:-30px; transform: translate(-50%, -50%) rotate(-50deg); }
-}
-
-.minos_babystep{
-  top: 31px;
-  left: 39px;
-  transform: translate(-50%, -50%) rotate(10deg);
-  animation: 2.25s infinite 1.75s alternate ease pulse;
-}
-
-@keyframes pulse{
-  0%{transform: translate(-50%, -50%) scale(0.9, 0.9) rotate(10deg);}
-  12%{transform: translate(-50%, -50%) rotate(10deg);}
-  100%{transform: translate(-50%, -50%) rotate(10deg);}
-}
-
-/*---------------------------
-
- #     #
- ##   ##  ####  #    # ######
- # # # # #    # #    # #
- #  #  # #    # #    # #####
- #     # #    # #    # #
- #     # #    #  #  #  #
- #     #  ####    ##   ######
-
----------------------------*/
 
 #move .piece-container{
   height: 220px;
   width: 100%;
 }
 
-.seto_move.btmL{
-  top: -14px;
-  left: 48px;
-}
-
-.seto_move.topR{
-  top: 40px;
-  left: -45px;
-}
-
-.minos_move{
-  top: 85px;
-  left: -123px;
-  transform: translate(-50%, -50%);
-}
-
-.seto_move1.top{
-  top: -5px;
-  left: -123px;
-}
-
-
-.seto_move.btmR{
-  top: 130px;
-  left: -45px;
-}
-
-/*--------------------------------------------------
-
- #     # #######  #####     #    #     # ###  #####
- ##   ## #       #     #   # #   ##    #  #  #     #
- # # # # #       #        #   #  # #   #  #  #
- #  #  # #####   #       #     # #  #  #  #  #
- #     # #       #       ####### #   # #  #  #
- #     # #       #     # #     # #    ##  #  #     #
- #     # #######  #####  #     # #     # ###  #####
-
- --------------------------------------------------*/
 #mecanic .piece-container{
   height: 360px;
   width: 100%
 }
-
-/*setominos*/
-
-.minos_mecanic{
-  top: 0px;
-  left: 0px;
-  transform: translate(-50%, -50%);
-}
-
-.seto_mecanic.top{
-  top: -90px;
-  left: 0px;
-}
-.seto_mecanic.topR{
-  top: -45px;
-  left: 78px;
-}
-.seto_mecanic.btmR{
-  top: 45px;
-  left: 78px;
-}
-.seto_mecanic.btm{
-  top: 90px;
-  left: 0px;
-}
-.seto_mecanic.btmL{
-  top: 45px;
-  left: -78px;
-}
-.seto_mecanic.topL{
-  top: -45px;
-  left: -78px;
-}
-
-/*other piece*/
-
-.seto_mecanic2.btm{
-  top: -54px;
-  left: 249px;
-}
-.seto_mecanic2.btmL{
-  top: -99px;
-  left: 171px;
-}
-.seto_mecanic2.topL{
-  top: -189px;
-  left: 171px;
-}
-
-.seto_mecanic3.topL{
-  top: 99px;
-  left: 171px;
-}
-
-
-/*--------------------------------------------------------------
-
-  #####  ####### ######     #    ####### #######  #####  #     #
- #     #    #    #     #   # #      #    #       #     #  #   #
- #          #    #     #  #   #     #    #       #         # #
-  #####     #    ######  #     #    #    #####   #  ####    #
-       #    #    #   #   #######    #    #       #     #    #
- #     #    #    #    #  #     #    #    #       #     #    #
-  #####     #    #     # #     #    #    #######  #####     #
-
---------------------------------------------------------------*/
 
 #strategy .piece-container{
   height: 250px;
   width: 100%
 }
 
-.seto_strategy.topL{
-  top: -27px;
-  left: -46px;
-}
-
-.seto_strategy.btmR{
-  top: 27px;
-  left: 46px;
-}
-
-/*resp*/
-
-.minos_strategy2{
-  top: 126px;
-  left: 217px;
-  transform: translate(-50%, -50%);
-}
-
-.seto_strategy2.topL{
-  top: 81px;
-  left: 139px;
-}
-
-.seto_strategy2.btmL{
-  top: 171px;
-  left: 139px;
-}
-
-.seto_strategy2.btm{
-  top: 216px;
-  left: 217px;
-}
-
-.seto_strategy2.btmR{
-  top: 171px;
-  left: 295px;
-}
-
-.minos_strategy3{
-  top: 270px;
-  left: -33px;
-  transform: translate(-50%, -50%);
-}
-
-.seto_strategy3.top{
-  top: 323px;
-  left: 217px;
-}
-
-.seto_strategy3.topR{
-  top: 224px;
-  left: 45px;
-}
-
-.seto_strategy3.topL{
-  top: 224px;
-  left: -111px;
-}
-
-.seto_strategy3.btmL{
-  top: 314px;
-  left: -111px;
-}
-
-
-/*------------------------------------------------------
-
-  #####  ####### #     # #######    #     #####  #######
- #     # #     # ##    #    #      # #   #     #    #
- #       #     # # #   #    #     #   #  #          #
- #       #     # #  #  #    #    #     # #          #
- #       #     # #   # #    #    ####### #          #
- #     # #     # #    ##    #    #     # #     #    #
-  #####  ####### #     #    #    #     #  #####     #
-
-------------------------------------------------------*/
-
 #contact .content{
   text-align: center;
   padding: 15px 20px
 }
 
-.follow{
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around
-}
+/*------------------------------------*\
+    $RESPONSIVE
+\*------------------------------------*/
 
-.btn-mbr{
-  width: 260px;
-  align-self: center;
-  background-color: #2A9A2A
-}
 
-.social{
-  display: flex;
-  justify-content: space-around;
-  align-items: center
-}
 
-.fa-facebook-square{
-  color: #3B5998
-}
+@media screen and (min-width: 750px) {
+  #intro{
+    display: block
+  }
 
-.fa-twitter-square{
-  color: #1DA1F2
-}
+  #intro .piece-container{
+    height: 200px;
+    width: 62.5%;
+  }
 
-/*----------------------------------------------
+  #intro .piece-container:first-child{
+    float: right;
+  }
 
- ####### ####### ####### ####### ####### ######
- #       #     # #     #    #    #       #     #
- #       #     # #     #    #    #       #     #
- #####   #     # #     #    #    #####   ######
- #       #     # #     #    #    #       #   #
- #       #     # #     #    #    #       #    #
- #       ####### #######    #    ####### #     #
+  #intro .content{
+    width: 37.5%;
+    height: 400px;
+    float: left;
+  }
 
-----------------------------------------------*/
+  #intro .content:after{
+    border-right: 1px solid #EDE
+  }
 
-footer{
-  background-color: #2A9A2A
-}
+  #babystep{
+    height: 500px
+  }
 
-footer p{
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 20px;
-  text-align: center;
-  font-size: 14px
-}
+  #babystep .content{
+    height: 200px;
+    width: 37.5%;
+    border-left: 1px solid #EDE;
+    order: 1
+  }
 
-footer .mentions{
-  height: 50px;
-  width: 100%;
-  display: flex;
-  flex-direction: column
-}
+  #babystep .piece-container{
+    width: 62.5%
+  }
 
-footer span{
-  text-align: center;
-  font-size: 12px
-}
+  #move{
+    height: 600px
+  }
 
-footer a{
-  cursor: pointer;
-  color: #EEE;
-  text-decoration: none
+  #move .piece-container{
+    width: 62.5%
+  }
+
+  #move .piece{
+    left: 55px;
+    top: -60px
+  }
+
+  #move .content{
+    height: 200px;
+    width: 37.5%;
+    border-right: 1px solid #EDE
+  }
+
+  #mecanic{
+    height: 650px
+  }
+
+  #mecanic .piece-container{
+    width: 62.5%
+  }
+
+  #mecanic .piece{
+    left: -75px;
+    top: 40px
+  }
+
+  #mecanic .content{
+    height: 250px;
+    width: 37.5%;
+    border-left: 1px solid #EDE;
+    order: 1
+  }
+
+  #strategy{
+    height: 400px
+  }
+
+  #strategy .piece-container{
+    width: 62.5%
+  }
+
+  #strategy .content{
+    height: 200px;
+    width: 37.5%;
+    border-right: 1px solid #EDE
+  }
+
+  #contact{
+    flex-direction: column;
+    align-items: flex-start
+  }
+
+  #contact .background{
+    height: 500px;
+    width: 100%;
+    background-image: url(../img/contact2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1
+  }
+
+  #contact .content{
+    display: none
+  }
+
 }
