@@ -71,7 +71,7 @@
   }
 
   #babystep{
-    height: 500px
+    height: 320px
   }
 
   #babystep .content{
@@ -86,7 +86,7 @@
   }
 
   #move{
-    height: 600px
+    height: 500px
   }
 
   #move .piece-container{
@@ -105,7 +105,7 @@
   }
 
   #mecanic{
-    height: 650px
+    height: 500px
   }
 
   #mecanic .piece-container{
