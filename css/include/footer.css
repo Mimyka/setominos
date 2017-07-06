@@ -1,0 +1,42 @@
+footer{
+  background-color: #2A9A2A
+}
+
+footer p{
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 14px
+}
+
+footer .mentions{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column
+}
+
+footer span{
+  text-align: center;
+  font-size: 12px
+}
+
+footer a{
+  cursor: pointer;
+  color: #EEE;
+  text-decoration: none
+}
+
+@media screen and (min-width: 750px) {
+  footer .mentions{
+    flex-direction: row;
+    justify-content: center
+  }
+
+  footer span:first-child{
+    padding-right: 10px
+  }
+}

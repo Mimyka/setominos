@@ -10,11 +10,19 @@
 
   <title>SétoMinos, le nouveau défi des jeux de société !</title>
 
+  <link rel="stylesheet" href="./css/base.css">
+
+  <link rel="stylesheet" href="./css/component.css">
+  <link rel="stylesheet" href="./css/keyframes.css">
+  <link rel="stylesheet" href="./css/font.css">
+
+  <link rel="stylesheet" href="./css/include/header.css">
   <link rel="stylesheet" href="./css/main.css">
-  <link rel="stylesheet" href="./css/modal.css">
-  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="./css/piece.css">
+  <link rel="stylesheet" href="./css/include/footer.css">
+  <link rel="stylesheet" href="./css/include/modal.css">
+
   <link rel="stylesheet" href="./fontAwesome/css/font-awesome.min.css">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Oxygen|Raleway|Coming+Soon|Handlee" rel="stylesheet"> -->
 
 </head>
 
@@ -23,7 +31,7 @@
   <svg class="svgDefs">
   <defs>
     <pattern id="pattern" patternUnits="userSpaceOnUse" height="100" width="100">
-      <image x="0" y="0" height="170" width="170" xlink:href="./img/patternPiece2.jpg"></image>
+      <image x="0" y="0" height="170" width="170" xlink:href="./img/patternPiece.jpg"></image>
     </pattern>
   </defs>
   </svg>
@@ -38,7 +46,7 @@
         </div>
         <div class="btn-group">
           <div class="btn-disabled btn">
-            Essayer
+            Jouez
           </div>
           <div class="btn modal-trigger" data-modal="modal-buy">
             Achetez
@@ -69,7 +77,7 @@
 
     <section id="babystep">
       <div class="content">
-        <p>Assemblez les Sétos de même couleur à leur bon Minos et reconstituez les 9 rosaces de couleur appelés SétoMinos.</p>
+        <p>Assemblez les Sétos de même couleur à leur bon Minos et reconstituez les 9 rosaces de couleur appelées SétoMinos.</p>
       </div>
       <div class="piece-container">
         <div class="piece">
@@ -80,7 +88,7 @@
 
     <section id="move">
       <div class="content">
-        <p>Les Sétos peuvent se lier entre eux par leur extrémité extérieur si les chiffres sont de même valeur.</p>
+        <p>Les Sétos peuvent se lier entre eux par leur extrémité extérieure si les chiffres sont de même valeur.</p>
       </div>
       <div class="piece-container">
         <div class="piece">
@@ -91,7 +99,7 @@
 
     <section id="mecanic">
       <div class="content">
-        <p>Finissez une rosace, dites "SétoMinos" et gagnez 100 pts bonus. Ce jeu intéractif recèle d'autres bonus de taille.</p>
+        <p>Finissez une rosace, dites "SétoMinos" et gagnez 100 points bonus. Ce jeu intéractif recèle d'autres bonus de taille.</p>
       </div>
       <div class="piece-container">
         <div class="piece">
@@ -117,7 +125,7 @@
       <div class="background">
         <div class="btn-group">
           <div class="btn btn-disabled">
-            Essayer
+            Jouez
           </div>
           <div class="btn modal-trigger" data-modal="modal-buy">
             Achetez

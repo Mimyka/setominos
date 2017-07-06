@@ -1,0 +1,103 @@
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+/**
+ * BASE..............Vous êtes en train de le lire
+ * COMPONENT.........Les composants réutilisables
+ * FONT..............Les polices de caractère
+ * KEYFRAMES.........Les keyframes utilisés en version mobile
+ * MAIN..............Style global de la page
+ * PIECE.............Positionnement des pièces et divers effets
+ */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+html, body{
+  height: 100%
+}
+
+main{
+  overflow: hidden;
+  background-image: url(../img/background_mobile.jpg);
+  background-size: cover;
+}
+
+h1,h2{
+  position: relative;
+  float: right;
+  padding-right: 10px;
+  text-shadow: 0 0 2px #FFF;
+}
+
+h1{
+  line-height: 1.55em;
+  font-family: 'Coming Soon', cursive;
+  font-size: 36px;
+  color: #259F25;
+  letter-spacing: 0.1em
+}
+
+h2{
+  font-family: 'Handlee', cursive;
+  font-size: 24px;
+  color: #F33;
+  line-height: 1.35em;
+  text-transform: uppercase;
+  letter-spacing: 0.03em
+}
+
+a, span, p{
+  line-height: 1.8em;
+  font-family: 'Oxygen', sans-serif;
+}
+
+p{
+  text-align: center
+}
+
+a, .fa{
+  text-decoration: none
+}
+
+svg{
+  position: absolute
+}
+
+.svgDefs{
+  position: absolute;
+  left: -100%
+}
+
+.fa-facebook-square{
+  color: #3B5998
+}
+
+.fa-twitter-square{
+  color: #1DA1F2
+}
+
+/*------------------------------------*\
+    $RESPONSIVE
+\*------------------------------------*/
+
+
+
+@media screen and (min-width: 750px) {
+  main{
+    background-image: url(../img/background.jpg);
+  }
+  
+  p{
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    line-height: 36px;
+  }
+
+  section{
+    display: flex;
+    align-items: center
+  }
+}
