@@ -25,24 +25,15 @@ var ModalEffects = (function() {
 
 })();
 
-var choice = document.querySelector('#modal-buy .choice');
 var form1 = document.querySelector('#modal-buy .form_part1');
 var form2 = document.querySelector('#modal-buy .form_part2');
 
-choice.querySelector('.btn').onclick = function() {
-  choice.style.display = "none";
-  form1.style.display = "flex";
-  form2.style.display = "none";
-}
-
 form1.querySelector('.btn').onclick = function() {
-  choice.style.display = "none";
   form1.style.display = "none";
   form2.style.display = "flex";
 }
 
 function resetDisplay() {
-  choice.style.display = "flex";
-  form1.style.display = "none";
+  form1.style.display = "flex";
   form2.style.display = "none";
 }
