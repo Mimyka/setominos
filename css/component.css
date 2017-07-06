@@ -90,8 +90,6 @@
     $PIECE
 \*------------------------------------*/
 
-
-
 .resp{
   display: none
 }
@@ -139,11 +137,10 @@
   transform: translate(-50%, -50%) rotate(-60deg)
 }
 
+
 /*------------------------------------*\
     $MODAL
 \*------------------------------------*/
-
-
 
 .overlay{
   position: fixed;
@@ -159,7 +156,6 @@
 }
 
 .modal{
-  /*border: 1px solid red;*/
   position: fixed;
 	top: 50%;
 	left: 50%;
@@ -177,7 +173,6 @@
 }
 
 .cross{
-  /*border: 1px solid red;*/
   width: 40px;
   float: right;
   padding-top: 5px;
@@ -206,7 +201,6 @@
 }
 
 .modal-content header h3{
-  /*border: 1px solid red;*/
   width: calc(100% - 40px);
   display: inline-block;
   padding-top: 10px;
