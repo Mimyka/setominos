@@ -54,11 +54,15 @@ a, span, p{
   font-family: 'Oxygen', sans-serif;
 }
 
+a{
+  cursor: pointer
+}
+
 p{
   text-align: center
 }
 
-a, .fa{
+.fa{
   text-decoration: none
 }
 
@@ -89,7 +93,7 @@ svg{
   main{
     background-image: url(../img/background.jpg);
   }
-  
+
   p{
     font-family: 'Raleway', sans-serif;
     font-size: 22px;
