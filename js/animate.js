@@ -8,6 +8,12 @@ var desktopAnimation = [
 		target: document.querySelector('.seto_babystep'),
 		animation: {
 			begin: 400,
+			onprogress: function() {
+				onMove(document.querySelector('#babystep .piece-container'));
+			},
+			onend: function() {
+				finishMove(document.querySelector('#babystep .piece-container'));
+			},
 			start: {"x":-140,"y":-90,"unit":"%"},
 			end: {"x":-30,"y":-27},
 			rotateZ: {
@@ -17,48 +23,27 @@ var desktopAnimation = [
 		}
 	}),
 	new scrollObject({
-		target: document.querySelector('.minos_babystep'),
-		from: document.querySelector('#babystep .piece'),
-		to: document.querySelector('#move .piece'),
-		reset: "start",
-		animation: {
-			begin: 300,
-			start: {"x":39,"y":31},
-			end: {"x":-123,"y":85},
-			rotateZ: {
-				start: 10,
-				end: 0
-			}
-		}
-	}),
-	new scrollObject({
-		target: document.querySelector('.minos_move'),
-		from: document.querySelector('#move .piece'),
-		to: document.querySelector('#mecanic .piece'),
-		animation: {
-			begin: 250,
-			onstart: function() {
-				document.querySelector('.minos_move').style.display = "none";
-				document.querySelector('.minos_babystep').style.display = "";
-			},
-			onprogress: function() {
-				document.querySelector('.minos_move').style.display = "";
-				document.querySelector('.minos_babystep').style.display = "none";
-			},
-			onend: function() {
-				document.querySelector('.minos_move').style.display = "";
-			},
-			start: {"x":-123,"y":85},
-			end: {"x":249,"y":-144}
-		}
-	}),
-	new scrollObject({
-		target: document.querySelector('.seto_move.btmL'),
+		target: document.querySelector('.seto_move.btmR'),
 		animation: {
 			begin: 200,
+			onprogress: function() {
+				onMove(document.querySelector('#move .piece-container'));
+			},
+			onend: function() {
+				finishMove(document.querySelector('#move .piece-container'));
+			},
+			start: {"x":-150,"y":-85,"unit":"%"},
+			end: {"x":-158,"y":-14},
+			rotateZ: 120
+		}
+	}),
+	new scrollObject({
+		target: document.querySelector('.seto_move2.topR'),
+		animation: {
+			begin: 380,
 			start: {"x":140,"y":-60,"unit":"%"},
-			end: {"x":48,"y":-14},
-			rotateZ: 240
+			end: {"x":91,"y":40},
+			rotateZ: 60
 		}
 	}),
 	new scrollObject({
@@ -217,6 +202,18 @@ function scrollObject(obj) {
 		_.target.style.transform = "translate("+_.translate+") rotateZ(" + _.rotateZ[_.reset] + "deg) rotateX(" + _.rotateX[_.reset] + "deg) rotateY(" + _.rotateY[_.reset] + "deg)";
 	}
 
+}
+
+function finishMove(target) {
+	target.style.opacity = 0.75;
+	target.style.filter = "grayscale(.6)";
+	target.style.transform = "scale(.95,.95)";
+}
+
+function onMove(target) {
+	target.style.opacity = "";
+	target.style.filter = "";
+	target.style.transform = "";
 }
 
 function animate(x){

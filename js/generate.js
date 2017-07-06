@@ -39,12 +39,15 @@ generate("#babystep .piece", "babystep", "seto", 5, 5, 5, 7);
 generate("#babystep .piece", "babystep", "minos", 5);
 
 // Move
-generate("#move .piece", "move btmL", "seto", 9, 8, 6, 1);
-generate("#move .piece", "move topR", "seto", 5, 7, 6, 9);
+generate("#move .piece", "move btmL resp2", "seto", 9, 8, 6, 1);
+generate("#move .piece", "move topR resp2", "seto", 5, 7, 6, 9);
 // resp
 generate("#move .piece", "move resp", "minos", 5);
-generate("#move .piece", "move btmR resp", "seto", 5, 9, 7, 7);
-generate("#move .piece", "move1 top resp", "seto", 5, 5, 5, 7);
+generate("#move .piece", "move btmR resp", "seto", 9, 9, 5, 8);
+generate("#move .piece", "move btmL resp", "seto", 5, 3, 4, 5);
+generate("#move .piece", "move top resp", "seto", 5, 7, 6, 9);
+generate("#move .piece", "move topL resp", "seto", 5, 5, 5, 7);
+generate("#move .piece", "move2 topR resp", "seto", 5, 9, 7, 7);
 
 // Mecanic
 generate("#mecanic .piece", "mecanic", "setominos", 6);

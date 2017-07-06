@@ -108,6 +108,7 @@
 
 .piece-container{
   width: 100%;
+  transition: opacity 1s, filter 1s, transform 1s;
   display: flex;
   align-items: center;
   justify-content: center

@@ -74,8 +74,18 @@
 
 
 .seto_move.btmL{
-  top: -14px;
-  left: 48px;
+  top: 130px;
+  left:-65px;
+}
+
+.seto_move.top{
+  top: -5px;
+  left: 13px;
+}
+
+.seto_move.topL{
+  top: 40px;
+  left: -65px;
 }
 
 .seto_move.topR{
@@ -83,21 +93,20 @@
   left: -45px;
 }
 
+.seto_move2.topR{
+  top: 40px;
+  left: 91px;
+}
+
 .minos_move{
   top: 85px;
-  left: -123px;
+  left: 13px;
   transform: translate(-50%, -50%);
 }
 
-.seto_move1.top{
-  top: -5px;
-  left: -123px;
-}
-
-
 .seto_move.btmR{
-  top: 130px;
-  left: -45px;
+  top: -14px;
+  left:-158px;
 }
 
 /*------------------------------------*\
