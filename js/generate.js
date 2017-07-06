@@ -20,9 +20,19 @@ function generate(location, haveClass, type, number, numberLeft, numberTop, numb
 	}
 }
 
+var rndTable = [2,3,4,5];
+
+var rand0 = rndTable[Math.floor(Math.random()*rndTable.length)];
+var rand1 = rndTable[Math.floor(Math.random()*rndTable.length)];
+while(rand1 == rand0){
+	rand1 = rndTable[Math.floor(Math.random()*rndTable.length)];
+}
+document.querySelector('#intro .piece-container:first-child .piece-name').style.color = fill_colors[rand0-1];
+document.querySelector('#intro .piece-container:last-child .piece-name').style.color = fill_colors[rand1-1];
+
 // Intro Séto x1 & Minos x1
-generate("#intro .piece-container:first-child .piece", "intro", "seto", 5, 9, 7, 7);
-generate("#intro .piece-container:last-child .piece", "intro", "minos", 5);
+generate("#intro .piece-container:first-child .piece", "intro", "seto", rand0, 9, 7, 7);
+generate("#intro .piece-container:last-child .piece", "intro", "minos", rand1);
 
 // Babystep
 generate("#babystep .piece", "babystep", "seto", 5, 5, 5, 7);
