@@ -269,7 +269,7 @@
 .modal .modal-content{
 	transform: scale(0.7);
 	opacity: 0;
-	transition: all 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
 }
 
 .open.modal .modal-content{
@@ -295,7 +295,7 @@
   .piece-container{
     width: 62.5%
   }
-  
+
   .resp{
     display: block;
   }
