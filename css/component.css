@@ -13,21 +13,21 @@
  .open{
   visibility: visible !important;
   opacity: 1 !important;
-  display: block;
+  display: block
 }
 
 .line{
   height: 1px;
   width: 90%;
   margin: auto;
-  background-color: #EDE;
+  background-color: #EDE
 }
 
 .content{
   padding: 0 20px;
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: center
 }
 
 .follow{
@@ -116,27 +116,27 @@
 }
 
 .top{
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%)
 }
 
 .topR{
-  transform: translate(-50%, -50%) rotate(60deg);
+  transform: translate(-50%, -50%) rotate(60deg)
 }
 
 .btmR{
-  transform: translate(-50%, -50%) rotate(120deg);
+  transform: translate(-50%, -50%) rotate(120deg)
 }
 
 .btm{
-  transform: translate(-50%, -50%) rotate(180deg);
+  transform: translate(-50%, -50%) rotate(180deg)
 }
 
 .btmL{
-  transform: translate(-50%, -50%) rotate(240deg);
+  transform: translate(-50%, -50%) rotate(240deg)
 }
 
 .topL{
-  transform: translate(-50%, -50%) rotate(-60deg);
+  transform: translate(-50%, -50%) rotate(-60deg)
 }
 
 /*------------------------------------*\
@@ -155,7 +155,7 @@
 	z-index: 1000;
 	opacity: 0;
 	background-color: rgba(53,53,53,0.65);
-	transition: all 0.3s;
+	transition: all 0.3s
 }
 
 .modal{
@@ -173,7 +173,7 @@
 	z-index: 2000;
 	visibility: hidden;
 	backface-visibility: hidden;
-	transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%)
 }
 
 .cross{
@@ -230,7 +230,7 @@
 
 .modal-content > .modal-body ul {
 	margin: 0;
-	padding: 0 0 30px 20px;
+	padding: 0 0 30px 20px
 }
 
 .modal-content > .modal-body ul li {
@@ -262,7 +262,7 @@
   max-width: 300px;
   margin-top: 20px;
   padding: 12px 0;
-  font-weight: 700;
+  font-weight: 700
 }
 
 /*effect*/
@@ -270,12 +270,12 @@
 .modal .modal-content{
 	transform: scale(0.7);
 	opacity: 0;
-  transition: opacity 0.3s, transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s
 }
 
 .open.modal .modal-content{
 	transform: scale(1);
-	opacity: 1;
+	opacity: 1
 }
 
 /*------------------------------------*\
@@ -298,11 +298,11 @@
   }
 
   .resp{
-    display: block;
+    display: block
   }
 
   .resp2{
-    display: none;
+    display: none
   }
   .line{
     display: none
