@@ -21,7 +21,7 @@ header .background{
 
 @media screen and (min-width: 750px) {
   header .background{
-    height: 450px;  
+    height: 450px;
     height: 70vh;
     min-height: 450px;
     background-image: url(../../img/home.jpg);
@@ -44,10 +44,6 @@ header .background{
 
   .btn-group .btn{
     width: 30%
-  }
-
-  header .btn-disabled{
-    order: 1
   }
 }
 

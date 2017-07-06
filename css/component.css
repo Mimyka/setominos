@@ -72,10 +72,12 @@
   justify-content: space-around
 }
 
-.btn-disabled{
-  cursor: not-allowed;
-  color: #EEE;
-  background-color: #BBB
+.btn-group .btn span{
+  display: none
+}
+
+.btn-group .btn-cdiscount{
+  background-color: #323232
 }
 
 .btn-mbr{
@@ -340,6 +342,16 @@
     margin: 20px 30px;
     width: 33%
   }
+
+  .btn-group .btn span{
+    display: block;
+    font-size: 10px
+  }
+
+  .btn-group .btn-cdiscount{
+    order: 1
+  }
+
   /*Modal*/
 
   .modal-content header h3{
