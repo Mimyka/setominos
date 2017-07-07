@@ -74,8 +74,18 @@
 
 
 .seto_move.btmL{
-  top: -14px;
-  left: 48px;
+  top: 130px;
+  left:-65px;
+}
+
+.seto_move.top{
+  top: -5px;
+  left: 13px;
+}
+
+.seto_move.topL{
+  top: 40px;
+  left: -65px;
 }
 
 .seto_move.topR{
@@ -83,28 +93,25 @@
   left: -45px;
 }
 
+.seto_move2.topR{
+  top: 40px;
+  left: 91px;
+}
+
 .minos_move{
   top: 85px;
-  left: -123px;
+  left: 13px;
   transform: translate(-50%, -50%);
 }
 
-.seto_move1.top{
-  top: -5px;
-  left: -123px;
-}
-
-
 .seto_move.btmR{
-  top: 130px;
-  left: -45px;
+  top: -14px;
+  left:-158px;
 }
 
 /*------------------------------------*\
     $MECANIC
 \*------------------------------------*/
-
-
 
 .minos_mecanic{
   top: 0px;
@@ -137,22 +144,24 @@
   left: -78px;
 }
 
-.seto_mecanic2.btm{
-  top: -54px;
-  left: 249px;
-}
-.seto_mecanic2.btmL{
-  top: -99px;
-  left: 171px;
-}
-.seto_mecanic2.topL{
-  top: -189px;
-  left: 171px;
+.seto_mecanic2.topR{
+  top: 59px;
+  left: -71px;
 }
 
-.seto_mecanic3.topL{
-  top: 99px;
-  left: 171px;
+.seto_mecanic2.top{
+  top: 14px;
+  left: -148px;
+}
+
+.seto_mecanic2.btmR{
+  top: 149px;
+  left: -71px;
+}
+
+.seto_mecanic3.btmR{
+  top: -139px;
+  left: -71px;
 }
 
 /*------------------------------------*\
@@ -238,5 +247,36 @@
 
   .minos_babystep{
     animation: none;
+  }
+
+  .minos_mecanic{
+    top: -40px;
+    left: 100px;
+    transform: translate(-50%, -50%);
+  }
+
+  .seto_mecanic.top{
+    top: -130px;
+    left: 100px;
+  }
+  .seto_mecanic.topR{
+    top: -85px;
+    left: 178px;
+  }
+  .seto_mecanic.btmR{
+    top: 5px;
+    left: 178px;
+  }
+  .seto_mecanic.btm{
+    top: 50px;
+    left: 100px;
+  }
+  .seto_mecanic.btmL{
+    top: 5px;
+    left: 22px;
+  }
+  .seto_mecanic.topL{
+    top: -85px;
+    left: 22px;
   }
 }

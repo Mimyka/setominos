@@ -8,6 +8,12 @@ var desktopAnimation = [
 		target: document.querySelector('.seto_babystep'),
 		animation: {
 			begin: 400,
+			onprogress: function() {
+				onMove(document.querySelector('#babystep .piece-container'));
+			},
+			onend: function() {
+				finishMove(document.querySelector('#babystep .piece-container'));
+			},
 			start: {"x":-140,"y":-90,"unit":"%"},
 			end: {"x":-30,"y":-27},
 			rotateZ: {
@@ -17,87 +23,53 @@ var desktopAnimation = [
 		}
 	}),
 	new scrollObject({
-		target: document.querySelector('.minos_babystep'),
-		from: document.querySelector('#babystep .piece'),
-		to: document.querySelector('#move .piece'),
-		reset: "start",
-		animation: {
-			begin: 300,
-			start: {"x":39,"y":31},
-			end: {"x":-123,"y":85},
-			rotateZ: {
-				start: 10,
-				end: 0
-			}
-		}
-	}),
-	new scrollObject({
-		target: document.querySelector('.minos_move'),
-		from: document.querySelector('#move .piece'),
-		to: document.querySelector('#mecanic .piece'),
-		animation: {
-			begin: 250,
-			onstart: function() {
-				document.querySelector('.minos_move').style.display = "none";
-				document.querySelector('.minos_babystep').style.display = "";
-			},
-			onprogress: function() {
-				document.querySelector('.minos_move').style.display = "";
-				document.querySelector('.minos_babystep').style.display = "none";
-			},
-			onend: function() {
-				document.querySelector('.minos_move').style.display = "";
-			},
-			start: {"x":-123,"y":85},
-			end: {"x":249,"y":-144}
-		}
-	}),
-	new scrollObject({
-		target: document.querySelector('.seto_move.btmL'),
+		target: document.querySelector('.seto_move.btmR'),
 		animation: {
 			begin: 200,
-			start: {"x":140,"y":-60,"unit":"%"},
-			end: {"x":48,"y":-14},
-			rotateZ: 240
-		}
-	}),
-	new scrollObject({
-		target: document.querySelector('.seto_mecanic.topL'),
-		animation: {
-			begin: 300,
-			start: {"x":-140,"y":-80,"unit":"%"},
-			end: {"x":-78,"y":-45},
-			rotateZ: -60
-		}
-	}),
-	new scrollObject({
-		target: document.querySelector('.seto_mecanic.btmL'),
-		reset: "start",
-		animation: {
-			begin: 300,
-			start: {"x":-78,"y":45},
-			end: {"x":-140,"y":80,"unit":"%"},
-			rotateZ: 240
-		}
-	}),
-	new scrollObject({
-		target: document.querySelector('.seto_strategy2.btmR'),
-		animation: {
-			begin: 300,
-			start: {"x":295,"y":171},
-			end: {"x":140,"y":80,"unit":"%"},
+			onprogress: function() {
+				onMove(document.querySelector('#move .piece-container'));
+			},
+			onend: function() {
+				finishMove(document.querySelector('#move .piece-container'));
+			},
+			start: {"x":-150,"y":-85,"unit":"%"},
+			end: {"x":-158,"y":-14},
 			rotateZ: 120
 		}
 	}),
 	new scrollObject({
-		target: document.querySelector('.seto_mecanic3.topL'),
-		from: document.querySelector('#mecanic .piece'),
-		to: document.querySelector('#strategy .piece'),
+		target: document.querySelector('.seto_move2.topR'),
+		animation: {
+			begin: 380,
+			start: {"x":140,"y":-60,"unit":"%"},
+			end: {"x":91,"y":40},
+			rotateZ: 60
+		}
+	}),
+	new scrollObject({
+		target: document.querySelector('.seto_mecanic.topR'),
 		animation: {
 			begin: 200,
-			start: {"x":171,"y":99},
-			end: {"x":-46,"y":-27},
-			rotateZ: -60
+			onprogress: function() {
+				onMove(document.querySelector('#mecanic .piece-container'));
+			},
+			onend: function() {
+				finishMove(document.querySelector('#mecanic .piece-container'));
+			},
+			start: {"x":350,"y":-200,"unit":"%"},
+			end: {"x":178,"y":-85},
+			rotateZ: {
+				start: -150,
+				end: 60
+			},
+			rotateX: {
+				start: -50,
+				end: 0
+			},
+			rotateY: {
+				start: -50,
+				end: 0
+			}
 		}
 	})
 ];
@@ -219,10 +191,23 @@ function scrollObject(obj) {
 
 }
 
+function finishMove(target) {
+	target.style.opacity = 0.75;
+	target.style.filter = "grayscale(.6)";
+	target.style.transform = "scale(.95,.95)";
+}
+
+function onMove(target) {
+	target.style.opacity = "";
+	target.style.filter = "";
+	target.style.transform = "";
+}
+
 function animate(x){
 	posScroll = (document.querySelector('body').scrollTop != 0) ? document.querySelector('body').scrollTop : document.querySelector('html').scrollTop;
 	var x = ((posScroll / totalH) * 100).toFixed(2);
 	if (window.matchMedia("(min-width: 750px)").matches) {
+		document.querySelector('#mecanic .piece').style.transform = '';
 		for (var i = 0; i < desktopAnimation.length; i++) {
 			desktopAnimation[i].animate(posScroll);
 		}
@@ -247,6 +232,6 @@ window.onresize = function() {
 	for (var i = 0; i < desktopAnimation.length; i++) {
 		desktopAnimation[i].update();
 	}
-	document.querySelector('#mecanic .piece').style.transform = '';
 	animate();
+	document.querySelector('#mecanic .piece').style.transform = '';
 }
