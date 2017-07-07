@@ -36,11 +36,10 @@
   padding: 15px 20px
 }
 
+
 /*------------------------------------*\
     $RESPONSIVE
 \*------------------------------------*/
-
-
 
 @media screen and (min-width: 750px) {
   #intro{
@@ -128,7 +127,7 @@
     width: 100%;
     background-image: url(../img/contact2.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
