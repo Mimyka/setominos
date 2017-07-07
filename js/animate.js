@@ -47,42 +47,29 @@ var desktopAnimation = [
 		}
 	}),
 	new scrollObject({
-		target: document.querySelector('.seto_mecanic.topL'),
-		animation: {
-			begin: 300,
-			start: {"x":-140,"y":-80,"unit":"%"},
-			end: {"x":-78,"y":-45},
-			rotateZ: -60
-		}
-	}),
-	new scrollObject({
-		target: document.querySelector('.seto_mecanic.btmL'),
-		reset: "start",
-		animation: {
-			begin: 300,
-			start: {"x":-78,"y":45},
-			end: {"x":-140,"y":80,"unit":"%"},
-			rotateZ: 240
-		}
-	}),
-	new scrollObject({
-		target: document.querySelector('.seto_strategy2.btmR'),
-		animation: {
-			begin: 300,
-			start: {"x":295,"y":171},
-			end: {"x":140,"y":80,"unit":"%"},
-			rotateZ: 120
-		}
-	}),
-	new scrollObject({
-		target: document.querySelector('.seto_mecanic3.topL'),
-		from: document.querySelector('#mecanic .piece'),
-		to: document.querySelector('#strategy .piece'),
+		target: document.querySelector('.seto_mecanic.topR'),
 		animation: {
 			begin: 200,
-			start: {"x":171,"y":99},
-			end: {"x":-46,"y":-27},
-			rotateZ: -60
+			onprogress: function() {
+				onMove(document.querySelector('#mecanic .piece-container'));
+			},
+			onend: function() {
+				finishMove(document.querySelector('#mecanic .piece-container'));
+			},
+			start: {"x":350,"y":-200,"unit":"%"},
+			end: {"x":178,"y":-85},
+			rotateZ: {
+				start: -150,
+				end: 60
+			},
+			rotateX: {
+				start: -50,
+				end: 0
+			},
+			rotateY: {
+				start: -50,
+				end: 0
+			}
 		}
 	})
 ];
@@ -220,6 +207,7 @@ function animate(x){
 	posScroll = (document.querySelector('body').scrollTop != 0) ? document.querySelector('body').scrollTop : document.querySelector('html').scrollTop;
 	var x = ((posScroll / totalH) * 100).toFixed(2);
 	if (window.matchMedia("(min-width: 750px)").matches) {
+		document.querySelector('#mecanic .piece').style.transform = '';
 		for (var i = 0; i < desktopAnimation.length; i++) {
 			desktopAnimation[i].animate(posScroll);
 		}
@@ -244,6 +232,6 @@ window.onresize = function() {
 	for (var i = 0; i < desktopAnimation.length; i++) {
 		desktopAnimation[i].update();
 	}
-	document.querySelector('#mecanic .piece').style.transform = '';
 	animate();
+	document.querySelector('#mecanic .piece').style.transform = '';
 }
