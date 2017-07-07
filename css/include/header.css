@@ -42,8 +42,8 @@ header .background{
     transform: translate(0%, -50%)
   }
 
-  .btn-group .btn{
-    width: 30%
+  header .btn-cdiscount{
+    order: 1
   }
 }
 
