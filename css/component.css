@@ -72,6 +72,10 @@
   justify-content: space-around
 }
 
+.btn-group .btn b{
+  display: block
+}
+
 .btn-group .btn span{
   display: none
 }
@@ -283,6 +287,12 @@
     $RESPONSIVE
 \*------------------------------------*/
 
+@media screen and (min-width: 542px){
+  .btn-group .btn b{
+    display: inline
+  }
+}
+
 @media screen and (min-width: 480px) and (orientation: portrait) {
   .btn-group .btn{
     width: 45%
@@ -348,9 +358,12 @@
     font-size: 10px
   }
 
+<<<<<<< Updated upstream
   .btn-group .btn-cdiscount{
     order: 1
   }
+=======
+>>>>>>> Stashed changes
 
   /*Modal*/
 

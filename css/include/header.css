@@ -19,6 +19,26 @@ header .background{
     $RESPONSIVE
 \*------------------------------------*/
 
+@media screen and (min-width: 374px) {
+  header h1{
+    font-size: 42px
+  }
+
+  header h2{
+    font-size: 28px
+  }
+}
+
+@media screen and (min-width: 413px) {
+  header h1{
+    font-size: 46px
+  }
+
+  header h2{
+    font-size: 30px
+  }
+}
+
 @media screen and (min-width: 750px) {
   header .background{
     height: 450px;
