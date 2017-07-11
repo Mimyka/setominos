@@ -7,7 +7,7 @@ var desktopAnimation = [
 	new scrollObject({
 		target: document.querySelector('.seto_babystep'),
 		animation: {
-			begin: 400,
+			begin: 45,
 			onprogress: function() {
 				onMove(document.querySelector('#babystep .piece-container'));
 			},
@@ -25,14 +25,14 @@ var desktopAnimation = [
 	new scrollObject({
 		target: document.querySelector('.seto_move.btmR'),
 		animation: {
-			begin: 200,
+			begin: 30,
 			onprogress: function() {
 				onMove(document.querySelector('#move .piece-container'));
 			},
 			onend: function() {
 				finishMove(document.querySelector('#move .piece-container'));
 			},
-			start: {"x":-150,"y":-85,"unit":"%"},
+			start: {"x":-180,"y":-85,"unit":"%"},
 			end: {"x":-158,"y":-14},
 			rotateZ: 120
 		}
@@ -40,7 +40,7 @@ var desktopAnimation = [
 	new scrollObject({
 		target: document.querySelector('.seto_move2.topR'),
 		animation: {
-			begin: 380,
+			begin: 50,
 			start: {"x":140,"y":-60,"unit":"%"},
 			end: {"x":91,"y":40},
 			rotateZ: 60
@@ -49,7 +49,7 @@ var desktopAnimation = [
 	new scrollObject({
 		target: document.querySelector('.seto_mecanic.topR'),
 		animation: {
-			begin: 200,
+			begin: 40,
 			onprogress: function() {
 				onMove(document.querySelector('#mecanic .piece-container'));
 			},
@@ -75,18 +75,24 @@ var desktopAnimation = [
 	new scrollObject({
 		target: document.querySelector('.seto_strategy3.topL'),
 		animation: {
-			begin: 200,
-			onprogress: function() {
-				onMove(document.querySelector('#strategy .piece-container'));
-			},
-			onend: function() {
-				finishMove(document.querySelector('#strategy .piece-container'));
-			},
-			start: {"x":-380,"y":-200,"unit":"%"},
+			begin: 35,
+			start: {"x":-150,"y":-110,"unit":"%"},
 			end: {"x":-164,"y":-52},
 			rotateZ: {
-				start: 0,
+				start: 120,
 				end: -60
+			}
+		}
+	}),
+	new scrollObject({
+		target: document.querySelector('.seto_strategy5.btmL'),
+		animation: {
+			begin: 70,
+			start: {"x":100,"y":-50,"unit":"%"},
+			end: {"x":271,"y":1},
+			rotateZ: {
+				start: 0,
+				end: 240
 			}
 		}
 	})
@@ -121,6 +127,8 @@ var mobileAnimation = [
 
 function scrollObject(obj) {
 	var _ = this;
+	var executed = false;
+	var wH =  document.documentElement.clientHeight || document.body.clientHeight;
 	_.target = obj.target;
 	_.from = obj.from || obj.target.parentNode;
 	_.to = obj.to || obj.target.parentNode;
@@ -145,23 +153,25 @@ function scrollObject(obj) {
 		y: _.b.y - _.a.y
 	};
 	_.translate = obj.translate || "-50%, -50%";
-	tV("rotateZ", obj.animation.rotateZ);
-	tV("rotateX", obj.animation.rotateX);
-	tV("rotateY", obj.animation.rotateY);
-	_.begin = obj.animation.begin || 0;
+	tV("rotateZ", obj.animation.rotateZ, "deg");
+	tV("rotateX", obj.animation.rotateX, "deg");
+	tV("rotateY", obj.animation.rotateY, "deg");
+	_.begin = (obj.animation.begin/100)*wH || 0;
 
-	function tV(trgt, eql, unit) {
+	function tV(trgt, eql, dU) {
 		_[trgt] = eql || {"start":0,"end":0};
 		_[trgt] = (typeof(_[trgt]) == "number")? {"start":_[trgt],"end":_[trgt]} : _[trgt];
+		_[trgt].unit = _[trgt].unit || dU;
 	}
 
-	function gettV(tV, unit) {
-		unit = unit || "%";
-		return tV + "(" + ((_[tV].start*(1-_.progress)) + (_[tV].end*_.progress)) + unit + ")";
+	function gettV(tV) {
+		if (_[tV].start == 0 && _[tV].end == 0) {
+			return "";
+		}
+		return " " + tV + "(" + (((_[tV].start*(1-_.progress)) + (_[tV].end*_.progress))).toFixed(0) + _[tV].unit + ")";
 	}
 
 	_.animate = function(y) {
-		var executed = false;
 		y += _.begin;
 		if (y < _.a.y) {
 			_.progress = 0;
@@ -185,11 +195,13 @@ function scrollObject(obj) {
 		}
 	}
 	_.mv = function() {
-		_.target.style.left = ((_.ab.x*_.progress)+(_.start.x))+"px";
-		_.target.style.top = ((_.ab.y*_.progress)+(_.start.y))+"px";
-		_.target.style.transform = "translate("+_.translate+") " + gettV("rotateZ", "deg") + " " + gettV("rotateX", "deg") + " " + gettV("rotateY", "deg");
+		_.target.style.left = ((_.ab.x*_.progress)+(_.start.x)).toFixed(0)+"px";
+		_.target.style.top = ((_.ab.y*_.progress)+(_.start.y)).toFixed(0)+"px";
+		_.target.style.transform = "translate("+_.translate+")" + gettV("rotateZ", "deg") + gettV("rotateX", "deg") + gettV("rotateY", "deg");
 	}
 	_.update = function() {
+		wH =  document.documentElement.clientHeight || document.body.clientHeight;
+		_.begin = (obj.animation.begin/100)*wH || 0;
 		if (_.start.unit == "%") {
 			_.start = {x: (obj.animation.start.x/100)*Number(_.from.offsetLeft), y: (obj.animation.start.y/100)*Number(_.from.offsetLeft)};
 		}
