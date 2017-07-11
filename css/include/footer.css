@@ -3,7 +3,7 @@ footer{
 }
 
 footer p{
-  height: 100px;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,21 +13,24 @@ footer p{
 }
 
 footer .mentions{
-  height: 50px;
+  min-height: 50px;
   width: 100%;
   display: flex;
   flex-direction: column
 }
 
-footer span{
-  text-align: center;
-  font-size: 12px
+footer a{
+  color: #EEE
 }
 
-footer a{
-  cursor: pointer;
-  color: #EEE;
-  text-decoration: none
+footer span{
+  text-align: center;
+  font-size: 10px
+}
+
+footer span a{
+  color: #000;
+  text-decoration: underline
 }
 
 @media screen and (min-width: 750px) {

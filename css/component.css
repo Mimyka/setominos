@@ -13,21 +13,21 @@
  .open{
   visibility: visible !important;
   opacity: 1 !important;
-  display: block;
+  display: block
 }
 
 .line{
   height: 1px;
   width: 90%;
   margin: auto;
-  background-color: #EDE;
+  background-color: #EDE
 }
 
 .content{
   padding: 0 20px;
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: center
 }
 
 .follow{
@@ -43,16 +43,21 @@
   align-items: center
 }
 
+
 /*------------------------------------*\
     $BUTTON
 \*------------------------------------*/
 
-
+.btn-group{
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-around
+}
 
 .btn{
   cursor: pointer;
   display: inline-block;
-  padding: 18px 0;
+  padding: 18px 5px;
   border: none;
   border-radius: 5px;
   text-align: center;
@@ -66,16 +71,16 @@
   width: 45%
 }
 
-.btn-group{
-  padding: 20px 0px;
-  display: flex;
-  justify-content: space-around
+.btn-group .btn b{
+  display: block
 }
 
-.btn-disabled{
-  cursor: not-allowed;
-  color: #EEE;
-  background-color: #BBB
+.btn-group .btn span{
+  display: none
+}
+
+.btn-group .btn-cdiscount{
+  background-color: #323232
 }
 
 .btn-mbr{
@@ -87,8 +92,6 @@
 /*------------------------------------*\
     $PIECE
 \*------------------------------------*/
-
-
 
 .resp{
   display: none
@@ -108,40 +111,41 @@
 
 .piece-container{
   width: 100%;
+  transition: opacity .7s, filter .7s, transform .7s;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+  will-change: auto
 }
 
 .top{
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%)
 }
 
 .topR{
-  transform: translate(-50%, -50%) rotate(60deg);
+  transform: translate(-50%, -50%) rotate(60deg)
 }
 
 .btmR{
-  transform: translate(-50%, -50%) rotate(120deg);
+  transform: translate(-50%, -50%) rotate(120deg)
 }
 
 .btm{
-  transform: translate(-50%, -50%) rotate(180deg);
+  transform: translate(-50%, -50%) rotate(180deg)
 }
 
 .btmL{
-  transform: translate(-50%, -50%) rotate(240deg);
+  transform: translate(-50%, -50%) rotate(240deg)
 }
 
 .topL{
-  transform: translate(-50%, -50%) rotate(-60deg);
+  transform: translate(-50%, -50%) rotate(-60deg)
 }
+
 
 /*------------------------------------*\
     $MODAL
 \*------------------------------------*/
-
-
 
 .overlay{
   position: fixed;
@@ -153,11 +157,10 @@
 	z-index: 1000;
 	opacity: 0;
 	background-color: rgba(53,53,53,0.65);
-	transition: all 0.3s;
+	transition: all 0.3s
 }
 
 .modal{
-  /*border: 1px solid red;*/
   position: fixed;
 	top: 50%;
 	left: 50%;
@@ -171,11 +174,10 @@
 	z-index: 2000;
 	visibility: hidden;
 	backface-visibility: hidden;
-	transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%)
 }
 
 .cross{
-  /*border: 1px solid red;*/
   width: 40px;
   float: right;
   padding-top: 5px;
@@ -185,6 +187,21 @@
   font-size: 40px;
   line-height: 1;
   color: #F60
+}
+
+#modal-ml h3{
+  padding-top: 25px
+}
+
+#modal-ml h5{
+  padding: 20px 20px 0 20px;
+  text-transform: uppercase;
+  color: #000
+}
+
+#modal-cgv p{
+  padding: 0 10px;
+  text-align: justify
 }
 
 /* Content styles */
@@ -204,7 +221,6 @@
 }
 
 .modal-content header h3{
-  /*border: 1px solid red;*/
   width: calc(100% - 40px);
   display: inline-block;
   padding-top: 10px;
@@ -228,7 +244,7 @@
 
 .modal-content > .modal-body ul {
 	margin: 0;
-	padding: 0 0 30px 20px;
+	padding: 0 0 30px 20px
 }
 
 .modal-content > .modal-body ul li {
@@ -238,7 +254,6 @@
 }
 
 .modal-content form{
-  /*border: 1px solid red;*/
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -261,7 +276,7 @@
   max-width: 300px;
   margin-top: 20px;
   padding: 12px 0;
-  font-weight: 700;
+  font-weight: 700
 }
 
 /*effect*/
@@ -269,25 +284,21 @@
 .modal .modal-content{
 	transform: scale(0.7);
 	opacity: 0;
-  transition: opacity 0.3s, transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s
 }
 
 .open.modal .modal-content{
 	transform: scale(1);
-	opacity: 1;
+	opacity: 1
 }
 
 /*------------------------------------*\
     $RESPONSIVE
 \*------------------------------------*/
 
-@media screen and (min-width: 480px) and (orientation: portrait) {
-  .btn-group .btn{
-    width: 45%
-  }
-
-  .btn-group{
-    padding: 25px 0px
+@media screen and (min-width: 542px){
+  .btn-group .btn b{
+    display: inline
   }
 }
 
@@ -297,11 +308,11 @@
   }
 
   .resp{
-    display: block;
+    display: block
   }
 
   .resp2{
-    display: none;
+    display: none
   }
   .line{
     display: none
@@ -329,7 +340,7 @@
 
   .btn-group{;
     height: 400px;
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column-reverse;
     align-items: flex-end;
@@ -338,12 +349,18 @@
 
   .btn-group .btn{
     margin: 20px 30px;
-    width: 33%
+    /*width: 40%*/
   }
+
+  .btn-group .btn span{
+    display: block;
+    font-size: 10px
+  }
+
   /*Modal*/
 
   .modal-content header h3{
-    padding-top: 25px
+    padding-top: 10px
   }
 
   #modal-ml{
@@ -357,5 +374,12 @@
   #modal-cgv p{
     padding: 0 20px;
     line-height: 1.9
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .btn-group .btn{
+      margin: 0 60px;
+    width: 30%
   }
 }

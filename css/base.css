@@ -22,14 +22,14 @@ html, body{
 main{
   overflow: hidden;
   background-image: url(../img/background_mobile.jpg);
-  background-size: cover;
+  background-size: cover
 }
 
 h1,h2{
   position: relative;
   float: right;
   padding-right: 10px;
-  text-shadow: 0 0 2px #FFF;
+  text-shadow: 0 0 2px #FFF
 }
 
 h1{
@@ -51,18 +51,26 @@ h2{
 
 a, span, p{
   line-height: 1.8em;
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'Oxygen', sans-serif
+}
+
+a{
+  cursor: pointer
 }
 
 p{
   text-align: center
 }
 
-a, .fa{
+.fa{
   text-decoration: none
 }
 
 svg{
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
   position: absolute
 }
 
@@ -83,17 +91,26 @@ svg{
     $RESPONSIVE
 \*------------------------------------*/
 
+@media screen and (min-width: 450px){
+  .content p{
+    padding: 0 10%
+  }
+}
 
 
 @media screen and (min-width: 750px) {
   main{
-    background-image: url(../img/background.jpg);
+    background-image: url(../img/background.jpg)
   }
-  
+
   p{
     font-family: 'Raleway', sans-serif;
     font-size: 22px;
-    line-height: 36px;
+    line-height: 36px
+  }
+
+  .content p{
+    padding: 0 0
   }
 
   section{

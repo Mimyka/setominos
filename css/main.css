@@ -15,6 +15,34 @@
   justify-content: space-around
 }
 
+#intro .piece-container .piece:after{
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  z-index: -1;
+  left: -100%;
+  top: 100%;
+}
+
+#intro .piece-container:first-child .piece:after{
+  box-shadow: 170px 30px 65px 35px #888;
+}
+
+#intro .piece-container:last-child .piece:after{
+  box-shadow: 100px 30px 40px 20px #888;
+}
+
+#intro .piece-container:first-child .piece {
+  animation: 3.2s infinite alternate ease-in-out gravity1;
+}
+
+#intro .piece-container:last-child .piece{
+  animation: 2.8s infinite alternate ease-in-out gravity2 ;
+  order: -1;
+}
+
+
 #babystep .piece-container{
   height: 370px
 }
@@ -36,11 +64,10 @@
   padding: 15px 20px
 }
 
+
 /*------------------------------------*\
     $RESPONSIVE
 \*------------------------------------*/
-
-
 
 @media screen and (min-width: 750px) {
   #intro{
@@ -62,7 +89,7 @@
 
   #intro .content:after{
     content: "";
-    border-right: 1px solid #EDE;
+    border-right: 1px solid #D3D3D3;
     transform: translate(0,-50%);
     position: absolute;
     right: 0;
@@ -76,7 +103,7 @@
 
   #babystep .content{
     height: 200px;
-    border-left: 1px solid #EDE;
+    border-left: 1px solid #D3D3D3;
     order: 1
   }
 
@@ -91,7 +118,7 @@
 
   #move .content{
     height: 200px;
-    border-right: 1px solid #EDE
+    border-right: 1px solid #D3D3D3
   }
 
   #mecanic{
@@ -105,7 +132,7 @@
 
   #mecanic .content{
     height: 250px;
-    border-left: 1px solid #EDE;
+    border-left: 1px solid #D3D3D3;
     order: 1
   }
 
@@ -115,7 +142,7 @@
 
   #strategy .content{
     height: 200px;
-    border-right: 1px solid #EDE
+    border-right: 1px solid #D3D3D3
   }
 
   #contact{
@@ -128,7 +155,7 @@
     width: 100%;
     background-image: url(../img/contact2.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
