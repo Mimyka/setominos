@@ -48,6 +48,12 @@
     $BUTTON
 \*------------------------------------*/
 
+.btn-group{
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-around
+}
+
 .btn{
   cursor: pointer;
   display: inline-block;
@@ -63,12 +69,6 @@
 
 .btn-group .btn{
   width: 45%
-}
-
-.btn-group{
-  padding: 20px 0px;
-  display: flex;
-  justify-content: space-around
 }
 
 .btn-group .btn b{
@@ -189,6 +189,21 @@
   color: #F60
 }
 
+#modal-ml h3{
+  padding-top: 25px
+}
+
+#modal-ml h5{
+  padding: 20px 20px 0 20px;
+  text-transform: uppercase;
+  color: #000
+}
+
+#modal-cgv p{
+  padding: 0 10px;
+  text-align: justify
+}
+
 /* Content styles */
 .modal-content{
   position: relative;
@@ -287,16 +302,6 @@
   }
 }
 
-@media screen and (min-width: 480px) and (orientation: portrait) {
-  .btn-group .btn{
-    width: 45%
-  }
-
-  .btn-group{
-    padding: 25px 0px
-  }
-}
-
 @media screen and (min-width: 750px) {
   .piece-container{
     width: 62.5%
@@ -351,22 +356,11 @@
     display: block;
     font-size: 10px
   }
-<<<<<<< HEAD
-  
-=======
-
-<<<<<<< Updated upstream
-  .btn-group .btn-cdiscount{
-    order: 1
-  }
-=======
->>>>>>> Stashed changes
->>>>>>> MarketinButon
 
   /*Modal*/
 
   .modal-content header h3{
-    padding-top: 25px
+    padding-top: 10px
   }
 
   #modal-ml{
@@ -380,5 +374,12 @@
   #modal-cgv p{
     padding: 0 20px;
     line-height: 1.9
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .btn-group .btn{
+      margin: 0 60px;
+    width: 30%
   }
 }
