@@ -56,7 +56,7 @@ var desktopAnimation = [
 			onend: function() {
 				finishMove(document.querySelector('#mecanic .piece-container'));
 			},
-			start: {"x":350,"y":-200,"unit":"%"},
+			start: {"x":380,"y":-200,"unit":"%"},
 			end: {"x":178,"y":-85},
 			rotateZ: {
 				start: -150,
@@ -69,6 +69,24 @@ var desktopAnimation = [
 			rotateY: {
 				start: -50,
 				end: 0
+			}
+		}
+	}),
+	new scrollObject({
+		target: document.querySelector('.seto_strategy3.topL'),
+		animation: {
+			begin: 200,
+			onprogress: function() {
+				onMove(document.querySelector('#strategy .piece-container'));
+			},
+			onend: function() {
+				finishMove(document.querySelector('#strategy .piece-container'));
+			},
+			start: {"x":-380,"y":-200,"unit":"%"},
+			end: {"x":-164,"y":-52},
+			rotateZ: {
+				start: 0,
+				end: -60
 			}
 		}
 	})
