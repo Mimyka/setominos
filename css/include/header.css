@@ -19,7 +19,7 @@ header .background{
     $RESPONSIVE
 \*------------------------------------*/
 
-/*@media screen and (min-width: 374px) {
+@media screen and (min-width: 374px) {
   header h1{
     font-size: 42px
   }
@@ -28,16 +28,6 @@ header .background{
     font-size: 28px
   }
 }
-
-@media screen and (min-width: 413px) {
-  header h1{
-    font-size: 46px
-  }
-
-  header h2{
-    font-size: 30px
-  }
-}*/
 
 @media screen and (min-width: 750px) {
   header .background{
@@ -53,7 +43,6 @@ header .background{
 
   header .btn-group{
     position: absolute;
-    width: 100%;
     top: 50%;
     right: 0;
     flex-direction: column;
@@ -64,26 +53,5 @@ header .background{
 
   header .btn-cdiscount{
     order: 1
-  }
-}
-
-@media screen and (min-width: 900px) {
-  .btn-group .btn{
-    width: 28.5%
-  }
-
-}
-
-
-@media screen and (min-width: 1060px) {
-  header .btn-group .btn{
-    width: 25%
-  }
-}
-
-@media screen and (min-width: 1150px) {
-  header .btn-group .btn{
-    margin: 40px 75px;
-    width: 22.5%
   }
 }

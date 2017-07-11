@@ -48,6 +48,12 @@
     $BUTTON
 \*------------------------------------*/
 
+.btn-group{
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-around
+}
+
 .btn{
   cursor: pointer;
   display: inline-block;
@@ -63,12 +69,6 @@
 
 .btn-group .btn{
   width: 45%
-}
-
-.btn-group{
-  padding: 20px 0px;
-  display: flex;
-  justify-content: space-around
 }
 
 .btn-group .btn b{
@@ -302,16 +302,6 @@
   }
 }
 
-@media screen and (min-width: 480px) and (orientation: portrait) {
-  .btn-group .btn{
-    width: 45%
-  }
-
-  .btn-group{
-    padding: 25px 0px
-  }
-}
-
 @media screen and (min-width: 750px) {
   .piece-container{
     width: 62.5%
@@ -384,5 +374,12 @@
   #modal-cgv p{
     padding: 0 20px;
     line-height: 1.9
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .btn-group .btn{
+      margin: 0 60px;
+    width: 30%
   }
 }
