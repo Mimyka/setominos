@@ -75,18 +75,24 @@ var desktopAnimation = [
 	new scrollObject({
 		target: document.querySelector('.seto_strategy3.topL'),
 		animation: {
-			begin: 200,
-			onprogress: function() {
-				onMove(document.querySelector('#strategy .piece-container'));
-			},
-			onend: function() {
-				finishMove(document.querySelector('#strategy .piece-container'));
-			},
+			begin: 150,
 			start: {"x":-380,"y":-200,"unit":"%"},
 			end: {"x":-164,"y":-52},
 			rotateZ: {
-				start: 0,
+				start: 360,
 				end: -60
+			}
+		}
+	}),
+	new scrollObject({
+		target: document.querySelector('.seto_strategy5.btmL'),
+		animation: {
+			begin: 300,
+			start: {"x":280,"y":-200,"unit":"%"},
+			end: {"x":271,"y":1},
+			rotateZ: {
+				start: -300,
+				end: 240
 			}
 		}
 	})
@@ -145,19 +151,22 @@ function scrollObject(obj) {
 		y: _.b.y - _.a.y
 	};
 	_.translate = obj.translate || "-50%, -50%";
-	tV("rotateZ", obj.animation.rotateZ);
-	tV("rotateX", obj.animation.rotateX);
-	tV("rotateY", obj.animation.rotateY);
+	tV("rotateZ", obj.animation.rotateZ, "deg");
+	tV("rotateX", obj.animation.rotateX, "deg");
+	tV("rotateY", obj.animation.rotateY, "deg");
 	_.begin = obj.animation.begin || 0;
 
-	function tV(trgt, eql, unit) {
+	function tV(trgt, eql, dU) {
 		_[trgt] = eql || {"start":0,"end":0};
 		_[trgt] = (typeof(_[trgt]) == "number")? {"start":_[trgt],"end":_[trgt]} : _[trgt];
+		_[trgt].unit = _[trgt].unit || dU;
 	}
 
-	function gettV(tV, unit) {
-		unit = unit || "%";
-		return tV + "(" + ((_[tV].start*(1-_.progress)) + (_[tV].end*_.progress)) + unit + ")";
+	function gettV(tV) {
+		if (_[tV].start == 0 && _[tV].end == 0) {
+			return "";
+		}
+		return " " + tV + "(" + ((_[tV].start*(1-_.progress)) + (_[tV].end*_.progress)) + _[tV].unit + ")";
 	}
 
 	_.animate = function(y) {
@@ -187,7 +196,7 @@ function scrollObject(obj) {
 	_.mv = function() {
 		_.target.style.left = ((_.ab.x*_.progress)+(_.start.x))+"px";
 		_.target.style.top = ((_.ab.y*_.progress)+(_.start.y))+"px";
-		_.target.style.transform = "translate("+_.translate+") " + gettV("rotateZ", "deg") + " " + gettV("rotateX", "deg") + " " + gettV("rotateY", "deg");
+		_.target.style.transform = "translate("+_.translate+")" + gettV("rotateZ", "deg") + gettV("rotateX", "deg") + gettV("rotateY", "deg");
 	}
 	_.update = function() {
 		if (_.start.unit == "%") {

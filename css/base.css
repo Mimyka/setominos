@@ -63,6 +63,10 @@ a, .fa{
 }
 
 svg{
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
   position: absolute
 }
 
@@ -89,7 +93,7 @@ svg{
   main{
     background-image: url(../img/background.jpg);
   }
-  
+
   p{
     font-family: 'Raleway', sans-serif;
     font-size: 22px;
