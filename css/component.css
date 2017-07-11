@@ -189,6 +189,21 @@
   color: #F60
 }
 
+#modal-ml h3{
+  padding-top: 25px
+}
+
+#modal-ml h5{
+  padding: 20px 20px 0 20px;
+  text-transform: uppercase;
+  color: #000
+}
+
+#modal-cgv p{
+  padding: 0 10px;
+  text-align: justify
+}
+
 /* Content styles */
 .modal-content{
   position: relative;
@@ -351,22 +366,11 @@
     display: block;
     font-size: 10px
   }
-<<<<<<< HEAD
-  
-=======
-
-<<<<<<< Updated upstream
-  .btn-group .btn-cdiscount{
-    order: 1
-  }
-=======
->>>>>>> Stashed changes
->>>>>>> MarketinButon
 
   /*Modal*/
 
   .modal-content header h3{
-    padding-top: 25px
+    padding-top: 10px
   }
 
   #modal-ml{
