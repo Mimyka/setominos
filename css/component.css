@@ -108,10 +108,11 @@
 
 .piece-container{
   width: 100%;
-  transition: opacity 1s, filter 1s, transform 1s;
+  transition: opacity .7s, filter .7s, transform .7s;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+  will-change: auto
 }
 
 .top{
@@ -158,7 +159,6 @@
 }
 
 .modal{
-  /*border: 1px solid red;*/
   position: fixed;
 	top: 50%;
 	left: 50%;
@@ -176,7 +176,6 @@
 }
 
 .cross{
-  /*border: 1px solid red;*/
   width: 40px;
   float: right;
   padding-top: 5px;
@@ -205,7 +204,6 @@
 }
 
 .modal-content header h3{
-  /*border: 1px solid red;*/
   width: calc(100% - 40px);
   display: inline-block;
   padding-top: 10px;
@@ -239,7 +237,6 @@
 }
 
 .modal-content form{
-  /*border: 1px solid red;*/
   height: 100%;
   display: flex;
   flex-direction: column;
