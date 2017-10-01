@@ -25,6 +25,59 @@ var ModalEffects = (function() {
 
 })();
 
+function input(target) {
+	return encodeURIComponent(document.querySelector("input[name="+target+"]").value);
+}
+
+function request(callback) {
+		var xhr = (function() {
+			var xhr = null;
+
+			if (window.XMLHttpRequest || window.ActiveXObject) {
+				if (window.ActiveXObject) {
+					try {
+						xhr = new ActiveXObject("Msxml2.XMLHTTP");
+					} catch(e) {
+						xhr = new ActiveXObject("Microsoft.XMLHTTP");
+					}
+				} else {
+					xhr = new XMLHttpRequest();
+				}
+			} else {
+				alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
+				return null;
+			}
+
+			return xhr;
+		})();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+            callback(xhr.responseText);
+        }
+    };
+
+		var first_name = input("first_name");
+		var last_name = input("last_name");
+		var email = input("email");
+		var amount = input("amount");
+		var adress = input("adress");
+		var postal_code = input("postal_code");
+		var city = input("city");
+    var phone = input("phone");
+
+		xhr.open("POST", "./form.php", true);
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send("first_name="+first_name+"&last_name="+last_name+"&email="+email+"&amount="+amount+"&adress="+adress+"&postal_code="+postal_code+"&city="+city+"&phone="+phone);
+}
+
+function read(data) {
+    if (data == "true") {
+        alert("Mail envoyé avec succès !");
+    } else {
+				alert("Le mail ne s'est pas envoyé, veuillez recommencer");
+    }
+}
+
 var form1 = document.querySelector('#modal-buy .form_part1');
 var form2 = document.querySelector('#modal-buy .form_part2');
 

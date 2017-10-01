@@ -165,7 +165,7 @@
       <p>Pour toute question ou suggestion, contactez nous via le site de la <a onclick="window.open('http://www.addoee.com/index.php?section=contact')">Maison d'Édition Addoée.</a></p>
 
       <div class="mentions">
-        <span>Copyright © 2017 <a onclick="window.open('https://github.com/Mimyka')">Jérémy Le Prunenec</a> • <a onclick="window.open('https://www.linkedin.com/in/rémi-de-grauw-998b1b5b/')">Rémi De Grauw.</a></span>
+        <span>Copyright © 2017 <a onclick="window.open('https://www.linkedin.com/in/j%C3%A9r%C3%A9my-le-prunenec-ab04a2143/')">Jérémy Le Prunenec</a> • <a onclick="window.open('https://www.linkedin.com/in/rémi-de-grauw-998b1b5b/')">Rémi De Grauw.</a></span>
         <span>Tout droit réservé. <a class="modal-trigger" data-modal="modal-ml">Mentions légales</a> • <a class="modal-trigger" data-modal="modal-cgv">CGV</a></span>
       </div>
 
@@ -195,16 +195,16 @@
           <input type="text" name="first_name" value="" placeholder="Votre nom">
           <input type="text" name="last_name" value="" placeholder="Votre prénom">
           <input type="email" name="email" value="" placeholder="Votre email le plus utilisé" autocomplete="off">
-          <input type="text" name="quantity" value="" placeholder="La quantité de jeu souhaité" autocomplete="off">
-          <button class="btn btn-form" type="button">Valider</button>
+          <input type="text" name="amount" value="" placeholder="La quantité de jeu souhaité" autocomplete="off">
+          <button class="btn btn-form" type="button">Suivant</button>
         </form>
 
         <form class="form_part2" action="index.html" method="post">
-          <input type="text" name="street" value="" placeholder="Votre adresse">
+          <input type="text" name="adress" value="" placeholder="Votre adresse">
           <input type="text" name="postal_code" value="" placeholder="Votre code postal">
           <input type="text" name="city" value="" placeholder="Votre ville">
           <input type="phone" name="phone" value="" placeholder="Votre numéro de téléphone" autocomplete="off">
-          <button class="btn btn-form" type="submit">Valider</button>
+          <button class="btn btn-form" type="button" onclick="request(read)">Valider</button>
         </form>
       </div>
     </div>
