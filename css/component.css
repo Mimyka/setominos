@@ -347,7 +347,7 @@
 
   .btn-group .btn{
     margin: 20px 30px;
-    /*width: 40%*/
+    width: 37.5%
   }
 
   .btn-group .btn span{
@@ -377,7 +377,7 @@
 
 @media screen and (min-width: 900px) {
   .btn-group .btn{
-      margin: 0 60px;
+    margin: 0 60px;
     width: 30%
   }
 }
