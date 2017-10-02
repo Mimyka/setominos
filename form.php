@@ -11,8 +11,8 @@
   $city = (isset($_POST['city'])) ? $_POST['city'] : "" ;
   $phone = (isset($_POST['phone'])) ? $_POST['phone'] : "" ;
 
-  $namereg = "#^(?:[a-zA-Z]|[\-_ ](?![\-_ ])|[\x{00C0}\x{00C1}\x{00C2}\x{00C3}\x{00C4}\x{00C5}\x{00C6}\x{00C7}\x{00C8}\x{00C9}\x{00CA}\x{00CB}\x{00CC}\x{00CD}\x{00CE}\x{00CF}\x{00D0}\x{00D1}\x{00D2}\x{00D3}\x{00D4}\x{00D5}\x{00D6}\x{00D8}\x{00D9}\x{00DA}\x{00DB}\x{00DC}\x{00DD}\x{00DF}\x{00E0}\x{00E1}\x{00E2}\x{00E3}\x{00E4}\x{00E5}\x{00E6}\x{00E7}\x{00E8}\x{00E9}\x{00EA}\x{00EB}\x{00EC}\x{00ED}\x{00EE}\x{00EF}\x{00F0}\x{00F1}\x{00F2}\x{00F3}\x{00F4}\x{00F5}\x{00F6}\x{00F9}\x{00FA}\x{00FB}\x{00FC}\x{00FD}\x{00FF}\x{0153}]){3,50}$#";
-  $adressreg = "#^(?:[a-zA-Z0-9]|[\-_ ](?![\-_ ])|[\x{00C0}\x{00C1}\x{00C2}\x{00C3}\x{00C4}\x{00C5}\x{00C6}\x{00C7}\x{00C8}\x{00C9}\x{00CA}\x{00CB}\x{00CC}\x{00CD}\x{00CE}\x{00CF}\x{00D0}\x{00D1}\x{00D2}\x{00D3}\x{00D4}\x{00D5}\x{00D6}\x{00D8}\x{00D9}\x{00DA}\x{00DB}\x{00DC}\x{00DD}\x{00DF}\x{00E0}\x{00E1}\x{00E2}\x{00E3}\x{00E4}\x{00E5}\x{00E6}\x{00E7}\x{00E8}\x{00E9}\x{00EA}\x{00EB}\x{00EC}\x{00ED}\x{00EE}\x{00EF}\x{00F0}\x{00F1}\x{00F2}\x{00F3}\x{00F4}\x{00F5}\x{00F6}\x{00F9}\x{00FA}\x{00FB}\x{00FC}\x{00FD}\x{00FF}\x{0153}]){3,50}$#";
+  $namereg = "#^(?:[a-zA-ZÉÈÊËéèêëÎÏîïÙùÇçÑñÔôÂâŒœ]|[\-_ ](?![\-_ ])){3,50}$#";
+  $adressreg = "#^(?:[a-zA-Z0-9ÉÈÊËéèêëÎÏîïÙùÇçÑñÔôÂâŒœ]|[\-_ ](?![\-_ ])){3,50}$#";
 
   $toverif = array(
     preg_match($namereg, $firstName),
@@ -55,17 +55,9 @@
       if($mail->Send()) {
         echo "true";
       } else {
-        echo ErrorInfo;
+        echo $mail->ErrorInfo;
       }
   }else{
-    echo $firstName . ",";
-    echo $toverif[0] ."|";
-    echo $toverif[1] ."|";
-    echo $toverif[2] ."|";
-    echo $toverif[3] ."|";
-    echo $toverif[4] ."|";
-    echo $toverif[5] ."|";
-    echo $toverif[6] ."|";
-    echo $toverif[7];
+    echo "false";
   }
 ?>
