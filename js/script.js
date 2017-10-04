@@ -29,30 +29,32 @@ function input(target) {
 	return encodeURIComponent(document.querySelector("input[name="+target+"]").value);
 }
 
-function request(callback) {
-		var xhr = (function() {
-			var xhr = null;
+function getXHR() {
+		var xhr = null;
 
-			if (window.XMLHttpRequest || window.ActiveXObject) {
-				if (window.ActiveXObject) {
-					try {
-						xhr = new ActiveXObject("Msxml2.XMLHTTP");
-					} catch(e) {
-						xhr = new ActiveXObject("Microsoft.XMLHTTP");
-					}
-				} else {
-					xhr = new XMLHttpRequest();
+		if (window.XMLHttpRequest || window.ActiveXObject) {
+			if (window.ActiveXObject) {
+				try {
+					xhr = new ActiveXObject("Msxml2.XMLHTTP");
+				} catch(e) {
+					xhr = new ActiveXObject("Microsoft.XMLHTTP");
 				}
 			} else {
-				alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
-				return null;
+				xhr = new XMLHttpRequest();
 			}
+		} else {
+			alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
+			return null;
+		}
 
-			return xhr;
-		})();
+		return xhr;
+}
+
+function request_command(callback) {
+		var xhr = getXHR();
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-            callback(xhr.responseText);
+            callback(xhr.responseText, 1);
         }
     };
 
@@ -64,18 +66,45 @@ function request(callback) {
 		var postal_code = input("postal_code");
 		var city = input("city");
     var phone = input("phone");
+		var check = document.querySelector("#modal-buy input[name=check]").value;
 
 		xhr.open("POST", "./form.php", true);
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.send("first_name="+first_name+"&last_name="+last_name+"&email="+email+"&amount="+amount+"&adress="+adress+"&postal_code="+postal_code+"&city="+city+"&phone="+phone);
+    xhr.send("first_name="+first_name+"&last_name="+last_name+"&email="+email+"&amount="+amount+"&adress="+adress+"&postal_code="+postal_code+"&city="+city+"&phone="+phone+"&check="+check);
 }
 
-function read(data) {
-    if (data == "true") {
-        alert("Mail envoyé avec succès !");
-    } else {
-				alert("Le mail ne s'est pas envoyé, veuillez recommencer");
-    }
+function request_member(callback) {
+		var xhr = getXHR();
+		xhr.onreadystatechange = function() {
+				if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+						callback(xhr.responseText, 2);
+				}
+		};
+
+		var pseudo = input("pseudo");
+		var member_email = input("member_email");
+		var check = document.querySelector("#modal-mbr input[name=check]").value;
+
+		xhr.open("POST", "./inscription.php", true);
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		xhr.send("pseudo="+pseudo+"&member_email="+member_email+"&check="+check);
+}
+
+function read(data, b) {
+		if(b == 1){
+			if (data == "true") {
+	        alert("Mail envoyé avec succès !");
+	    } else {
+					alert("Le mail ne s'est pas envoyé, veuillez vérifier vos informations.");
+	    }
+		}
+		if(b == 2){
+			if (data == "true") {
+					alert("Inscription effectuée avec succès !");
+			} else {
+					alert("Veuillez vérifier vos informations et recommencer, l'inscription a échoué.");
+			}
+		}
 }
 
 var form1 = document.querySelector('#modal-buy .form_part1');

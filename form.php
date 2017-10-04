@@ -1,6 +1,10 @@
 <?php
   header("Content-Type: text/plain");
 
+  if ($_POST['check'] != "true") {
+    header('Location: http://www.google.com');
+  }
+
   include './PHPMailer/class.phpmailer.php';
   include './PHPMailer/class.smtp.php';
 

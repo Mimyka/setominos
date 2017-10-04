@@ -204,7 +204,8 @@
           <input type="text" name="postal_code" value="" placeholder="Votre code postal">
           <input type="text" name="city" value="" placeholder="Votre ville">
           <input type="phone" name="phone" value="" placeholder="Votre numéro de téléphone" autocomplete="off">
-          <button class="btn btn-form" type="button" onclick="request(read)">Valider</button>
+          <input type="hidden" name="check" value="true">
+          <button class="btn btn-form" type="button" onclick="request_command(read)">Valider</button>
         </form>
       </div>
     </div>
@@ -218,9 +219,10 @@
       </header>
       <div class="modal-body">
         <form action="#" method="post">
-          <input type="text" name="first_name" value="" placeholder="Votre prénom ou pseudo" autofocus="on" autocomplete="off">
-          <input type="text" name="email" value="" placeholder="Votre email le plus utilisé" autocomplete="off">
-          <button class="btn btn-form" type="submit">Valider</button>
+          <input type="text" name="pseudo" value="" placeholder="Votre prénom ou pseudo" autofocus="on" autocomplete="off">
+          <input type="text" name="member_email" value="" placeholder="Votre email le plus utilisé" autocomplete="off">
+          <input type="hidden" name="check" value="true">
+          <button class="btn btn-form" type="button" onclick="request_member(read)">Valider</button>
         </form>
       </div>
     </div>
