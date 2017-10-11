@@ -49,7 +49,12 @@ h2{
   letter-spacing: 0.03em
 }
 
-a, span, p{
+p, h3{
+  font-weight: 400;
+  font-size: 18px
+}
+
+a, span, p, h3{
   line-height: 1.8em;
   font-family: 'Oxygen', sans-serif
 }
@@ -58,16 +63,11 @@ a{
   cursor: pointer
 }
 
-p{
-  text-align: center
-}
-
 .fa{
   text-decoration: none
 }
 
 svg{
-  user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   -moz-user-select: none;
@@ -91,26 +91,16 @@ svg{
     $RESPONSIVE
 \*------------------------------------*/
 
-@media screen and (min-width: 450px){
-  .content p{
-    padding: 0 10%
-  }
-}
-
 
 @media screen and (min-width: 750px) {
   main{
     background-image: url(../img/background.jpg)
   }
 
-  p{
+  p,h3{
     font-family: 'Raleway', sans-serif;
     font-size: 22px;
     line-height: 36px
-  }
-
-  .content p{
-    padding: 0 0
   }
 
   section{

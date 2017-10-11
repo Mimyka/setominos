@@ -24,10 +24,18 @@
 }
 
 .content{
-  padding: 0 20px;
+  padding: 0 10%;
   position: relative;
   display: flex;
   align-items: center
+}
+
+.content div{
+  text-align: center;
+}
+
+.content h3, .content p{
+  display: inline;
 }
 
 .follow{
@@ -188,11 +196,11 @@
   color: #F60
 }
 
-#modal-ml h3{
+#modal-ml h5{
   padding-top: 25px
 }
 
-#modal-ml h5{
+#modal-ml h6{
   padding: 20px 20px 0 20px;
   text-transform: uppercase;
   color: #000
@@ -219,7 +227,7 @@
   background: rgba(0,0,0,0.1)
 }
 
-.modal-content header h3{
+.modal-content header h4, .modal-content header h5{
   width: calc(100% - 40px);
   display: inline-block;
   padding-top: 10px;
@@ -317,7 +325,12 @@
   }
 
   .content{
+    padding: 0 20px;
     width: 37.5%
+  }
+
+  .content h3, .content p{
+    padding: 0 0
   }
 
   .follow{
@@ -357,7 +370,7 @@
 
   /*Modal*/
 
-  .modal-content header h3{
+  .modal-content header h4, .modal-content header h5{
     padding-top: 10px
   }
 

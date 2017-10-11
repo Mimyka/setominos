@@ -1,3 +1,5 @@
+"use strict";
+
 //////////////////////////// VARIABLE DEFINITIONS ////////////////////////////
 var scrH =  document.documentElement.clientHeight || document.body.clientHeight;
 var totalH = document.querySelector('html').scrollHeight - scrH;
